@@ -1,38 +1,549 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header {
+  height: 16.5vh;
+  background-color: #312e31;
+  width: 100vw;
+  z-index: 2;
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Logo-container {
+  height: 90px;
+  width: 90px;
+}
+.Logo-container img {
+  width: 100%;
+  height: 100%;
+}
+.Header-buttons {
+  height: 90px;
+  display: flex;
+  align-items: center;
+
+  margin-right: 100px;
+}
+.feature_Vidos {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+.feature_Vidocontent {
+  height: 300px;
+  width: 100%;
+}
+.feature_Vidocontent iframe {
+  top: 0;
+  z-index: 4;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#title {
+  font-weight: bold;
+}
+.feature_Vidos_header {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex: 1;
+}
+.Footer {
+  margin-top: 100px;
+  background-color: rgb(46, 45, 45);
+  height: 82vh;
+  padding: 10px;
+}
+.Socialcard {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #252525;
+  margin: 10px;
+  border-radius: 5px;
+}
+.inline-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Header-buttons ul {
+  display: inline-flex;
+}
+.Header-buttons #selected {
+  background-color: #fdfdfd;
+  color: black;
+}
+.Map {
+  background-color: #fdfdfd;
+  height: 200px;
+  margin-top: 20px;
+  width: 300px;
+}
+.Header-buttons li:hover #icon {
+  color: orange !important;
+
+  cursor: pointer;
+}
+.Header-buttons li:hover {
+  cursor: pointer;
+}
+.Header-buttons li {
+  list-style: none;
+  color: white;
+
+  border-radius: 3px;
+  margin-inline: 10px;
+  height: 40px;
+  width: 90px;
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.HomeScreen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.Bannercomponent {
+  height: 85vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.bodycontainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-inline: 10px;
+}
+.leftbodycontainer {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Newscard {
+  flex: 1;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(238, 236, 234, 0.041);
+
+  border: 1px solid rgba(0, 0, 0, 0.055);
+  height: 100px;
+  padding: 20px;
+}
+.Newscard img {
+  height: 100px;
+  width: 100px;
+}
+.Newslist {
+  display: flex;
+}
+.NewsText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+.NewsText #newsdescription {
+  height: 60px;
+  margin: 5px;
+  width: 600px;
+  font-size: 12px;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+#date {
+  margin: 0px;
+  height: 0px;
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(156, 154, 154);
+  align-self: flex-end;
+}
+.Newscard #NewsTitle {
+  font-weight: bold;
+  margin: 0px;
+  color: rgb(18, 65, 92);
+}
+.Newscard #NewsTitle:hover {
+  color: rgb(226, 136, 0);
+  cursor: pointer;
+}
+.cardstitle {
+  height: 40px;
+  background-color: rgba(231, 229, 229, 0.075);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.texteventname {
+  flex: 1;
+}
+.texteventname p {
+  margin: 0px;
+  padding: 0px;
+}
+.texteventname #location {
+  font-size: 10px;
+  color: rgb(66, 34, 34);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardelements {
+  height: 60px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+  padding: 2px;
+
+  border: 0.5px solid rgba(73, 72, 72, 0.055);
+}
+.cardelements:hover {
+  background-color: #e0dfdf50;
+  cursor: pointer;
+}
+.cardelements img {
+  height: 100%;
+}
+#Newcontainertitle {
+  font-weight: bold;
+}
+.rightbodycontainer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 50px;
+  flex-direction: column;
+}
+.rightbodycontainer .Cards {
+  height: 300px;
+  width: 300px;
+  background-color: rgba(238, 236, 234, 0.041);
+}
+.Drop-downAcadmay {
+  position: absolute;
+
+  padding-inline: 60px;
+  padding-top: 10px;
+  max-width: 400px;
+  padding-bottom: 10px;
+
+  background-color: rgb(46, 45, 45);
+  right: 450px;
+  animation: myAnimation 0.2s;
+  display: flex;
+  flex-direction: row;
+  top: 65px;
+  padding-top: 5px;
+  flex-wrap: wrap;
+}
+.dropdownpart {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+.Drop-downlatest {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: rgb(46, 45, 45);
+  right: 650px;
+  animation: myAnimation 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  top: 65px;
+  padding-top: 5px;
+}
+#deptitle {
+  font-weight: bold;
+  animation: slideIn 0.7s ease-in-out;
+}
+@keyframes myAnimation {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
+.eachelement {
+  width: 80%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: center;
+  font-size: 13px;
+
+  border-bottom: 1px solid rgba(10, 132, 153, 0.664);
+
+  animation: slideIn 0.7s ease-in-out;
+}
+.Footer .text {
+  display: flex;
+  flex-direction: row;
+
+  height: 90%;
+}
+.text p {
+  margin: 0px;
+}
+.text-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.text-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fdfdfd;
+}
+.copyrightmessage {
+  flex: 1;
+  color: #fdfdfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#linktitle {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#links {
+  font-size: 13px;
+  color: rgb(0, 217, 255);
+  margin-top: 10px;
+}
+.eachelement p {
+  text-align: center;
+}
+.AcadamicReward {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+.CommunityOutreach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: -60px;
+  height: 500px;
+  width: 100%;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+.Communitycards {
+  width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+
+  height: 450px;
+  display: flex;
+  overflow: hidden;
+}
+.Communitycardsout {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.CommunityOutreachheads {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  height: 40px;
+}
+.CommunityCard {
+  flex: 1;
+
+  box-shadow: rgba(12, 11, 11, 0.116) 1.2px 1.95px 1.95px 2.6px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.leftcommunitycard {
+  flex: 1;
+  width: 600px;
+  background-color: #312e31;
+}
+.leftcommunitycard img {
+  width: 100%;
+  height: 100%;
+}
+.Rightcommunitycard {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.textwidth {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.textwidth p {
+  font-weight: normal;
+}
+.box {
+  height: 100px;
+  background-color: orange;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.box .boxdetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+  width: 200px;
+  height: 220px;
+}
+.boxdetail p {
+  color: white;
+  margin: 0px;
+}
+#No {
+  font-size: 60px;
+  font-weight: bold;
+}
+#value {
+  font-weight: bold;
+  color: #312e31;
+}
+.eachelement:hover {
+  background-color: rgba(148, 148, 144, 0.116);
+  cursor: pointer;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.Newscontainerlist {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  background-color: rgba(240, 248, 255, 0.301);
+  padding-inline: 5px;
+}
+.seemore:hover {
+  color: rgb(13, 13, 119);
+  cursor: pointer;
+}
+.Newscontainerlist #Newcontainertitle {
+  font-weight: bold;
+  color: rgb(31, 30, 30);
+}
+
+.Banner-darken {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.897);
+  display: flex;
+  flex-direction: row;
+}
+.Wellcome-text {
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Wellcombutton {
+  flex: 1;
+}
+.Wellcome-text p {
+  margin: 0px;
+
+  padding: 0px;
+}
+.Banner-darken .Wellcome-text #wellcome {
+  font-weight: bolder;
+  font-size: 36px;
+}
+.Wellcome-text button {
+  margin-top: 20px;
+  background-color: transparent;
+  height: 40px;
+  color: orange;
+
+  border: 1px solid rgb(253, 253, 253);
+  border-radius: 12px;
+  width: 90px;
+}
+.Wellcome-text button:hover {
+  background-color: rgba(0, 217, 255, 0.281);
+  color: white;
 }

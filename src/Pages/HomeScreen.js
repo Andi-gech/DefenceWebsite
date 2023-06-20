@@ -1,0 +1,133 @@
+import React from "react";
+import Bannercomponent from "../components/Bannercomponent";
+import {
+  FaAngleDown,
+  FaAngleLeft,
+  FaArrowCircleDown,
+  FaArrowDown,
+  FaArrowRight,
+  FaArrowsAltH,
+  FaCalendarDay,
+  FaLocationArrow,
+  FaMapMarker,
+  FaShare,
+} from "react-icons/fa";
+import Newscardcomponent from "../components/Newscardcomponent";
+import logo from "../Assets/defenceLogo.png";
+import YouTube from "react-youtube";
+
+function HomeScreen() {
+  const opts = {
+    height: "360",
+    width: "640",
+  };
+  return (
+    <div className="HomeScreen">
+      <Bannercomponent />
+      <div className="bodycontainer">
+        <div className="leftbodycontainer">
+          <div className="Newscontainerlist">
+            <p id="Newcontainertitle">Leatest News</p>
+            <p id="Newcontainertitle">
+              sort
+              <FaArrowDown
+                style={{
+                  fontWeight: "normal",
+                }}
+              />
+            </p>
+          </div>
+          <div>
+            <Newscardcomponent />
+            <Newscardcomponent />
+            <Newscardcomponent />
+            <Newscardcomponent />
+          </div>
+          <p className="seemore">
+            seemore
+            <FaShare />
+          </p>
+          <div className="feature_Vidos">
+            <div className="feature_Vidos_header">
+              <p id="title">feature_Video</p>
+            </div>
+            <div className="feature_Vidocontent">
+              <iframe
+                src="https://www.youtube.com/embed/0-ND5ib9FkY"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="Defence University"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="rightbodycontainer">
+          <div className="Cards">
+            <div className="cardstitle">
+              <p id="Newcontainertitle">CAMPUSES</p>
+            </div>
+            <div className="cardelements">
+              <img src={logo} />
+              <p>Enginnering Campus</p>
+              <FaArrowRight />
+            </div>
+            <div className="cardelements">
+              <img src={logo} />
+              <p>Health Campus</p>
+              <FaArrowRight />
+            </div>
+            <div className="cardelements">
+              <img src={logo} />
+              <p>Resource Campus</p>
+              <FaArrowRight />
+            </div>
+          </div>
+          <div className="Cards">
+            <div className="cardstitle">
+              <p id="Newcontainertitle">Events</p>
+            </div>
+            <div className="cardelements" style={{ paddingInline: 55 }}>
+              <FaCalendarDay size={19} color="green" />
+              <div className="texteventname">
+                <p>Staff Meeting</p>
+                <p id="location">
+                  <span>
+                    <FaMapMarker size={10} /> Admin
+                  </span>
+                  <span>Jan-23-2014</span>
+                </p>
+              </div>
+            </div>
+            <div className="cardelements" style={{ paddingInline: 55 }}>
+              <FaCalendarDay size={19} color="green" />
+              <div className="texteventname">
+                <p>Enginnering Campus</p>
+                <p id="location">
+                  <span>
+                    <FaMapMarker size={10} /> Admin
+                  </span>
+                  <span>Jan-23-2014</span>
+                </p>
+              </div>
+            </div>
+            <div className="cardelements" style={{ paddingInline: 55 }}>
+              <FaCalendarDay size={19} color="green" />
+              <div className="texteventname">
+                <p>Polen</p>
+                <p id="location">
+                  <span>
+                    <FaMapMarker size={10} /> Admin
+                  </span>
+                  <span>Jan-23-2014</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default HomeScreen;
