@@ -16,7 +16,9 @@ import {
   FaShare,
   FaSpeakap,
   FaSpeakerDeck,
+  FaUserShield,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [islatest, setIslatest] = useState(false);
@@ -38,10 +40,16 @@ function Header() {
               color: selected == "home" ? "black" : "white",
             }}
           >
-            Home{" "}
-            <FaHome id="icon" color={selected == "home" ? "orange" : "white"} />
+            <Link to={"home"} className="EachHeaderbutton">
+              Home
+              <FaHome
+                id="icon"
+                color={selected == "home" ? "orange" : "white"}
+              />
+            </Link>
           </li>
           <li
+            className="EachHeaderbutton"
             onMouseEnter={() => setIslatest(true)}
             onMouseLeave={() => setIslatest(false)}
             onClick={() => setselected("latest")}
@@ -57,18 +65,18 @@ function Header() {
                 color: "white",
               }}
             >
-              <div className="eachelement">
+              <Link className="eachelement" to={"latest-announcement"}>
                 Announcment
                 <FaBullhorn />
-              </div>
-              <div className="eachelement">
-                latest
+              </Link>
+              <Link to={"latest-news"} className="eachelement">
+                News
                 <FaBullhorn />
-              </div>
-              <div className="eachelement">
+              </Link>
+              <Link to={"Latest-Research"} className="eachelement">
                 Reasearch
                 <FaBullhorn />
-              </div>
+              </Link>
             </div>
 
             <span>
@@ -81,6 +89,7 @@ function Header() {
           </li>
 
           <li
+            className="EachHeaderbutton"
             onClick={() => setselected("acadamics")}
             onMouseEnter={() => setacadamy(true)}
             onMouseLeave={() => setacadamy(false)}
@@ -100,26 +109,38 @@ function Header() {
               <div className="dropdownpart">
                 <p id="deptitle">Colleges</p>
 
-                <div className="eachelement">
+                <Link to={"DE"} className="eachelement">
                   <p>College of Enginnering</p>
-                </div>
-                <div className="eachelement"> College of Health Science</div>
-                <div className="eachelement">
+                </Link>
+                <Link to={"Dhe"} className="eachelement">
+                  College of Health Science
+                </Link>
+                <Link to={"drs"} className="eachelement">
                   <p> Resource Management</p>
-                </div>
+                </Link>
               </div>
               <div className="dropdownpart">
                 <p id="deptitle">Regestrar</p>
 
-                <div className="eachelement">Acadamic Calander </div>
-                <div className="eachelement">Admission </div>
-                <div className="eachelement">contact </div>
+                <Link to={"AcadamicCalander"} className="eachelement">
+                  Acadamic Calander{" "}
+                </Link>
+                <Link to={"Admmisson"} className="eachelement">
+                  Admission{" "}
+                </Link>
+                <Link to={"admission-contact"} className="eachelement">
+                  contact{" "}
+                </Link>
               </div>
               <div className="dropdownpart">
                 <p id="deptitle">Research</p>
 
-                <div className="eachelement">Projects</div>
-                <div className="eachelement">Community activities</div>
+                <Link to={"research-project"} className="eachelement">
+                  Projects
+                </Link>
+                <Link to={"research-Community"} className="eachelement">
+                  Community activities
+                </Link>
               </div>
             </div>
             <span>
@@ -138,11 +159,13 @@ function Header() {
               color: selected == "library" ? "black" : "white",
             }}
           >
-            Library{" "}
-            <FaBook
-              id="icon"
-              color={selected == "library" ? "orange" : "white"}
-            />
+            <Link to={"Adminstration"} className="EachHeaderbutton">
+              Adminstration
+              <FaUserShield
+                id="icon"
+                color={selected == "library" ? "orange" : "white"}
+              />
+            </Link>
           </li>
 
           <li
@@ -152,11 +175,13 @@ function Header() {
               color: selected == "clander" ? "black" : "white",
             }}
           >
-            Calander{" "}
-            <FaCalendar
-              id="icon"
-              color={selected == "clander" ? "orange" : "white"}
-            />
+            <Link to={"calander"} className="EachHeaderbutton">
+              Calander{" "}
+              <FaCalendar
+                id="icon"
+                color={selected == "clander" ? "orange" : "white"}
+              />
+            </Link>
           </li>
           <li
             onClick={() => setselected("about")}
@@ -165,14 +190,24 @@ function Header() {
               color: selected == "about" ? "black" : "white",
             }}
           >
-            About
-            <FaGlobe
-              id="icon"
-              color={selected == "about" ? "orange" : "white"}
-            />{" "}
+            <Link to={"about"} className="EachHeaderbutton">
+              About
+              <FaGlobe
+                id="icon"
+                color={selected == "about" ? "orange" : "white"}
+              />
+            </Link>
           </li>
-          <li>
-            Support <FaQuestionCircle id="icon" />
+          <li
+            onClick={() => setselected("Support")}
+            style={{
+              backgroundColor: selected === "Support" ? "white" : "transparent",
+              color: selected == "Support" ? "black" : "white",
+            }}
+          >
+            <Link to={"support"} className="EachHeaderbutton">
+              Support <FaQuestionCircle id="icon" />
+            </Link>
           </li>
         </ul>
       </div>

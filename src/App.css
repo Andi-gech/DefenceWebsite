@@ -5,16 +5,30 @@
   display: flex;
   flex-direction: column;
 }
-
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inherit;
+}
 .Header {
   height: 16.5vh;
-  background-color: #312e31;
+  background-color: rgb(46, 45, 45);
   width: 100vw;
   z-index: 2;
   display: flex;
   position: fixed;
   flex-direction: row;
   justify-content: space-between;
+}
+.EachHeaderbutton {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+}
+#PAgesh1 {
+  margin-top: 100px;
 }
 .Logo-container {
   height: 90px;
@@ -111,11 +125,6 @@
   margin-inline: 10px;
   height: 40px;
   width: 90px;
-  display: flex;
-  flex-direction: column-reverse;
-  font-size: 15px;
-  align-items: center;
-  justify-content: center;
 }
 .HomeScreen {
   flex: 1;
@@ -190,6 +199,8 @@
 .Newscard #NewsTitle {
   font-weight: bold;
   margin: 0px;
+  text-align: center;
+  margin-left: 10px;
   color: rgb(18, 65, 92);
 }
 .Newscard #NewsTitle:hover {
@@ -509,7 +520,7 @@
 .Banner-darken {
   height: 100%;
   width: 100%;
-  background-color: rgba(15, 15, 15, 0.897);
+  background-color: rgba(28, 29, 29, 0.781);
   display: flex;
   flex-direction: row;
 }

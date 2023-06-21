@@ -1,20 +1,17 @@
 import React from "react";
 import Bannercomponent from "../components/Bannercomponent";
 import {
-  FaAngleDown,
-  FaAngleLeft,
-  FaArrowCircleDown,
   FaArrowDown,
   FaArrowRight,
-  FaArrowsAltH,
   FaCalendarDay,
-  FaLocationArrow,
   FaMapMarker,
   FaShare,
 } from "react-icons/fa";
 import Newscardcomponent from "../components/Newscardcomponent";
 import logo from "../Assets/defenceLogo.png";
 import YouTube from "react-youtube";
+import ACadamicReward from "../components/ACadamicReward";
+import CommunityOutreach from "../components/CommunityOutreach";
 
 function HomeScreen() {
   const opts = {
@@ -126,6 +123,8 @@ function HomeScreen() {
           </div>
         </div>
       </div>
+      <ACadamicReward />
+      <CommunityOutreach />
     </div>
   );
 }
