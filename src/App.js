@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 import ACadamicReward from "./components/ACadamicReward";
 import CommunityOutreach from "./components/CommunityOutreach";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Subheadercomponent from "./components/Subheader";
+import EnginneringCollegescreen from "./Pages/EnginneringCollegescreen";
+import HealthCollage from "./Pages/HealthCollage";
 
 function App() {
   return (
@@ -17,18 +20,12 @@ function App() {
           <Route index path="/" element={<HomeScreen />} />
           <Route path="home" element={<HomeScreen />} />
           <Route path="about" element={<h1 id="PAgesh1">about Page</h1>} />
-          <Route
-            path="DE"
-            element={<h1 id="PAgesh1">DEfence Enginnering page</h1>}
-          />
+          <Route path="DE" element={<EnginneringCollegescreen />} />
           <Route
             path="Drs"
             element={<h1 id="PAgesh1">DEfence Resource page</h1>}
           />
-          <Route
-            path="Dhe"
-            element={<h1 id="PAgesh1">DEfence Health page</h1>}
-          />
+          <Route path="Dhe" element={<HealthCollage />} />
           <Route
             path="latest-announcement"
             element={<h1 id="PAgesh1">Defence announcement page</h1>}

@@ -12,6 +12,7 @@ import {
   FaLightbulb,
   FaNewspaper,
   FaQuestionCircle,
+  FaRegNewspaper,
   FaSchool,
   FaShare,
   FaSpeakap,
@@ -67,15 +68,12 @@ function Header() {
             >
               <Link className="eachelement" to={"latest-announcement"}>
                 Announcment
-                <FaBullhorn />
               </Link>
               <Link to={"latest-news"} className="eachelement">
                 News
-                <FaBullhorn />
               </Link>
               <Link to={"Latest-Research"} className="eachelement">
                 Reasearch
-                <FaBullhorn />
               </Link>
             </div>
 

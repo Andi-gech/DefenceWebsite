@@ -8,20 +8,19 @@ function CommunityOutreach() {
   const cards = [
     {
       id: 1,
-      title: "React Animated Slideris",
-      description:
-        "Style your slideshow by adding CSS to your project. You can customize the appearance and layout of the slideshow by targeting the appropriate CSS classes or elements.",
+      title: "Defence University community news title 1 ",
+      description: "defence unversity community discription 1",
       image: banner,
     },
     {
       id: 2,
-      title: "Card 2",
-      description: "This is the description for Card 2.",
+      title: "Defence University community news title 2",
+      description: "Defence University community discription 2",
       image: banner2,
     },
     {
       id: 3,
-      title: "Card 3",
+      title: "Defence University community news title 3",
       description: "This is the description for Card 3.",
       image: banner3,
     },
