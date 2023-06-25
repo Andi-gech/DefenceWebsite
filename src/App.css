@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -12,13 +13,41 @@ a {
 }
 .Header {
   height: 16.5vh;
-  background-color: rgb(46, 45, 45);
+  background-color: rgb(48, 46, 46);
   width: 100vw;
   z-index: 2;
   display: flex;
   position: fixed;
   flex-direction: row;
   justify-content: space-between;
+}
+.Announcmentpage {
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+}
+.datelist {
+  height: 500px;
+
+  background-color: #252525;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.Newspage {
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+}
+.Newslist {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+}
+.Anouncmentlist {
+  width: 400px;
 }
 .EachHeaderbutton {
   display: flex;
@@ -29,6 +58,13 @@ a {
 }
 #PAgesh1 {
   margin-top: 100px;
+}
+.headermobile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 15px;
 }
 .Logo-container {
   height: 90px;
@@ -64,6 +100,8 @@ a {
 }
 #title {
   font-weight: bold;
+
+  font-size: 24px;
 }
 .feature_Vidos_header {
   height: 40px;
@@ -146,14 +184,12 @@ a {
   justify-content: center;
   align-items: center;
 }
-.EnginneringCollegescreen {
+.Collegescreen {
   margin-top: 16vh;
   display: flex;
   flex-direction: column;
 }
-.HealthCollage {
-  margin-top: 16vh;
-}
+
 .ECpageBody {
   flex: 1;
 
@@ -177,8 +213,8 @@ a {
 }
 .DepartmentCards {
   background-color: rgb(255, 255, 255);
-  border-radius: 30px;
-  box-shadow: rgba(12, 11, 11, 0.116) 1.2px 1.95px 1.95px 2.6px;
+  border-radius: 2px;
+  box-shadow: rgba(12, 11, 11, 0.068) 0.5px 0.5px 0.5px 2.5px;
   display: flex;
   flex: 1;
 
@@ -207,11 +243,93 @@ a {
   flex: 2;
 
   display: flex;
+  margin: 10px;
 
   flex-direction: column;
   background-color: rgb(255, 255, 255);
 }
+.titles {
+  display: flex;
 
+  align-items: center;
+  justify-content: center;
+}
+.inline-smallcard {
+  display: flex;
+  height: 100px;
+  width: 100%;
+}
+.titles p {
+  font-weight: bold;
+  font-size: 22px;
+}
+.AnnouncmentCardlsts {
+  display: flex;
+  flex-direction: column;
+}
+
+.PartnerComponent {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.PartnersCards {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+}
+.CollageFacility {
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+}
+.FacilityComponent .titles {
+  align-self: flex-start;
+  margin-left: 60px;
+}
+.FacilityComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.Facilitycardlist {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+.CollageAdminstartion {
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+}
+.smallcard {
+  height: 50%;
+  width: 50px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.Facilitycard {
+  width: 400px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 20px;
+}
+.FacilityComponent P {
+  flex: 1;
+}
+.inlinecardfacility {
+  width: 80%;
+  display: flex;
+
+  justify-content: space-between;
+
+  flex-direction: row;
+}
 .pervious {
   background-color: rgb(218, 223, 221);
   height: 40px;
@@ -220,10 +338,60 @@ a {
   align-items: center;
   justify-content: center;
 }
-.EcLeftbottom {
-  height: 500px;
+.WellcomeMessage {
+  display: flex;
+  height: 300px;
+  margin-top: 30px;
+  margin-bottom: 40px;
 
-  background-color: aliceblue;
+  overflow: hidden;
+}
+.ECNEwscards {
+  width: 800px;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.WellcomeMessage img {
+  width: 300px;
+  height: 84%;
+}
+.Presidantpic {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+.Presidantpic p {
+  margin: 0px;
+
+  font-weight: bold;
+  color: rgb(87, 80, 80);
+}
+.WellcomeText button {
+  height: 25px;
+  border: 1px solid orange;
+  border-radius: 25px;
+
+  background-color: transparent;
+  width: 200px;
+}
+.WellcomeMessage p {
+  height: 60%;
+  overflow: hidden;
+  text-align: justify;
+}
+.WellcomeMessagername {
+  margin: 0px;
+}
+.WellcomeText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
 }
 .ECrightBody {
   flex: 1;
@@ -297,7 +465,7 @@ a {
 .NewsText #newsdescription {
   height: 60px;
   margin: 5px;
-  width: 600px;
+  max-width: 600px;
   font-size: 12px;
   overflow: hidden;
 
@@ -676,6 +844,7 @@ a {
 .Banner-darken .Wellcome-text #wellcome {
   font-weight: bolder;
   font-size: 36px;
+  font-family: "Inconsolata", monospace;
 }
 .Wellcome-text button {
   margin-top: 20px;
@@ -690,4 +859,147 @@ a {
 .Wellcome-text button:hover {
   background-color: rgba(0, 217, 255, 0.281);
   color: white;
+}
+/* Slideshow */
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 900px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  display: inline-block;
+
+  height: 400px;
+  width: 300px;
+  border-radius: 40px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+  text-align: center;
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  margin: 15px 7px 0px;
+
+  background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+  background-color: #161318;
+}
+.Calander {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  background-color: #e6d2e6;
+  align-items: center;
+  justify-content: center;
+}
+.Calanderpage {
+  margin-top: 16vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CalanderdateCoponents {
+  height: 40px;
+
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+.NEWspageTitle {
+  font-size: 35px;
+  font-weight: bold;
+}
+.newsdate {
+  color: #716f71;
+  font-weight: bold;
+}
+.SideNEws {
+  width: 500px;
+}
+.MainNewsdetail {
+  margin-left: 30px;
+  margin-top: 40px;
+  flex: 2;
+}
+.MainNewsdetail p {
+  width: 600px;
+}
+.Newsdetailpages {
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: row;
+}
+.listCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: rgba(12, 11, 11, 0.041) 1.2px 1.95px 1.95px 2.6px;
+}
+.Questioncard {
+  width: 900px;
+  margin-top: 10px;
+}
+.Questioncard:hover {
+  cursor: pointer;
+}
+.hiddentext {
+  display: none;
+  width: 700px;
+  animation: myAnimation 0.2s;
+}
+.listCard p {
+  font-weight: bold;
+}
+.Admissionpage {
+  margin-top: 16vh;
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+.Admissionpagetext {
+  width: 900px;
+}
+.MainNewsdetail img {
+  width: 600px;
+  height: 400px;
+}
+.CalanderdateCoponents p {
+  margin: 0px;
+}
+.year p {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.year {
+  display: flex;
+  background-color: #e6d2e6;
+  align-items: center;
+  justify-content: center;
 }

@@ -9,20 +9,29 @@ import {
 } from "react-icons/fa";
 import Newscardcomponent from "../components/Newscardcomponent";
 import logo from "../Assets/defenceLogo.png";
-import YouTube from "react-youtube";
+import { newsData } from "../Pages/NEwsData";
 import ACadamicReward from "../components/ACadamicReward";
 import CommunityOutreach from "../components/CommunityOutreach";
+import WellcomeMessage from "../components/WellcomeMessage";
 
 function HomeScreen() {
   const opts = {
     height: "360",
     width: "640",
   };
+
   return (
     <div className="HomeScreen">
       <Bannercomponent />
       <div className="bodycontainer">
         <div className="leftbodycontainer">
+          <div>
+            <div className="">
+              <p id="title">Wellcome Message From Commandant</p>
+            </div>
+            <WellcomeMessage />
+          </div>
+
           <div className="Newscontainerlist">
             <p id="Newcontainertitle">Leatest News</p>
             <p id="Newcontainertitle">
@@ -35,10 +44,16 @@ function HomeScreen() {
             </p>
           </div>
           <div>
-            <Newscardcomponent />
-            <Newscardcomponent />
-            <Newscardcomponent />
-            <Newscardcomponent />
+            {newsData.map((news) => {
+              return (
+                <Newscardcomponent
+                  id={news.id}
+                  title={news.title}
+                  discription={news.content}
+                  date={news.date}
+                />
+              );
+            })}
           </div>
           <p className="seemore">
             seemore
@@ -84,18 +99,7 @@ function HomeScreen() {
             <div className="cardstitle">
               <p id="Newcontainertitle">Events</p>
             </div>
-            <div className="cardelements" style={{ paddingInline: 55 }}>
-              <FaCalendarDay size={19} color="green" />
-              <div className="texteventname">
-                <p>Staff Meeting</p>
-                <p id="location">
-                  <span>
-                    <FaMapMarker size={10} /> Admin
-                  </span>
-                  <span>Jan-23-2014</span>
-                </p>
-              </div>
-            </div>
+
             <div className="cardelements" style={{ paddingInline: 55 }}>
               <FaCalendarDay size={19} color="green" />
               <div className="texteventname">
