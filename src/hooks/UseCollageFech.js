@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function UseCollageFech() {
   const fetchCollage = async () => {
-    const res = await axios.get(`http://127.0.0.1:8000/collages/`);
+    const res = await axios.get(`https://andii23.pythonanywhere.com/collages/`);
 
     return res.data;
   };

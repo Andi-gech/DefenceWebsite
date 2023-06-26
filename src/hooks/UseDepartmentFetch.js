@@ -4,7 +4,7 @@ import axios from "axios";
 export default function UseDepartmentFech(id) {
   const fetchDepartment = async () => {
     const res = await axios.get(
-      `http://127.0.0.1:8000/collages/${id}/department`
+      `https://andii23.pythonanywhere.com/collages/${id}/department`
     );
 
     return res.data;

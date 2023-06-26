@@ -4,7 +4,7 @@ import axios from "axios";
 export default function UseFacilitiesFech(id) {
   const fetchFacilities = async () => {
     const res = await axios.get(
-      `http://127.0.0.1:8000/collages/${id}/facilities`
+      `https://andii23.pythonanywhere.com/collages/${id}/facilities`
     );
 
     return res.data;

@@ -3,7 +3,9 @@ import axios from "axios";
 
 export default function UseUniversityFech() {
   const fetchUniversity = async () => {
-    const res = await axios.get(`http://127.0.0.1:8000/university/`);
+    const res = await axios.get(
+      `https://andii23.pythonanywhere.com/university/`
+    );
 
     return res.data;
   };

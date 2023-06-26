@@ -3,7 +3,9 @@ import axios from "axios";
 
 export default function UsePartnersFech(id) {
   const fetchPartners = async () => {
-    const res = await axios.get(`http://127.0.0.1:8000/collages/${id}/partner`);
+    const res = await axios.get(
+      `https://andii23.pythonanywhere.com/collages/${id}/partner`
+    );
 
     return res.data;
   };
