@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import banner from "../Assets/banner.jpg";
-function Bannercomponent({ banner }) {
+function Bannercomponent({ banner, onImageLoad }) {
+  useEffect(() => {
+    const img = new Image();
+    img.src = banner;
+
+    img.onload = () => {
+      onImageLoad(true);
+    };
+
+    return () => {
+      img.onload = null;
+    };
+  }, [banner, onImageLoad]);
+
   return (
     <div
       className="Bannercomponent"

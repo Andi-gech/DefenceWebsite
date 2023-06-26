@@ -16,6 +16,7 @@ import Calanderpage from "./Pages/Calanderpage";
 import Newsdetailpages from "./Pages/Newsdetailpages";
 import Admissionpage from "./Pages/Admissionpage";
 import Aboutpages from "./Pages/Aboutpages";
+import Loadingpage from "./Pages/Loadingpage";
 
 function App() {
   return (
@@ -39,10 +40,7 @@ function App() {
           <Route path="/admissioncontact" element={<p>ss</p>} />
 
           <Route path="latest-announcement" element={<Announcmentpage />} />
-          <Route
-            path="Adminstration"
-            element={<h1 id="PAgesh1">Adminstarion page</h1>}
-          />
+          <Route path="Adminstration" element={<Loadingpage />} />
           <Route path="latest-news" element={<Newspage />} />
           <Route
             path="Downloads"

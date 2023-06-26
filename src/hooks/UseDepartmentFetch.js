@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default function UseDepartmentFech(id) {
   const fetchDepartment = async () => {
+    console.log("deprefeching");
     const res = await axios.get(
       `https://andii23.pythonanywhere.com/collages/${id}/department`
     );
