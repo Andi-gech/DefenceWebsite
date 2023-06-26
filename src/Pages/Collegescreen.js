@@ -15,6 +15,10 @@ import AnnouncmentCard from "../components/AnnouncmentCard";
 import PartnerComponent from "../components/PartnerComponent";
 import { useParams } from "react-router-dom";
 import { Slideshow } from "../components/Slideshow";
+import UseCollageFech from "../hooks/UseCollageFech";
+import UseNewsfech from "../hooks/UseNewsfetch";
+import UseDepartmentFech from "../hooks/UseDepartmentFetch";
+import UsePartnersFech from "../hooks/UsePartnerFech";
 function Collegescreen() {
   const { Collages } = useParams();
   const images = [
@@ -66,17 +70,23 @@ function Collegescreen() {
       ],
     },
   ];
+  const { data, isError, error, isLoading, refech } = UseCollageFech();
 
-  // Find the matching college based on the Collages parameter
-  const college = collages.find((college) => college.name === Collages);
+  const { data: News } = UseNewsfech();
+
+  const college = data?.find((college) => college.pathname === Collages);
   console.log(college);
-
+  const Anounments = News?.filter(
+    (f) => f.type === "Announcment" && f.tags.some((tag) => tag === college.id)
+  );
+  const { data: Department } = UseDepartmentFech(college?.id);
+  const { data: Partners } = UsePartnersFech(college?.id);
   if (!college) {
     return <h1 id="PAgesh1">page not found </h1>;
   }
   return (
     <div className="Collegescreen">
-      <Smallbanner name={Collages} />
+      <Smallbanner image={college.bannerimage} name={college.name} />
       <Subheadercomponent />
 
       <div className="ECpageBody">
@@ -84,56 +94,30 @@ function Collegescreen() {
           <div className="titles">
             <p>Wellcome Message</p>
           </div>
-          <WellcomeMessage />
+          <WellcomeMessage
+            Leadername={college.leaderName}
+            message={college.welcomeMessage}
+            image={college.leaderimage}
+          />
 
           <div className="titles">
             <p>Departments</p>
           </div>
-          <Slideshow images={college.depatments} />
+          <Slideshow images={Department} />
 
           <div className="titles">
-            <p>About DEC</p>
+            <p>About {college.name}</p>
           </div>
           <div className="Text">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              aliquet metus ac nunc hendrerit, et finibus justo mollis. Sed sed
-              neque a ex aliquam feugiat. Donec tristique purus ut justo
-              pharetra, ac commodo dui ullamcorper. Suspendisse potenti. Morbi
-              lobortis aliquet volutpat. Aliquam dignissim nibh et mauris
-              dictum, et dapibus mi tincidunt. Duis sit amet arcu id sem
-              pulvinar fermentum. Integer auctor, nulla vel posuere lacinia,
-              tortor urna eleifend ex, nec luctus elit turpis vitae eros. Sed at
-              efficitur ex. In hac habitasse platea dictumst. Proin pellentesque
-              ex eget quam pharetra semper. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia curae; Maecenas
-              sed facilisis ligula. Sed varius faucibus nisi id vulputate.
-              Phasellus mattis velit eu felis aliquam, ut dapibus nisi dapibus.
-              Vivamus ut dolor euismod, eleifend felis a, fermentum tellus. Ut
-              eget dapibus nisi. Aenean ut massa mauris. Fusce efficitur
-              condimentum neque, ut dapibus mauris mollis ut. Pellentesque
-              habitant morbi tristique senectus et netus et malesuada fames ac
-              turpis egestas. Integer non vestibulum dui. Sed iaculis semper
-              arcu id aliquam. Vestibulum ante ipsum primis in faucibus orci
-              luctus et ultrices posuere cubilia curae; Cras nec consectetur
-              ipsum. Duis faucibus sem non ex egestas efficitur. Sed fermentum
-              orci risus, vel interdum elit congue ut. Ut feugiat nisl vel
-              tellus tristique sollicitudin. Mauris non consectetur tellus.
-              Donec non ipsum risus. Sed et dolor nec sapien iaculis tincidunt.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada fames ac turpis egestas. Maecenas sit amet nunc eu purus
-              tempor lobortis ut vitae mauris. Nullam consequat ultrices erat
-              non ultricies. Vestibulum auctor elit sit amet ante mollis, sit
-              amet ullamcorper mauris tristique.
-            </p>
+            <p>{college.about}</p>
           </div>
           <div className="titles">
             <p>Partners</p>
           </div>
           <div className="PartnersCards">
-            <PartnerComponent />
-            <PartnerComponent />
-            <PartnerComponent />
+            {Partners?.map((Partner) => {
+              return <PartnerComponent />;
+            })}
           </div>
         </div>
         <div className="ECrightBody">
@@ -141,10 +125,15 @@ function Collegescreen() {
             <p>Announcments</p>
           </div>
           <div className="AnnouncmentCardlsts">
-            <AnnouncmentCard />
-            <AnnouncmentCard />
-            <AnnouncmentCard />
-            <AnnouncmentCard />
+            {Anounments?.map((An) => {
+              return (
+                <AnnouncmentCard
+                  title={An.Title}
+                  location={An.description}
+                  date={An.date}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

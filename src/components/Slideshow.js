@@ -31,12 +31,14 @@ export function Slideshow({ images }) {
     <div className="slideshow">
       <div
         className="slideshowSlider"
-        style={{ transform: `translate3d(${-index * 20}%, 0, 0)` }}
+        style={{
+          transform: `translate3d(${-index * (images?.length - 1) * 2}%, 0, 0)`,
+        }}
       >
         {images?.map((backgroundColor, index) => (
           <div className="slide">
             <DepartmentCards
-              image={backgroundColor.images}
+              image={backgroundColor.photo}
               deparmentname={backgroundColor.name}
             />
           </div>

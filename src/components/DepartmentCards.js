@@ -3,7 +3,9 @@ import React from "react";
 function DepartmentCards({ deparmentname, image }) {
   return (
     <div className="DepartmentCards">
-      <img src={image} />
+      <div>
+        <img src={image} />
+      </div>
       <div className="DepcardText">
         <p>{deparmentname} Department</p>
       </div>

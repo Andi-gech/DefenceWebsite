@@ -22,6 +22,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import UseCollageFech from "../hooks/UseCollageFech";
 
 function Header() {
   const [islatest, setIslatest] = useState(false);
@@ -57,6 +58,7 @@ function Header() {
       description: "This is the description for Card 3.",
     },
   ];
+  const { data, isError, error, isLoading, refech } = UseCollageFech();
 
   return (
     <div className="Header">
@@ -144,8 +146,8 @@ function Header() {
               >
                 <div className="dropdownpart">
                   <p id="deptitle">Colleges</p>
-                  {collages.map((college) => (
-                    <Link to={college.name} className="eachelement">
+                  {data?.map((college) => (
+                    <Link to={college.pathname} className="eachelement">
                       <p>{college.name}</p>
                     </Link>
                   ))}

@@ -2,7 +2,7 @@ import React from "react";
 import b1 from "../Assets/rm373batch13-085.jpg";
 import b2 from "../Assets/26363.jpg";
 import b3 from "../Assets/OMHWPG0.jpg";
-function Smallbanner({ name }) {
+function Smallbanner({ name, image }) {
   const collages = [
     {
       id: 1,
@@ -27,9 +27,7 @@ function Smallbanner({ name }) {
     <div
       className="Smallbanner"
       style={{
-        backgroundImage: `url(${
-          collages?.filter((c) => c.name == name)[0]?.images
-        })`,
+        backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPositionY: -200,
       }}
@@ -37,9 +35,9 @@ function Smallbanner({ name }) {
       <div className="smallBanner-darken">
         <p>
           <span style={{ fontWeight: "bold", fontSize: 40, color: "orange" }}>
-            DU{" "}
+            EDU{" "}
           </span>
-          {`College of ${name}`}
+          {name}
         </p>
       </div>
     </div>

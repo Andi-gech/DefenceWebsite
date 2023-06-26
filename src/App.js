@@ -15,6 +15,7 @@ import Newspage from "./Pages/Newspage";
 import Calanderpage from "./Pages/Calanderpage";
 import Newsdetailpages from "./Pages/Newsdetailpages";
 import Admissionpage from "./Pages/Admissionpage";
+import Aboutpages from "./Pages/Aboutpages";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomeScreen />} />
           <Route path="home" element={<HomeScreen />} />
-          <Route path="about" element={<h1 id="PAgesh1">about Page</h1>} />
+
           <Route exact path="/:Collages" element={<Collegescreen />} />
           <Route
             path=":Collages/facilities"
@@ -49,7 +50,7 @@ function App() {
           />
           <Route path="Support" element={<h1 id="PAgesh1">Support page</h1>} />
           <Route path="*" element={<h1 id="PAgesh1"> page note found</h1>} />
-          <Route path="about" element={<h1 id="PAgesh1">about page</h1>} />
+          <Route path="about" element={<Aboutpages />} />
           <Route path="/latest-news/:id" element={<Newsdetailpages />} />
           <Route
             path="research-project"

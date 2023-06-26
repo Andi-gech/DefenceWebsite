@@ -1,6 +1,6 @@
 import React from "react";
 import banner from "../Assets/banner.jpg";
-function Bannercomponent() {
+function Bannercomponent({ banner }) {
   return (
     <div
       className="Bannercomponent"
