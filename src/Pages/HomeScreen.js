@@ -36,7 +36,7 @@ function HomeScreen() {
           <div className="leftbodycontainer">
             <div>
               <div className="">
-                <p id="title">Wellcome Message From Commandant</p>
+                <p id="title">Welcome Message From Commandant</p>
               </div>
               <WellcomeMessage
                 Leadername={data[0]?.leaderName}
