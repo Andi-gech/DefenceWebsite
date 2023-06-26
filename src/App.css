@@ -895,8 +895,27 @@ a {
 }
 .Aboutpages {
   margin-top: 16vh;
-  background-color: #716f71;
-  height: 200px;
+  background-color: #fff;
+
+}
+.AboutContainer {
+  margin: auto;
+  text-align: center;
+}
+.Aboutpages p {
+  width: 800px;
+  margin: auto;
+  padding-bottom: 20px;
+  color: rgba(41, 36, 41, 0.8);
+
+  font-size: 18px;
+  margin-bottom: 45px;
+}
+.Aboutpages h1{
+  color: rgba(41, 36, 41, 0.8);;
+  font-size: 32px;
+  text-transform: capitalize;
+  margin-bottom:20px;
 }
 .slideshowDots {
   text-align: center;
