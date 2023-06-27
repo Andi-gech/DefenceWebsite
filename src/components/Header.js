@@ -2,21 +2,12 @@ import React, { useState } from "react";
 import logo from "../Assets/defenceLogo.png";
 import {
   FaAngleDown,
-  FaBeer,
-  FaBook,
-  FaBullhorn,
-  FaCalendar,
   FaFileDownload,
   FaGlobe,
   FaGraduationCap,
   FaHome,
-  FaLightbulb,
   FaNewspaper,
   FaQuestionCircle,
-  FaRegNewspaper,
-  FaSchool,
-  FaShare,
-  FaSpeakap,
   FaBars,
   FaUserShield,
 } from "react-icons/fa";
@@ -25,45 +16,29 @@ import { useMediaQuery } from "react-responsive";
 import UseCollageFech from "../hooks/UseCollageFech";
 
 function Header() {
-  const [islatest, setIslatest] = useState(false);
-  const [isacadamy, setacadamy] = useState(false);
+  const [isLatest, setIsLatest] = useState(false);
+  const [isAcademy, setIsAcademy] = useState(false);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
-  const [selected, setselected] = useState("");
-  const latestclicked = () => {
-    setselected("latest");
-    setIslatest(false);
+  const [selected, setSelected] = useState("");
+  const latestClicked = () => {
+    setSelected("latest");
+    setIsLatest(false);
   };
-  const Acadamicclicked = () => {
-    setselected("acadamics");
-    setacadamy(false);
+  const acadamicClicked = () => {
+    setSelected("academics");
+    setIsAcademy(false);
   };
-  const collages = [
-    {
-      id: 1,
-      name: "Enginnering ",
-      description: "defence unversity community discription 1",
-    },
-    {
-      id: 2,
-      name: "Health",
-      description: "Defence University community discription 2",
-    },
-    {
-      id: 3,
-      name: "Resource",
-      description: "This is the description for Card 3.",
-    },
-  ];
-  const { data, isError, error, isLoading, refech } = UseCollageFech();
+
+  const { data } = UseCollageFech();
 
   return (
     <div className="Header">
       <div className="Logo-container">
-        <img src={logo} />
+        <img src={logo} alt="Logo" />
       </div>
       {isTabletOrMobile && (
         <div className="headermobile">
@@ -75,45 +50,46 @@ function Header() {
           <ul>
             <li
               id="selected"
-              onClick={() => setselected("home")}
+              onClick={() => setSelected("home")}
               style={{
-                backgroundColor: selected == "home" ? "white" : "transparent",
-                color: selected == "home" ? "black" : "white",
+                backgroundColor: selected === "home" ? "white" : "transparent",
+                color: selected === "home" ? "black" : "white",
               }}
             >
               <Link to={"home"} className="EachHeaderbutton">
                 Home
                 <FaHome
                   id="icon"
-                  color={selected == "home" ? "orange" : "white"}
+                  color={selected === "home" ? "orange" : "white"}
                 />
               </Link>
             </li>
             <li
               className="EachHeaderbutton"
-              onMouseEnter={() => setIslatest(true)}
-              onMouseLeave={() => setIslatest(false)}
-              onClick={latestclicked}
+              onMouseEnter={() => setIsLatest(true)}
+              onMouseLeave={() => setIsLatest(false)}
+              onClick={latestClicked}
               style={{
-                backgroundColor: selected == "latest" ? "white" : "transparent",
-                color: selected == "latest" ? "black" : "white",
+                backgroundColor:
+                  selected === "latest" ? "white" : "transparent",
+                color: selected === "latest" ? "black" : "white",
               }}
             >
               <div
                 className="Drop-downlatest"
                 style={{
-                  display: islatest ? "flex" : "none",
+                  display: isLatest ? "flex" : "none",
                   color: "white",
                 }}
               >
                 <Link className="eachelement" to={"latest-announcement"}>
-                  Announcment
+                  Announcement
                 </Link>
                 <Link to={"latest-news"} className="eachelement">
                   News
                 </Link>
                 <Link to={"Latest-Research"} className="eachelement">
-                  Reasearch
+                  Research
                 </Link>
               </div>
 
@@ -122,47 +98,51 @@ function Header() {
               </span>
               <FaNewspaper
                 id="icon"
-                color={selected == "latest" ? "orange" : "white"}
+                color={selected === "latest" ? "orange" : "white"}
               />
             </li>
 
             <li
               className="EachHeaderbutton"
-              onClick={Acadamicclicked}
-              onMouseEnter={() => setacadamy(true)}
-              onMouseLeave={() => setacadamy(false)}
+              onClick={acadamicClicked}
+              onMouseEnter={() => setIsAcademy(true)}
+              onMouseLeave={() => setIsAcademy(false)}
               style={{
                 backgroundColor:
-                  selected === "acadamics" ? "white" : "transparent",
-                color: selected == "acadamics" ? "black" : "white",
+                  selected === "academics" ? "white" : "transparent",
+                color: selected === "academics" ? "black" : "white",
               }}
             >
               <div
                 className="Drop-downAcadmay"
                 style={{
-                  display: isacadamy ? "flex" : "none",
+                  display: isAcademy ? "flex" : "none",
                   color: "white",
                 }}
               >
                 <div className="dropdownpart">
                   <p id="deptitle">Colleges</p>
                   {data?.map((college) => (
-                    <Link to={college.pathname} className="eachelement">
+                    <Link
+                      to={college.pathname}
+                      className="eachelement"
+                      key={college?.id}
+                    >
                       <p>{college.name}</p>
                     </Link>
                   ))}
                 </div>
                 <div className="dropdownpart">
-                  <p id="deptitle">Regestrar</p>
+                  <p id="deptitle">Registrar</p>
 
                   <Link to={"AcadamicCalander"} className="eachelement">
-                    Acadamic Calander{" "}
+                    Academic Calendar{" "}
                   </Link>
-                  <Link to={"Admmisson"} className="eachelement">
+                  <Link to={"Admission"} className="eachelement">
                     Admission{" "}
                   </Link>
                   <Link to={"admissioncontact"} className="eachelement">
-                    contact{" "}
+                    Contact{" "}
                   </Link>
                 </div>
                 <div className="dropdownpart">
@@ -177,68 +157,68 @@ function Header() {
                 </div>
               </div>
               <span>
-                Acadamics
+                Academics
                 <FaAngleDown />
               </span>
               <FaGraduationCap
                 id="icon"
-                color={selected == "acadamics" ? "orange" : "white"}
+                color={selected === "academics" ? "orange" : "white"}
               />
             </li>
             <li
-              onClick={() => setselected("library")}
+              onClick={() => setSelected("library")}
               style={{
                 backgroundColor:
                   selected === "library" ? "white" : "transparent",
-                color: selected == "library" ? "black" : "white",
+                color: selected === "library" ? "black" : "white",
               }}
             >
-              <Link to={"Adminstration"} className="EachHeaderbutton">
-                Adminstration
+              <Link to={"Administration"} className="EachHeaderbutton">
+                Administration
                 <FaUserShield
                   id="icon"
-                  color={selected == "library" ? "orange" : "white"}
+                  color={selected === "library" ? "orange" : "white"}
                 />
               </Link>
             </li>
 
             <li
-              onClick={() => setselected("clander")}
+              onClick={() => setSelected("calendar")}
               style={{
                 backgroundColor:
-                  selected === "clander" ? "white" : "transparent",
-                color: selected == "clander" ? "black" : "white",
+                  selected === "calendar" ? "white" : "transparent",
+                color: selected === "calendar" ? "black" : "white",
               }}
             >
               <Link to={"Downloads"} className="EachHeaderbutton">
                 Downloads{" "}
                 <FaFileDownload
                   id="icon"
-                  color={selected == "clander" ? "orange" : "white"}
+                  color={selected === "calendar" ? "orange" : "white"}
                 />
               </Link>
             </li>
             <li
-              onClick={() => setselected("about")}
+              onClick={() => setSelected("about")}
               style={{
                 backgroundColor: selected === "about" ? "white" : "transparent",
-                color: selected == "about" ? "black" : "white",
+                color: selected === "about" ? "black" : "white",
               }}
             >
               <Link to={"about"} className="EachHeaderbutton">
                 About
                 <FaGlobe
                   id="icon"
-                  color={selected == "about" ? "orange" : "white"}
+                  color={selected === "about" ? "orange" : "white"}
                 />
               </Link>
             </li>
             <li
-              onClick={() => setselected("Support")}
+              onClick={() => setSelected("support")}
               style={{
                 backgroundColor:
-                  selected === "Support" ? "white" : "transparent",
-                color: selected == "Support" ? "black" : "white",
+                  selected === "support" ? "white" : "transparent",
+                color: selected === "support" ? "black" : "white",
               }}
             >
               <Link to={"support"} className="EachHeaderbutton">

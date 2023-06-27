@@ -1,55 +1,55 @@
 import React, { useEffect, useState } from "react";
-import UseNewsfech from "../hooks/UseNewsfetch";
-import UseEventFech from "../hooks/UseEventfecg";
 
 function CalanderdateCoponents({ day, year, month, data }) {
-  const [event, setevent] = useState({});
+  const [events, setEvents] = useState([]);
   const today = new Date();
   const currentDay = today.getDate();
   const currentMonth = today.getMonth();
   const currentYear = today.getFullYear();
+
   useEffect(() => {
-    checkevent(year, month, day);
-  }, [year, month, day, data]);
+    checkEvents(year, month, day);
+  });
+
   const isToday =
     day === currentDay && month === currentMonth + 1 && year === currentYear;
 
-  const checkevent = () => {
-    const events = data?.filter((event) => {
+  const checkEvents = () => {
+    const filteredEvents = data?.filter((event) => {
       const eventDate = new Date(event.date);
       return (
         eventDate.getFullYear() === year &&
-        eventDate.getMonth() === month - 1 && // Month is zero-based (0-11)
+        eventDate.getMonth() === month - 1 &&
         eventDate.getDate() === day
       );
     });
-    setevent(events);
+    setEvents(filteredEvents);
   };
-  console.log(data);
-
-  return (
-    <div
-      className="CalanderdateCoponents"
-      style={{
-        backgroundColor: isToday
-          ? "orange"
-          : event?.length > 0
-          ? "yellow"
-          : "white",
-      }}
-    >
-      <div className="day">
-        <p>{day}</p>
-      </div>
-      {event?.length > 0 && (
-        <div className="dayevent">
-          {event?.map((eventd) => (
-            <p>{eventd.Title}</p>
-          ))}
+  if (events) {
+    return (
+      <div
+        className="CalanderdateCoponents"
+        style={{
+          backgroundColor: isToday
+            ? "orange"
+            : events?.length > 0
+            ? "yellow"
+            : "white",
+        }}
+      >
+        <div className="day">
+          <p>{day}</p>
         </div>
-      )}
-    </div>
-  );
+        {events?.length > 0 && (
+          <div className="dayevent">
+            {events?.map((event) => (
+              <p key={event.id}>{event.Title}</p>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
 }
 
 export default CalanderdateCoponents;

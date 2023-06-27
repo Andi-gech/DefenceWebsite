@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import CalanderdateCoponents from "./CalanderdateCoponents";
 import UseEventFech from "../hooks/UseEventfecg";
-import UseNewsfech from "../hooks/UseNewsfetch";
 
 function Calander() {
-  const [year, setyear] = useState(new Date().getFullYear());
-  const [month, setmonth] = useState(new Date().getMonth() + 1);
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth() + 1);
   const { data } = UseEventFech();
 
   const getDaysInMonth = (year, month) => {
@@ -18,75 +17,43 @@ function Calander() {
     { length: daysInMonth },
     (_, index) => index + 1
   );
-  console.log(month);
-  console.log(daysArray);
-  const getMonth = () => {
-    const date = (month - 1 + 13) % 13;
-    if (date === 0) {
-      setmonth(month);
-    } else {
-      setmonth(date);
-    }
+
+  const getPreviousMonth = () => {
+    const previousMonth = (month - 1 + 13) % 13;
+    setMonth(previousMonth === 0 ? month : previousMonth);
   };
-  const incresemonth = () => {
-    const date = (month + 1 + 13) % 13;
-    if (date === 0) {
-      setmonth(month);
-    } else {
-      setmonth(date);
-    }
+
+  const getNextMonth = () => {
+    const nextMonth = (month + 1 + 13) % 13;
+    setMonth(nextMonth === 0 ? month : nextMonth);
   };
+
   return (
     <div className="Calander">
       <div className="titles">
-        <p>Acadamic Calander of defence</p>
+        <p>Academic Calendar of Defence</p>
       </div>
       <div className="year">
-        <button
-          onClick={() => {
-            setyear(year - 1);
-          }}
-        >
-          -
-        </button>
+        <button onClick={() => setYear(year - 1)}>-</button>
         <p>{year}</p>
-        <button
-          onClick={() => {
-            setyear(year + 1);
-          }}
-        >
-          +
-        </button>
+        <button onClick={() => setYear(year + 1)}>+</button>
       </div>
       <div className="year">
-        <button
-          onClick={() => {
-            getMonth();
-          }}
-        >
-          -
-        </button>
+        <button onClick={getPreviousMonth}>-</button>
         <p>{month}</p>
-        <button
-          onClick={() => {
-            incresemonth();
-          }}
-        >
-          +
-        </button>
+        <button onClick={getNextMonth}>+</button>
       </div>
 
       <div className="datelist">
-        {daysArray.map((day) => {
-          return (
-            <CalanderdateCoponents
-              year={year}
-              month={month}
-              day={day}
-              data={data}
-            />
-          );
-        })}
+        {daysArray?.map((day) => (
+          <CalanderdateCoponents
+            key={day}
+            year={year}
+            month={month}
+            day={day}
+            data={data}
+          />
+        ))}
       </div>
     </div>
   );

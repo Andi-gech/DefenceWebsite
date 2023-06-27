@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import banner from "../Assets/banner.jpg";
+
 function Bannercomponent({ banner, onImageLoad }) {
   useEffect(() => {
     const img = new Image();
@@ -25,8 +25,8 @@ function Bannercomponent({ banner, onImageLoad }) {
     >
       <div className="Banner-darken">
         <div className="Wellcome-text">
-          <p id="wellcome">Wellcome to Ethiopian Defence University</p>
-          <p>largrest learning center in africa</p>
+          <p id="wellcome">Welcome to Ethiopian Defence University</p>
+          <p>largest learning center in Africa</p>
           <button>Our Vision</button>
         </div>
       </div>

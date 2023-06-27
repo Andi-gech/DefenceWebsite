@@ -32,6 +32,7 @@ function App() {
             path=":Collages/facilities"
             element={<CollageFacility name={"Collage of Enginnering"} />}
           />
+          <Route path="AcadamicCalander" element={<Calanderpage />} />
 
           <Route
             path=":Collages/Adminstration"
@@ -67,9 +68,8 @@ function App() {
               </h1>
             }
           />
-          <Route path="AcadamicCalander" element={<Calanderpage />} />
 
-          <Route path="Admmisson" element={<Admissionpage />} />
+          <Route path="Admission" element={<Admissionpage />} />
           <Route
             path="Latest-Research"
             element={<h1 id="PAgesh1">Latest-Research page</h1>}
