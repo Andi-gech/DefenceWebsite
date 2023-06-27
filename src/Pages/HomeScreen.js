@@ -79,6 +79,7 @@ function HomeScreen() {
                       title={news.Title}
                       discription={news.description}
                       date={news.date}
+                      image={news.image}
                     />
                   );
                 })}
@@ -107,7 +108,7 @@ function HomeScreen() {
                 <div className="cardstitle">
                   <p id="Newcontainertitle">CAMPUSES</p>
                 </div>
-                {collages.map((collage) => {
+                {collages?.map((collage) => {
                   return (
                     <div className="cardelements">
                       <img src={logo} />
@@ -121,7 +122,7 @@ function HomeScreen() {
                 <div className="cardstitle">
                   <p id="Newcontainertitle">Events</p>
                 </div>
-                {Event.map((e) => {
+                {Event?.map((e) => {
                   return (
                     <div className="cardelements" style={{ paddingInline: 10 }}>
                       <FaCalendarDay size={19} color="green" />

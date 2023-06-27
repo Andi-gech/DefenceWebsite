@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import CalanderdateCoponents from "./CalanderdateCoponents";
+import UseEventFech from "../hooks/UseEventfecg";
+import UseNewsfech from "../hooks/UseNewsfetch";
 
 function Calander() {
   const [year, setyear] = useState(new Date().getFullYear());
   const [month, setmonth] = useState(new Date().getMonth() + 1);
+  const { data } = UseEventFech();
 
   const getDaysInMonth = (year, month) => {
     const date = new Date(year, month + 1, 0);
@@ -75,7 +78,14 @@ function Calander() {
 
       <div className="datelist">
         {daysArray.map((day) => {
-          return <CalanderdateCoponents year={year} month={month} day={day} />;
+          return (
+            <CalanderdateCoponents
+              year={year}
+              month={month}
+              day={day}
+              data={data}
+            />
+          );
         })}
       </div>
     </div>

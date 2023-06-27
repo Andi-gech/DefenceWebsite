@@ -902,7 +902,7 @@ a {
 .slideshowSlider {
   white-space: nowrap;
 
-  max-height: 350px;
+  max-height: 450px;
 
   transition: ease 1000ms;
 }
@@ -972,6 +972,14 @@ a {
   align-items: center;
   justify-content: center;
   width: 100px;
+}
+.day {
+  flex: 1;
+}
+.dayevent {
+  flex: 1;
+  overflow: hidden;
+  font-size: 12px;
 }
 .NEWspageTitle {
   font-size: 35px;
