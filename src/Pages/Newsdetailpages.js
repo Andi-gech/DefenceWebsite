@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Newscardcomponent from "../components/Newscardcomponent";
 import UseNewsfech from "../hooks/UseNewsfetch";
@@ -9,6 +9,9 @@ function Newsdetailpages() {
   const { id } = useParams();
   const { data: news } = UseNewsfech();
   const { data: individualNews } = UseIndividualnewsFech(id);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const formattedDate = formatDate(individualNews?.date);
 

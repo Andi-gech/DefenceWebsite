@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Newscardcomponent from "../components/Newscardcomponent";
 import UseNewsfech from "../hooks/UseNewsfetch";
 import Loadingpage from "./Loadingpage";
 
 function Newspage() {
   const { data: news } = UseNewsfech();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (news) {
     return (

@@ -24,6 +24,9 @@ function HomeScreen() {
   const { data: collages } = UseCollageFech();
   const { data: News } = UseNewsfech();
   const { data: Event } = UseEventFech();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const handleImageLoad = () => {

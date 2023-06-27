@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RingLoader } from "react-spinners";
 
 function Loadingpage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="Loadingpage">
       <RingLoader

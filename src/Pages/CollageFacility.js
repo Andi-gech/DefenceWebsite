@@ -11,6 +11,9 @@ import Loadingpage from "./Loadingpage";
 function CollageFacility() {
   const { Collages } = useParams();
   const { data: collage } = UseCollageFech();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const college = collage?.find((college) => college.pathname === Collages);
   const { data } = UseFacilitiesFech(college?.id);

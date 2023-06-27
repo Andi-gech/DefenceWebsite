@@ -17,6 +17,9 @@ import Loadingpage from "./Loadingpage";
 
 function Collegescreen() {
   const { Collages } = useParams();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const { data } = UseCollageFech();
   const { data: News } = UseNewsfech();
