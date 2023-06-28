@@ -20,6 +20,7 @@ import Loadingpage from "./Loadingpage";
 import logo from "../Assets/defenceLogo.png";
 
 import Erorrpage from "./Errorpage";
+import AnnouncmentCard from "../components/AnnouncmentCard";
 
 function HomeScreen() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -94,16 +95,19 @@ function HomeScreen() {
                 </p>
               </div>
               <div className="Newslist">
-                {News.reverse().map((news) => (
-                  <Newscardcomponent
-                    key={news.id}
-                    id={news.id}
-                    title={news.Title}
-                    discription={news.description}
-                    date={news.date}
-                    image={news.image}
-                  />
-                ))}
+                {News.slice()
+                  .reverse()
+                  .slice(0, 4)
+                  .map((news) => (
+                    <Newscardcomponent
+                      key={news.id}
+                      id={news.id}
+                      title={news.Title}
+                      discription={news.description}
+                      date={news.date}
+                      image={news.image}
+                    />
+                  ))}
               </div>
               <p className="seemore">
                 See more
@@ -151,22 +155,11 @@ function HomeScreen() {
                     whileInView={{ scale: [0, 1.2, 1] }}
                     transition={{ duration: 1, delay: index / 10 }}
                   >
-                    <div
-                      className="cardelements"
-                      key={e.id}
-                      style={{ paddingInline: 10 }}
-                    >
-                      <FaCalendarDay size={19} color="green" />
-                      <div className="texteventname">
-                        <p>{e.Title}</p>
-                        <p id="location">
-                          <span>
-                            <FaMapMarker size={10} /> {e.location}
-                          </span>
-                          <span>{e.date}</span>
-                        </p>
-                      </div>
-                    </div>
+                    <AnnouncmentCard
+                      title={e.Title}
+                      date={e.date}
+                      location={e.location}
+                    />
                   </motion.div>
                 ))}
               </div>

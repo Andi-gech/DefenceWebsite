@@ -8,13 +8,13 @@ function AnnouncmentCard({ title, location, date }) {
     day: "2-digit",
   });
   return (
-    <div className="cardelements" style={{ paddingInline: 55 }}>
-      <FaCalendarDay size={19} color="green" />
+    <div className="cardelements" style={{ paddingInline: 25 }}>
+      <FaCalendarDay size={19} color="gray" />
       <div className="texteventname">
         <p>{title}</p>
         <p id="location">
           <span>
-            <FaMapMarker size={10} />
+            <FaMapMarker size={10} color="red" />
             {location}
           </span>
           <span>{formattedDate}</span>
