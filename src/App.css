@@ -376,9 +376,13 @@ a {
 }
 .Presidantpic {
   display: flex;
-
   flex-direction: column;
   align-items: center;
+}
+.Presidantpic img{
+  border-radius: 50%;
+  width: 280px;
+  height: 280;
 }
 .Presidantpic p {
   margin: 0px;
@@ -856,7 +860,6 @@ a {
 }
 .Wellcome-text p {
   margin: 0px;
-
   padding: 0px;
 }
 .Banner-darken .Wellcome-text #wellcome {
