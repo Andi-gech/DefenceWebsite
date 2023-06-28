@@ -18,6 +18,7 @@ import Admissionpage from "./Pages/Admissionpage";
 import Aboutpages from "./Pages/Aboutpages";
 import Loadingpage from "./Pages/Loadingpage";
 import NoFoundPage from "./Pages/NoFoundPage";
+import Adminstrationpage from "./Pages/Adminstrationpage";
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
           <Route path="/admissioncontact" element={<p>ss</p>} />
 
           <Route path="latest-announcement" element={<Announcmentpage />} />
-          <Route path="Administration" element={<Admissionpage />} />
+          <Route path="Administration" element={<Adminstrationpage />} />
           <Route path="latest-news" element={<Newspage />} />
           <Route
             path="Downloads"
