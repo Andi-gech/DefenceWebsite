@@ -7,7 +7,6 @@ function PartnerComponent({ image }) {
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
-        backgroundPositionY: -200,
       }}
     ></div>
   );
