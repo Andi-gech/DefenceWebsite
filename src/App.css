@@ -39,6 +39,9 @@ a {
 
   background-color: rgb(43, 42, 42);
 }
+#types {
+  height: 10px;
+}
 .Erorrpageimage img {
   height: 200px;
   width: 200px;
@@ -410,7 +413,7 @@ a {
   flex-direction: column;
   align-items: center;
 }
-.Presidantpic img{
+.Presidantpic img {
   border-radius: 50%;
   width: 280px;
   height: 280px;

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { RingLoader } from "react-spinners";
+import { TailSpin } from "react-loader-spinner";
 
 function Loadingpage() {
   useEffect(() => {
@@ -8,12 +8,15 @@ function Loadingpage() {
 
   return (
     <div className="Loadingpage">
-      <RingLoader
-        color={"rgb(0, 217, 255)"}
-        loading={true}
-        size={70}
-        aria-label="Loading Spinner"
-        data-testid="loader"
+      <TailSpin
+        height="80"
+        width="80"
+        color="white"
+        ariaLabel="tail-spin-loading"
+        radius="1"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
       />
       <p>Loading..</p>
     </div>

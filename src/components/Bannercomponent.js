@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Typewriter from "typewriter-effect";
 
 function Bannercomponent({ banner, onImageLoad }) {
   useEffect(() => {
@@ -26,7 +27,30 @@ function Bannercomponent({ banner, onImageLoad }) {
       <div className="Banner-darken">
         <div className="Wellcome-text">
           <p id="wellcome">Welcome to Ethiopian Defence University</p>
-          <p>largest learning center in Africa</p>
+          <p>
+            <Typewriter
+              id="types"
+              options={{
+                loop: true,
+                delay: 190,
+                deleteSpeed: 100,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+
+                  .typeString("እንኳን ወደ ኢትዮጵያ መከላከያ ዩኒቨርሲቲ በደህና መጡ!!")
+
+                  .pauseFor(3000)
+                  .deleteAll()
+                  .typeString(" the Largest Learning Center In ethiopia")
+                  .pauseFor(3000)
+                  .deleteAll()
+
+                  .start();
+              }}
+            />
+          </p>
+
           <button>Our Vision</button>
         </div>
       </div>
