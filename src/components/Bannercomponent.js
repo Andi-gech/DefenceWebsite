@@ -12,7 +12,7 @@ function Bannercomponent({ banner }) {
     >
       <div className="Banner-darken">
         <div className="Wellcome-text">
-          <p id="wellcome">Wellcome to Ethiopian Defence University</p>
+          <p id="wellcome">Welcome to Ethiopian Defence University</p>
           <p>largrest learning center in africa</p>
           <button>Our Vision</button>
         </div>
