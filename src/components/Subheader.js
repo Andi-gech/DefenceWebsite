@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../Assets/banner.jpg";
+
 import { Link, useParams } from "react-router-dom";
 function Subheadercomponent() {
   const { Collages } = useParams();

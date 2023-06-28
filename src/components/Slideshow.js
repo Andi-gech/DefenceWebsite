@@ -49,7 +49,7 @@ function Slideshow({ id }) {
           <div className="slide" key={idx}>
             <DepartmentCards
               image={department.photo}
-              departmentName={department.name}
+              deparmentname={department.name}
             />
           </div>
         ))}

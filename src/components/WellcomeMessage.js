@@ -1,10 +1,10 @@
 import React from "react";
-import Enginneringsvg from "../Assets/general pic.png";
+
 function WellcomeMessage({ Leadername, message, image }) {
   return (
     <div className="WellcomeMessage">
       <div className="Presidantpic">
-        <img src={image} />
+        <img src={image} alt="presidantpic" />
         <div className="WellcomeMessagername">
           <p>{Leadername} </p>
           <p style={{ fontWeight: "normal", fontSize: 14 }}>

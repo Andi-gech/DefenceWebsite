@@ -15,16 +15,21 @@ import UseNewsfech from "../hooks/UseNewsfetch";
 import UsePartnersFech from "../hooks/UsePartnerFech";
 import Loadingpage from "./Loadingpage";
 
+import NoFoundPage from "./NoFoundPage";
+import Erorrpage from "./Errorpage";
+
 function Collegescreen() {
   const { Collages } = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { data } = UseCollageFech();
-  const { data: News } = UseNewsfech();
+  const { data, isLoading, isError } = UseCollageFech();
+  const { data: News, isError: Newserror } = UseNewsfech();
 
-  const college = data?.find((college) => college.pathname === Collages);
+  const college = data?.find(
+    (college) => college.pathname.toLowerCase() === Collages.toLowerCase()
+  );
   const Anounments = News?.filter(
     (f) => f.type === "Announcment" && f.tags.some((tag) => tag === college?.id)
   );
@@ -47,10 +52,13 @@ function Collegescreen() {
       };
     }
   }, [college]);
+  if (isLoading) {
+    return <Loadingpage />;
+  }
 
-  if (data && News && Partners) {
+  if (data) {
     if (!college) {
-      return <h1 id="PAgesh1">Page not found</h1>;
+      return <NoFoundPage />;
     } else {
       return (
         <>
@@ -92,7 +100,7 @@ function Collegescreen() {
                 </div>
                 <div className="PartnersCards">
                   {Partners?.map((Partner) => (
-                    <PartnerComponent key={Partner.id} />
+                    <PartnerComponent key={Partner.id} image={Partner.photo} />
                   ))}
                 </div>
               </div>
@@ -119,8 +127,9 @@ function Collegescreen() {
         </>
       );
     }
-  } else {
-    return <Loadingpage />;
+  }
+  if (Newserror || isError) {
+    return <Erorrpage />;
   }
 }
 

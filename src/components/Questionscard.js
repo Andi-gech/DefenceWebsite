@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../Assets/photo_2023-06-16_22-33-56.jpg";
+
 import { FaAngleDown } from "react-icons/fa";
 function QuestionsCard({ name, describtion }) {
   const [visible, setvisible] = useState(false);
