@@ -76,6 +76,9 @@ a {
 
   background-color: rgb(43, 42, 42);
 }
+#types {
+  height: 10px;
+}
 .Erorrpageimage img {
   height: 200px;
   width: 200px;
@@ -97,7 +100,6 @@ a {
 .datelist {
   height: 500px;
 
-  background-color: #252525;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -447,8 +449,8 @@ a {
   flex-direction: column;
   align-items: center;
 }
-.Presidantpic img{
-  border-radius: 50%;
+.Presidantpic img {
+  border-radius: 2%;
   width: 280px;
   height: 280px;
 }
@@ -492,7 +494,7 @@ a {
 }
 .Subheadercomponent ul li {
   list-style: none;
-  color: rgb(0, 180, 252);
+  color: rgb(242, 242, 242);
   margin-left: 10px;
   padding: 5px;
 
@@ -1023,7 +1025,7 @@ a {
   width: 800px;
   display: flex;
   flex-direction: column;
-  background-color: #e6d2e6;
+
   align-items: center;
   justify-content: center;
 }
@@ -1036,8 +1038,8 @@ a {
 }
 .CalanderdateCoponents {
   height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.227);
 
-  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1124,7 +1126,7 @@ a {
 }
 .year {
   display: flex;
-  background-color: #e6d2e6;
+
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }

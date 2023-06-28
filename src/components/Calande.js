@@ -37,8 +37,7 @@ function Calander() {
         <button onClick={() => setYear(year - 1)}>-</button>
         <p>{year}</p>
         <button onClick={() => setYear(year + 1)}>+</button>
-      </div>
-      <div className="year">
+
         <button onClick={getPreviousMonth}>-</button>
         <p>{month}</p>
         <button onClick={getNextMonth}>+</button>

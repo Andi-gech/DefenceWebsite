@@ -6,6 +6,7 @@ import {
   FaMapMarker,
   FaShare,
 } from "react-icons/fa";
+import { delay, motion } from "framer-motion";
 import Bannercomponent from "../components/Bannercomponent";
 import Newscardcomponent from "../components/Newscardcomponent";
 import WellcomeMessage from "../components/WellcomeMessage";
@@ -128,41 +129,51 @@ function HomeScreen() {
                 <div className="cardstitle">
                   <p id="Newcontainertitle">CAMPUSES</p>
                 </div>
-                {collages.map((collage) => (
-                  <div className="cardelements" key={collage.id}>
-                    <img src={logo} alt={collage.name} />
-                    <p>{collage.name}</p>
-                    <FaArrowRight />
-                  </div>
+                {collages.map((collage, index) => (
+                  <motion.div
+                    whileInView={{ x: [150, 0] }}
+                    transition={{ duration: 1, delay: index / 10 }}
+                  >
+                    <div className="cardelements" key={collage.id}>
+                      <img src={logo} alt={collage.name} />
+                      <p>{collage.name}</p>
+                      <FaArrowRight />
+                    </div>
+                  </motion.div>
                 ))}
               </div>
               <div className="Cards">
                 <div className="cardstitle">
                   <p id="Newcontainertitle">Events</p>
                 </div>
-                {Event.map((e) => (
-                  <div
-                    className="cardelements"
-                    key={e.id}
-                    style={{ paddingInline: 10 }}
+                {Event.map((e, index) => (
+                  <motion.div
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    transition={{ duration: 1, delay: index / 10 }}
                   >
-                    <FaCalendarDay size={19} color="green" />
-                    <div className="texteventname">
-                      <p>{e.Title}</p>
-                      <p id="location">
-                        <span>
-                          <FaMapMarker size={10} /> {e.location}
-                        </span>
-                        <span>{e.date}</span>
-                      </p>
+                    <div
+                      className="cardelements"
+                      key={e.id}
+                      style={{ paddingInline: 10 }}
+                    >
+                      <FaCalendarDay size={19} color="green" />
+                      <div className="texteventname">
+                        <p>{e.Title}</p>
+                        <p id="location">
+                          <span>
+                            <FaMapMarker size={10} /> {e.location}
+                          </span>
+                          <span>{e.date}</span>
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
           <ACadamicReward />
-          <CommunityOutreach />
+          <CommunityOutreach news={News} />
         </div>
         <div style={{ display: !imageLoaded ? "block" : "none" }}>
           <Loadingpage />
