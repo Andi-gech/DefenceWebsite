@@ -26,15 +26,18 @@ a {
   display: flex;
   flex-direction: column;
 }
-.Erorrpage {
+.Adminstrationpage {
   margin-top: 16vh;
+  height: 85vh;
+  color: white;
+}
+.Erorrpage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 85vh;
+
   background-color: rgb(43, 42, 42);
-  color: white;
 }
 .Erorrpageimage img {
   height: 200px;

@@ -42,7 +42,7 @@ function App() {
           <Route path="/admissioncontact" element={<p>ss</p>} />
 
           <Route path="latest-announcement" element={<Announcmentpage />} />
-          <Route path="Administration" element={<Loadingpage />} />
+          <Route path="Administration" element={<Admissionpage />} />
           <Route path="latest-news" element={<Newspage />} />
           <Route
             path="Downloads"
