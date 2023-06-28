@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import AnnouncmentCard from "../components/AnnouncmentCard";
+import UseNewsfech from "../hooks/UseNewsfetch";
 
 function Announcmentpage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const { data: News } = UseNewsfech();
+  const Anouncments = News?.filter((f) => f.type === "Announcment");
 
   return (
     <div className="Announcmentpage">
@@ -12,10 +15,9 @@ function Announcmentpage() {
         <p>Latest Announcment</p>
       </div>
       <div className="Anouncmentlist">
-        <AnnouncmentCard />
-        <AnnouncmentCard />
-        <AnnouncmentCard />
-        <AnnouncmentCard />
+        {Anouncments?.map((item) => {
+          return <AnnouncmentCard title={item.Title} date={item.date} />;
+        })}
       </div>
     </div>
   );

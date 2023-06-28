@@ -173,7 +173,7 @@ function HomeScreen() {
             </div>
           </div>
           <ACadamicReward />
-          <CommunityOutreach />
+          <CommunityOutreach news={News} />
         </div>
         <div style={{ display: !imageLoaded ? "block" : "none" }}>
           <Loadingpage />
