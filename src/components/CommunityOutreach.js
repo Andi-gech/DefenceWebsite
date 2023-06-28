@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import CommunityCard from "./CommunityCard";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import banner from "../Assets/banner.jpg";
-import banner2 from "../Assets/defenceLogo.png";
-import banner3 from "../Assets/photo_2023-06-16_22-33-56.jpg";
 
 function CommunityOutreach() {
   const cards = [
@@ -17,13 +15,13 @@ function CommunityOutreach() {
       id: 2,
       title: "Defence University community news title 2",
       description: "Defence University community description 2",
-      image: banner2,
+      image: banner,
     },
     {
       id: 3,
       title: "Defence University community news title 3",
       description: "This is the description for Card 3.",
-      image: banner3,
+      image: banner,
     },
   ];
 

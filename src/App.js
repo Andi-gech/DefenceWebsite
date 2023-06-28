@@ -17,6 +17,7 @@ import Newsdetailpages from "./Pages/Newsdetailpages";
 import Admissionpage from "./Pages/Admissionpage";
 import Aboutpages from "./Pages/Aboutpages";
 import Loadingpage from "./Pages/Loadingpage";
+import NoFoundPage from "./Pages/NoFoundPage";
 
 function App() {
   return (
@@ -41,14 +42,14 @@ function App() {
           <Route path="/admissioncontact" element={<p>ss</p>} />
 
           <Route path="latest-announcement" element={<Announcmentpage />} />
-          <Route path="Adminstration" element={<Loadingpage />} />
+          <Route path="Administration" element={<Loadingpage />} />
           <Route path="latest-news" element={<Newspage />} />
           <Route
             path="Downloads"
             element={<h1 id="PAgesh1">no resources found</h1>}
           />
           <Route path="Support" element={<h1 id="PAgesh1">Support page</h1>} />
-          <Route path="*" element={<h1 id="PAgesh1"> page note found</h1>} />
+          <Route path="*" element={<NoFoundPage />} />
           <Route path="about" element={<Aboutpages />} />
           <Route path="/latest-news/:id" element={<Newsdetailpages />} />
           <Route
@@ -74,7 +75,7 @@ function App() {
             path="Latest-Research"
             element={<h1 id="PAgesh1">Latest-Research page</h1>}
           />
-          <Route element={<h1 id="PAgesh1">page not found </h1>} />
+          <Route element={<NoFoundPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

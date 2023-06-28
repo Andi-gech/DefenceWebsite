@@ -1,11 +1,11 @@
 import React from "react";
-import banner from "../Assets/defenceLogo.png";
-function PartnerComponent() {
+
+function PartnerComponent({ image }) {
   return (
     <div
       className="PartnerComponent"
       style={{
-        backgroundImage: `url(${banner})`,
+        backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPositionY: -200,
       }}
