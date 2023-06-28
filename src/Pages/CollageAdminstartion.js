@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Smallbanner from "./Smallbanner";
 import Subheadercomponent from "../components/Subheader";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import UseCollageFech from "../hooks/UseCollageFech";
 
 function CollageAdminstartion() {
-  const location = useLocation();
-  const currentPath = location.pathname;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { data: collage } = UseCollageFech();
   const { Collages } = useParams();
   const college = collage?.find((college) => college.pathname === Collages);

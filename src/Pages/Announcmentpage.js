@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AnnouncmentCard from "../components/AnnouncmentCard";
 
 function Announcmentpage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="Announcmentpage">
       <div className="title">

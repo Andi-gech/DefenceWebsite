@@ -1,5 +1,4 @@
-import React from "react";
-import Bannercomponent from "../components/Bannercomponent";
+import React, { useEffect, useState } from "react";
 import {
   FaArrowDown,
   FaArrowRight,
@@ -7,31 +6,58 @@ import {
   FaMapMarker,
   FaShare,
 } from "react-icons/fa";
+import Bannercomponent from "../components/Bannercomponent";
 import Newscardcomponent from "../components/Newscardcomponent";
-import logo from "../Assets/defenceLogo.png";
-import { newsData } from "../Pages/NEwsData";
+import WellcomeMessage from "../components/WellcomeMessage";
 import ACadamicReward from "../components/ACadamicReward";
 import CommunityOutreach from "../components/CommunityOutreach";
-import WellcomeMessage from "../components/WellcomeMessage";
 import UseUniversityFech from "../hooks/UseUniversity";
 import UseNewsfech from "../hooks/UseNewsfetch";
 import UseEventFech from "../hooks/UseEventfecg";
 import UseCollageFech from "../hooks/UseCollageFech";
+import Loadingpage from "./Loadingpage";
+import logo from "../Assets/defenceLogo.png";
 
 function HomeScreen() {
-  const opts = {
-    height: "360",
-    width: "640",
-  };
-  const { data, isError, error, isLoading, refech } = UseUniversityFech();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const { data, isLoading } = UseUniversityFech();
   const { data: collages } = UseCollageFech();
-
   const { data: News } = UseNewsfech();
   const { data: Event } = UseEventFech();
-  if (data && News && Event) {
-    return (
-      <div className="HomeScreen">
-        <Bannercomponent banner={data[0].bannerimage} />
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      setImageLoaded(true);
+    };
+
+    if (data && data.length > 0) {
+      const img = new Image();
+      img.src = data[0].bannerimage;
+      img.onload = handleImageLoad;
+
+      return () => {
+        img.onload = null;
+      };
+    }
+  }, [data]);
+
+  if (isLoading || !data || !News || !Event) {
+    return <Loadingpage />;
+  }
+
+  return (
+    <>
+      <div
+        className="HomeScreen"
+        style={{ display: imageLoaded ? "flex" : "none" }}
+      >
+        <Bannercomponent
+          banner={data[0].bannerimage}
+          onImageLoad={() => setImageLoaded(true)}
+        />
         <div className="bodycontainer">
           <div className="leftbodycontainer">
             <div>
@@ -46,42 +72,38 @@ function HomeScreen() {
             </div>
 
             <div className="Newscontainerlist">
-              <p id="Newcontainertitle">Leatest News</p>
+              <p id="Newcontainertitle">Latest News</p>
               <p id="Newcontainertitle">
-                sort
-                <FaArrowDown
-                  style={{
-                    fontWeight: "normal",
-                  }}
-                />
+                Sort
+                <FaArrowDown style={{ fontWeight: "normal" }} />
               </p>
             </div>
             <div className="Newslist">
-              {News?.reverse().map((news) => {
-                return (
-                  <Newscardcomponent
-                    id={news.id}
-                    title={news.Title}
-                    discription={news.description}
-                    date={news.date}
-                  />
-                );
-              })}
+              {News.reverse().map((news) => (
+                <Newscardcomponent
+                  key={news.id}
+                  id={news.id}
+                  title={news.Title}
+                  discription={news.description}
+                  date={news.date}
+                  image={news.image}
+                />
+              ))}
             </div>
             <p className="seemore">
-              seemore
+              See more
               <FaShare />
             </p>
             <div className="feature_Vidos">
               <div className="feature_Vidos_header">
-                <p id="title">feature_Video</p>
+                <p id="title">Feature Video</p>
               </div>
               <div className="feature_Vidocontent">
                 <iframe
                   src="https://www.youtube.com/embed/0-ND5ib9FkY"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="autoplay; encrypted-media"
-                  allowfullscreen
+                  allowFullScreen
                   title="Defence University"
                 />
               </div>
@@ -92,44 +114,47 @@ function HomeScreen() {
               <div className="cardstitle">
                 <p id="Newcontainertitle">CAMPUSES</p>
               </div>
-              {collages.map((collage) => {
-                return (
-                  <div className="cardelements">
-                    <img src={logo} />
-                    <p>{collage.name}</p>
-                    <FaArrowRight />
-                  </div>
-                );
-              })}
+              {collages.map((collage) => (
+                <div className="cardelements" key={collage.id}>
+                  <img src={logo} alt={collage.name} />
+                  <p>{collage.name}</p>
+                  <FaArrowRight />
+                </div>
+              ))}
             </div>
             <div className="Cards">
               <div className="cardstitle">
                 <p id="Newcontainertitle">Events</p>
               </div>
-              {Event.map((e) => {
-                return (
-                  <div className="cardelements" style={{ paddingInline: 10 }}>
-                    <FaCalendarDay size={19} color="green" />
-                    <div className="texteventname">
-                      <p>{e.Title}</p>
-                      <p id="location">
-                        <span>
-                          <FaMapMarker size={10} /> {e.location}
-                        </span>
-                        <span>{e.date}</span>
-                      </p>
-                    </div>
+              {Event.map((e) => (
+                <div
+                  className="cardelements"
+                  key={e.id}
+                  style={{ paddingInline: 10 }}
+                >
+                  <FaCalendarDay size={19} color="green" />
+                  <div className="texteventname">
+                    <p>{e.Title}</p>
+                    <p id="location">
+                      <span>
+                        <FaMapMarker size={10} /> {e.location}
+                      </span>
+                      <span>{e.date}</span>
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </div>
         <ACadamicReward />
         <CommunityOutreach />
       </div>
-    );
-  }
+      <div style={{ display: !imageLoaded ? "block" : "none" }}>
+        <Loadingpage />
+      </div>
+    </>
+  );
 }
 
 export default HomeScreen;

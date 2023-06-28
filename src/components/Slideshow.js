@@ -1,45 +1,55 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import DepartmentCards from "./DepartmentCards";
-export function Slideshow({ images }) {
+import UseDepartmentFech from "../hooks/UseDepartmentFetch";
+
+function Slideshow({ id }) {
   const delay = 2500;
-  const [index, setIndex] = React.useState(0);
-  const timeoutRef = React.useRef(null);
+  const [index, setIndex] = useState(0);
+  const { data: images, refetch } = UseDepartmentFech(id);
+  const timeoutRef = useRef(null);
 
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }
-  console.log(images);
+  useEffect(() => {
+    const fetchDepartment = () => {
+      refetch();
+    };
 
-  React.useEffect(() => {
+    fetchDepartment();
+  }, [id, refetch]);
+
+  useEffect(() => {
+    const resetTimeout = () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+
     resetTimeout();
-    timeoutRef.current = setTimeout(
-      () =>
-        setIndex((prevIndex) =>
-          prevIndex === images?.length - 1 ? 0 : prevIndex + 1
-        ),
-      delay
-    );
+    timeoutRef.current = setTimeout(() => {
+      setIndex((prevIndex) =>
+        prevIndex === images?.length - 1 ? 0 : prevIndex + 1
+      );
+    }, delay);
 
     return () => {
       resetTimeout();
     };
-  }, [index]);
+  }, [index, images]);
 
   return (
     <div className="slideshow">
       <div
         className="slideshowSlider"
         style={{
-          transform: `translate3d(${-index * (images?.length - 1) * 2}%, 0, 0)`,
+          transform: `translate3d(${
+            -index * (images?.length || 0) * 2
+          }%, 0, 0)`,
         }}
       >
-        {images?.map((backgroundColor, index) => (
-          <div className="slide">
+        {images?.map((department, idx) => (
+          <div className="slide" key={idx}>
             <DepartmentCards
-              image={backgroundColor.photo}
-              deparmentname={backgroundColor.name}
+              image={department.photo}
+              departmentName={department.name}
             />
           </div>
         ))}
@@ -59,3 +69,5 @@ export function Slideshow({ images }) {
     </div>
   );
 }
+
+export default Slideshow;

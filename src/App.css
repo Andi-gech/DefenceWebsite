@@ -113,7 +113,6 @@ a {
   flex: 1;
 }
 .Footer {
-  margin-top: 100px;
   background-color: rgb(46, 45, 45);
   height: 82vh;
   padding: 10px;
@@ -885,18 +884,31 @@ a {
   overflow: hidden;
   max-width: 900px;
 }
+.Loadingpage {
+  margin-top: 16vh;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(41, 41, 41);
+}
+.Loadingpage p {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.371);
+  text-align: center;
+}
 
 .slideshowSlider {
   white-space: nowrap;
 
-  max-height: 350px;
+  max-height: 450px;
 
   transition: ease 1000ms;
 }
 .Aboutpages {
   margin-top: 16vh;
   background-color: #fff;
-
 }
 .AboutContainer {
   margin: auto;
@@ -911,11 +923,11 @@ a {
   font-size: 18px;
   margin-bottom: 45px;
 }
-.Aboutpages h1{
-  color: rgba(41, 36, 41, 0.8);;
+.Aboutpages h1 {
+  color: rgba(41, 36, 41, 0.8);
   font-size: 32px;
   text-transform: capitalize;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 .slideshowDots {
   text-align: center;
@@ -960,6 +972,14 @@ a {
   align-items: center;
   justify-content: center;
   width: 100px;
+}
+.day {
+  flex: 1;
+}
+.dayevent {
+  flex: 1;
+  overflow: hidden;
+  font-size: 12px;
 }
 .NEWspageTitle {
   font-size: 35px;

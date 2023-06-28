@@ -1,26 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Newscardcomponent from "../components/Newscardcomponent";
-import { newsData } from "./NEwsData";
+import UseNewsfech from "../hooks/UseNewsfetch";
+import Loadingpage from "./Loadingpage";
+
 function Newspage() {
-  return (
-    <div className="Newspage">
-      <div className="titles">
-        <p>Latest News</p>
-      </div>
-      <div className="Newslist">
-        {newsData.map((news) => {
-          return (
+  const { data: news } = UseNewsfech();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  if (news) {
+    return (
+      <div className="Newspage">
+        <div className="titles">
+          <p>Latest News</p>
+        </div>
+        <div className="Newslist">
+          {news.map((item) => (
             <Newscardcomponent
-              id={news.id}
-              title={news.title}
-              discription={news.content}
-              date={news.date}
+              key={item.id}
+              id={item.id}
+              title={item.Title}
+              discription={item.description}
+              date={item.date}
+              image={item.image}
             />
-          );
-        })}
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <Loadingpage />;
+  }
 }
 
 export default Newspage;

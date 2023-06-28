@@ -1,45 +1,60 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { newsData } from "./NEwsData";
-import newssvg from "../Assets/photo_2023-06-16_22-33-56.jpg";
 import Newscardcomponent from "../components/Newscardcomponent";
+import UseNewsfech from "../hooks/UseNewsfetch";
+import UseIndividualnewsFech from "../hooks/UseIndividualnews";
+import Loadingpage from "./Loadingpage";
 
 function Newsdetailpages() {
   const { id } = useParams();
-  const newdat = newsData.filter((data) => data.id == id);
-  return (
-    <div className="Newsdetailpages">
-      <div className="MainNewsdetail">
-        <div className="NEWspageTitle"> {newdat[0].title}</div>
-        <div className="newsdate"> {newdat[0].date}</div>
-        <img src={newssvg} />
-        <div>
-          <p>{newdat[0].content}</p>
-        </div>
-      </div>
+  const { data: news } = UseNewsfech();
+  const { data: individualNews } = UseIndividualnewsFech(id);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-      <div className="SideNEws">
-        <div className="titles">Related news</div>
-        <div>
-          {newsData
-            .reverse()
-            .slice(0, 5)
-            .map((news) => {
-              return (
-                <div>
-                  <Newscardcomponent
-                    id={news.id}
-                    title={news.title}
-                    discription={news.content}
-                    date={news.date}
-                  />
-                </div>
-              );
-            })}
+  const formattedDate = formatDate(individualNews?.date);
+
+  if (news && individualNews) {
+    return (
+      <div className="Newsdetailpages">
+        <div className="MainNewsdetail">
+          <div className="NEWspageTitle"> {individualNews?.Title}</div>
+          <div className="newsdate"> {formattedDate}</div>
+          <img src={individualNews?.image} alt="News" />
+          <div>
+            <p>{individualNews.description}</p>
+          </div>
+        </div>
+
+        <div className="SideNEws">
+          <div className="titles">Related news</div>
+          <div>
+            {news.map((item) => (
+              <div key={item.id}>
+                <Newscardcomponent
+                  id={item.id}
+                  title={item.Title}
+                  date={item.date}
+                  image={item.image}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <Loadingpage />;
+  }
+}
+
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 export default Newsdetailpages;
