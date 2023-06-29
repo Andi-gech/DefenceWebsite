@@ -41,16 +41,16 @@ function Footer() {
         </div>
         <div className="text-right">
           <p id="linktitle">Direct links </p>
-          <p id="links">Student portal</p>
-          <p id="links">Student Downloads </p>
-          <p id="links">Library </p>
-          <p id="links">Vaccency</p>
+          <a href="http://10.228.10.13/"><p id="links">Engineering Students Portal</p></a>
+          <a href="http://10.228.10.13/"><p id="links">RSM Students Portal</p></a>
+          <a href="http://10.228.10.13/"><p id="links">Health Students Portal</p></a>
+          <a href="http://10.228.10.13/"><p id="links">Library</p></a>
           <p id="linktitle">Emergency Contacts </p>
-          <p id="links">DU Clinic </p>
+          <a href="tel:123-456-7890"><p id="links">DU Clinic</p></a>
         </div>
       </div>
       <div className="copyrightmessage">
-        <p>&#169;Defence University 2022</p>
+        <p>&#169; Ethiopian Defence University 2023</p>
       </div>
     </div>
   );
