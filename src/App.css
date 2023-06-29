@@ -172,7 +172,7 @@ a {
   width: 100%;
 }
 .feature_Vidocontent {
-  height: 300px;
+  height: 400px;
   width: 100%;
 }
 .feature_Vidocontent iframe {
@@ -227,7 +227,6 @@ a {
   color: black;
 }
 .Map {
-
 }
 .Header-buttons li:hover #icon {
   color: orange !important;
