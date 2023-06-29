@@ -43,7 +43,10 @@ a {
   text-align: center;
 }
 .Adminstrationpage ul {
-  list-style: none;
+  list-style-type: lower-roman;
+  margin-left: 0;
+  padding-left: 30px;
+
 }
 .container {
   display: flex;
@@ -480,12 +483,11 @@ a {
 }
 .Presidantpic img {
   border-radius: 50%;
-  width: 280px;
-  height: 280px;
+  width: 228px;
+  height: 210px;
 }
 .Presidantpic p {
   margin: 0px;
-
   font-weight: bold;
   color: rgb(87, 80, 80);
 }
