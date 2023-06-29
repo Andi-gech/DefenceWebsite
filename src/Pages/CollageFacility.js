@@ -10,12 +10,14 @@ import Loadingpage from "./Loadingpage";
 
 function CollageFacility() {
   const { Collages } = useParams();
-  const { data: collage } = UseCollageFech();
+  const { data: collages } = UseCollageFech();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const college = collage?.find((college) => college.pathname === Collages);
+  const college = collages?.find(
+    (college) => college.pathname.toLowerCase() === Collages.toLowerCase()
+  );
   const { data } = UseFacilitiesFech(college?.id);
 
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -50,15 +52,17 @@ function CollageFacility() {
           />
 
           <Subheadercomponent />
-          {data.map((Facility) => {
-            return (
-              <FacilityComponent
-                name={Facility.Facilityname}
-                Bigbanner={Facility.image}
-                detail={Facility.Facilities_detail}
-              />
-            );
-          })}
+          <div className="facilitybody">
+            {data.map((Facility) => {
+              return (
+                <FacilityComponent
+                  name={Facility.Facilityname}
+                  Bigbanner={Facility.image}
+                  detail={Facility.Facilities_detail}
+                />
+              );
+            })}
+          </div>
         </div>
         <div style={{ display: !imageLoaded ? "block" : "none" }}>
           <Loadingpage />

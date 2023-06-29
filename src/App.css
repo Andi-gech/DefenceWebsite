@@ -25,6 +25,7 @@ a {
 .Announcmentpage {
   margin-top: 16vh;
   display: flex;
+  height: 85vh;
   flex-direction: column;
 }
 .Adminstrationpage {
@@ -100,12 +101,11 @@ a {
   width: 200px;
 }
 .datelist {
-  height: 500px;
-
   display: flex;
   flex-direction: row;
-  align-items: center;
+
   justify-content: center;
+
   flex-wrap: wrap;
 }
 .Newspage {
@@ -245,9 +245,11 @@ a {
 .Subheadercomponent {
   background-color: rgb(51, 49, 49);
   height: 50px;
+  width: 100vw;
 
   display: flex;
   flex-direction: row;
+  overflow-x: scroll;
 }
 .Subheadercomponent ul {
   flex: 1;
@@ -264,6 +266,8 @@ a {
 
 .ECpageBody {
   flex: 1;
+  width: 100vw;
+  flex-wrap: nowrap;
 
   display: flex;
   flex-direction: row;
@@ -372,6 +376,9 @@ a {
 .CollageFacility {
   margin-top: 16vh;
   display: flex;
+  flex: 1;
+  min-height: 85vh;
+
   flex-direction: column;
 }
 .FacilityComponent .titles {
@@ -382,8 +389,16 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  max-width: 1000px;
+
   justify-content: center;
-  width: 100vw;
+}
+.facilitybody {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Facilitycardlist {
   display: flex;
@@ -405,17 +420,19 @@ a {
 .Facilitycard {
   width: 400px;
   height: 300px;
-  margin: 10px;
+
   border-radius: 20px;
 }
 .FacilityComponent P {
   flex: 1;
 }
 .inlinecardfacility {
-  width: 80%;
+  width: 98%;
   display: flex;
 
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 
   flex-direction: row;
 }
@@ -511,6 +528,7 @@ a {
   color: rgb(242, 242, 242);
   margin-left: 10px;
   padding: 5px;
+  width: max-content;
 
   display: flex;
   align-items: center;
@@ -931,6 +949,7 @@ a {
 }
 .smallBanner-darken p {
   color: white;
+  text-align: center;
   font-size: 30px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -1044,6 +1063,7 @@ a {
 }
 .Calander {
   width: 800px;
+  height: 85vh;
   display: flex;
   flex-direction: column;
 
@@ -1064,6 +1084,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   justify-content: center;
   width: 100px;
 }

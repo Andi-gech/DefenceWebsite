@@ -2,12 +2,18 @@ import React, { useEffect } from "react";
 import Newscardcomponent from "../components/Newscardcomponent";
 import UseNewsfech from "../hooks/UseNewsfetch";
 import Loadingpage from "./Loadingpage";
+import { useMediaQuery } from "react-responsive";
 
 function Newspage() {
   const { data: news } = UseNewsfech();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   if (news) {
     return (
@@ -15,7 +21,10 @@ function Newspage() {
         <div className="titles">
           <p>Latest News</p>
         </div>
-        <div className="Newslist">
+        <div
+          className="Newslist"
+          style={{ width: isTabletOrMobile ? "100vw" : 900 }}
+        >
           {news.map((item) => (
             <Newscardcomponent
               key={item.id}

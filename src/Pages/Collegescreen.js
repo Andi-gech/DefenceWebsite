@@ -17,12 +17,18 @@ import Loadingpage from "./Loadingpage";
 
 import NoFoundPage from "./NoFoundPage";
 import Erorrpage from "./Errorpage";
+import { useMediaQuery } from "react-responsive";
 
 function Collegescreen() {
   const { Collages } = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   const { data, isLoading, isError } = UseCollageFech();
   const { data: News, isError: Newserror } = UseNewsfech();
@@ -72,9 +78,8 @@ function Collegescreen() {
               onImageLoad={() => setImageLoaded(true)}
             />
             <Subheadercomponent />
-
-            <div className="ECpageBody">
-              <div className="ECLeftBody">
+            {isTabletOrMobile && (
+              <div>
                 <div className="titles">
                   <p>Welcome Message</p>
                 </div>
@@ -83,7 +88,17 @@ function Collegescreen() {
                   message={college.welcomeMessage}
                   image={college.leaderimage}
                 />
-
+                <div className="titles">
+                  <p>Announcements</p>
+                </div>
+                {Anounments?.map((An) => (
+                  <AnnouncmentCard
+                    key={An.id}
+                    title={An.Title}
+                    location={An.description}
+                    date={An.date}
+                  />
+                ))}
                 <div className="titles">
                   <p>Departments</p>
                 </div>
@@ -99,27 +114,65 @@ function Collegescreen() {
                   <p>Partners</p>
                 </div>
                 <div className="PartnersCards">
+                  {Partners?.length == 0 && <p>No partners Exist</p>}
                   {Partners?.map((Partner) => (
                     <PartnerComponent key={Partner.id} image={Partner.photo} />
                   ))}
                 </div>
               </div>
-              <div className="ECrightBody">
-                <div className="titles">
-                  <p>Announcements</p>
+            )}
+            {isDesktopOrLaptop && (
+              <div className="ECpageBody">
+                <div className="ECLeftBody">
+                  <div className="titles">
+                    <p>Welcome Message</p>
+                  </div>
+                  <WellcomeMessage
+                    Leadername={college.leaderName}
+                    message={college.welcomeMessage}
+                    image={college.leaderimage}
+                  />
+
+                  <div className="titles">
+                    <p>Departments</p>
+                  </div>
+                  <Slideshow id={college.id} />
+
+                  <div className="titles">
+                    <p>About {college.name}</p>
+                  </div>
+                  <div className="Text">
+                    <p>{college.about}</p>
+                  </div>
+                  <div className="titles">
+                    <p>Partners</p>
+                  </div>
+                  <div className="PartnersCards">
+                    {Partners?.map((Partner) => (
+                      <PartnerComponent
+                        key={Partner.id}
+                        image={Partner.photo}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <div className="AnnouncmentCardlsts">
-                  {Anounments?.map((An) => (
-                    <AnnouncmentCard
-                      key={An.id}
-                      title={An.Title}
-                      location={An.description}
-                      date={An.date}
-                    />
-                  ))}
+                <div className="ECrightBody">
+                  <div className="titles">
+                    <p>Announcements</p>
+                  </div>
+                  <div className="AnnouncmentCardlsts">
+                    {Anounments?.map((An) => (
+                      <AnnouncmentCard
+                        key={An.id}
+                        title={An.Title}
+                        location={An.description}
+                        date={An.date}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
           <div style={{ display: !imageLoaded ? "block" : "none" }}>
             <Loadingpage />

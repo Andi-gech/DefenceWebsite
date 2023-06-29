@@ -11,8 +11,8 @@ function Announcmentpage() {
 
   return (
     <div className="Announcmentpage">
-      <div className="title">
-        <p>Latest Announcment</p>
+      <div className="titles">
+        <p>Latest Announcement</p>
       </div>
       <div className="Anouncmentlist">
         {Anouncments?.map((item) => {
