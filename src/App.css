@@ -514,6 +514,49 @@ a {
   margin: 10px;
   align-items: center;
 }
+.menusidebar p {
+  align-items: center;
+}
+.Sidemenubutton {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(85, 84, 84, 0.281);
+  margin-top: 2px;
+}
+.menusidebar {
+  width: 100vw;
+  background-color: rgb(35, 34, 35);
+  color: white;
+  height: 100vh;
+  top: 16.5vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  transition: ease 1000ms;
+  animation: sidemenu 0.1s;
+  right: 0;
+  position: absolute;
+}
+@keyframes sidemenu {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50vh;
+  }
+}
+.sidemenufinalsub {
+  background-color: rgb(38, 38, 42) !important;
+}
+.sidemenusub {
+  width: 100%;
+  background-color: rgb(31, 31, 36);
+}
 .ECrightBody {
   flex: 1;
   background-color: white;

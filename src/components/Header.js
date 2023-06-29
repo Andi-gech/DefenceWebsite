@@ -10,6 +10,7 @@ import {
   FaQuestionCircle,
   FaBars,
   FaUserShield,
+  FaAngleRight,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
@@ -18,6 +19,10 @@ import UseCollageFech from "../hooks/UseCollageFech";
 function Header() {
   const [isLatest, setIsLatest] = useState(false);
   const [isAcademy, setIsAcademy] = useState(false);
+  const [ismenuopen, setmenuopen] = useState(false);
+  const [iscolllage, setcollageopen] = useState(false);
+  const [isregestar, setregstraropen] = useState(false);
+  const [isresearch, setreseachopen] = useState(false);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
@@ -42,9 +47,178 @@ function Header() {
       </div>
       {isTabletOrMobile && (
         <div className="headermobile">
-          <FaBars size={25} color="white" />{" "}
+          {ismenuopen && (
+            <div className="menusidebar">
+              <Link
+                to={"home"}
+                onClick={() => setmenuopen(false)}
+                className="Sidemenubutton"
+              >
+                <p>Home</p>
+              </Link>
+              <div
+                className="Sidemenubutton"
+                onClick={() => setIsLatest(!isLatest)}
+              >
+                <p>Latest {isLatest ? <FaAngleDown /> : <FaAngleRight />}</p>
+              </div>
+              {isLatest && (
+                <div className="sidemenusub">
+                  <Link
+                    to={"latest-news"}
+                    onClick={() => setmenuopen(false)}
+                    className="Sidemenubutton"
+                  >
+                    <p>News</p>
+                  </Link>
+                  <Link
+                    to={"latest-announcement"}
+                    onClick={() => setmenuopen(false)}
+                    className="Sidemenubutton"
+                  >
+                    <p>Announcement</p>
+                  </Link>
+                  <Link
+                    to={"Latest-Research"}
+                    onClick={() => setmenuopen(false)}
+                    className="Sidemenubutton"
+                  >
+                    <p>Research News</p>
+                  </Link>
+                </div>
+              )}
+              <div
+                className="Sidemenubutton"
+                onClick={() => setIsAcademy(!isAcademy)}
+              >
+                <p>
+                  Acadamics {isAcademy ? <FaAngleDown /> : <FaAngleRight />}
+                </p>
+              </div>
+              {isAcademy && (
+                <div className="sidemenusub">
+                  <div
+                    className="Sidemenubutton"
+                    onClick={() => setcollageopen(!iscolllage)}
+                  >
+                    <p>
+                      Collages {iscolllage ? <FaAngleDown /> : <FaAngleRight />}
+                    </p>
+                  </div>
+                  {iscolllage && (
+                    <div className="sidemenufinalsub">
+                      {data?.map((college) => (
+                        <Link
+                          onClick={() => setmenuopen(false)}
+                          to={college.pathname}
+                          className="Sidemenubutton"
+                          key={college?.id}
+                        >
+                          <p>{college.name}</p>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  <div
+                    className="Sidemenubutton"
+                    onClick={() => setregstraropen(!isregestar)}
+                  >
+                    <p>
+                      Register {isregestar ? <FaAngleDown /> : <FaAngleRight />}
+                    </p>
+                  </div>
+                  {isregestar && (
+                    <div className="sidemenufinalsub">
+                      <Link
+                        to={"AcadamicCalander"}
+                        onClick={() => setmenuopen(false)}
+                        className="Sidemenubutton"
+                      >
+                        <p>Academic Calendar</p>
+                      </Link>
+                      <Link
+                        to={"Admission"}
+                        onClick={() => setmenuopen(false)}
+                        className="Sidemenubutton"
+                      >
+                        <p>Admission</p>
+                      </Link>
+                      <Link
+                        to={"admissioncontact"}
+                        onClick={() => setmenuopen(false)}
+                        className="Sidemenubutton"
+                      >
+                        <p>admissioncontact</p>
+                      </Link>
+                    </div>
+                  )}
+                  <div
+                    className="Sidemenubutton"
+                    onClick={() => setreseachopen(!isresearch)}
+                  >
+                    <p>
+                      Research {isresearch ? <FaAngleDown /> : <FaAngleRight />}
+                    </p>
+                  </div>
+                  {isresearch && (
+                    <div className="sidemenufinalsub">
+                      <Link
+                        to={"research-project"}
+                        onClick={() => setmenuopen(false)}
+                        className="Sidemenubutton"
+                      >
+                        <p>Projects</p>
+                      </Link>
+                      <Link
+                        to={"research-Community"}
+                        onClick={() => setmenuopen(false)}
+                        className="Sidemenubutton"
+                      >
+                        <p> Community activities</p>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <Link
+                to={"Administration"}
+                onClick={() => setmenuopen(false)}
+                className="Sidemenubutton"
+              >
+                <p>Administration</p>
+              </Link>
+              <Link
+                to={"Downloads"}
+                onClick={() => setmenuopen(false)}
+                className="Sidemenubutton"
+              >
+                <p>Downloads</p>
+              </Link>
+              <Link
+                to={"about"}
+                onClick={() => setmenuopen(false)}
+                className="Sidemenubutton"
+              >
+                <p>About-us</p>
+              </Link>
+              <Link
+                to={"support"}
+                onClick={() => setmenuopen(false)}
+                className="Sidemenubutton"
+              >
+                <p>support</p>
+              </Link>
+            </div>
+          )}
+          <FaBars
+            size={25}
+            color="white"
+            onClick={() => setmenuopen(!ismenuopen)}
+          />{" "}
         </div>
       )}
+
       {isDesktopOrLaptop && (
         <div className="Header-buttons">
           <ul>
