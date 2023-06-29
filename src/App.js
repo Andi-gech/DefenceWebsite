@@ -19,6 +19,7 @@ import Aboutpages from "./Pages/Aboutpages";
 import Loadingpage from "./Pages/Loadingpage";
 import NoFoundPage from "./Pages/NoFoundPage";
 import Adminstrationpage from "./Pages/Adminstrationpage";
+import Downloadpage from "./Pages/Downloadpage";
 
 function App() {
   return (
@@ -45,10 +46,7 @@ function App() {
           <Route path="latest-announcement" element={<Announcmentpage />} />
           <Route path="Administration" element={<Adminstrationpage />} />
           <Route path="latest-news" element={<Newspage />} />
-          <Route
-            path="Downloads"
-            element={<h1 id="PAgesh1">no resources found</h1>}
-          />
+          <Route path="Downloads" element={<Downloadpage />} />
           <Route path="Support" element={<h1 id="PAgesh1">Support page</h1>} />
           <Route path="*" element={<NoFoundPage />} />
           <Route path="about" element={<Aboutpages />} />

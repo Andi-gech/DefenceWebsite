@@ -1123,12 +1123,17 @@ a {
 .listCard {
   display: flex;
   flex-direction: row;
+
   align-items: center;
   justify-content: space-around;
   box-shadow: rgba(12, 11, 11, 0.041) 1.2px 1.95px 1.95px 2.6px;
 }
 .Questioncard {
-  width: 900px;
+  margin-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
 }
 .Questioncard:hover {
@@ -1136,7 +1141,7 @@ a {
 }
 .hiddentext {
   display: none;
-  width: 700px;
+
   animation: myAnimation 0.2s;
 }
 .listCard p {
@@ -1149,9 +1154,10 @@ a {
   flex-direction: column;
 
   align-items: center;
+  margin-inline: 5px;
 }
 .Admissionpagetext {
-  width: 900px;
+  width: 90vw;
 }
 .MainNewsdetail img {
   width: 600px;
@@ -1171,4 +1177,8 @@ a {
 
   align-items: center;
   justify-content: space-between;
+}
+.Downloadpage {
+  margin-top: 16vh;
+  height: 85vh;
 }
