@@ -34,7 +34,7 @@ function Bannercomponent({ banner, onImageLoad }) {
       <div className="Banner-darken">
         <div className="Wellcome-text">
           <p id="wellcome">Welcome to Ethiopian Defence University</p>
-          <p>
+          <>
             <Typewriter
               id="types"
               options={{
@@ -56,7 +56,7 @@ function Bannercomponent({ banner, onImageLoad }) {
                   .start();
               }}
             />
-          </p>
+          </>
 
           <button>Our Vision</button>
         </div>
