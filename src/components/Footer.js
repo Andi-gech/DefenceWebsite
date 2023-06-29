@@ -47,8 +47,8 @@ function Footer() {
         <div className="text-right">
           <p id="linktitle">Direct links </p>
           <a href="http://10.228.10.13/"><p id="links">Engineering Students Portal</p></a>
-          <a href="http://10.228.10.13/"><p id="links">RSM Students Portal</p></a>
-          <a href="http://10.228.10.13/"><p id="links">Health Students Portal</p></a>
+          <a href="http://10.228.10.23/"><p id="links">RSM Students Portal</p></a>
+          <a href="http://10.228.140.9/"><p id="links">Health Students Portal</p></a>
           <a href="http://10.228.10.13/"><p id="links">Library</p></a>
           <p id="linktitle">Emergency Contacts </p>
           <a href="tel:123-456-7890"><p id="links">DU Clinic</p></a>
