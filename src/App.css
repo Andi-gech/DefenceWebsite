@@ -219,10 +219,7 @@ a {
   color: black;
 }
 .Map {
-  background-color: #fdfdfd;
-  height: 200px;
-  margin-top: 20px;
-  width: 300px;
+
 }
 .Header-buttons li:hover #icon {
   color: orange !important;
