@@ -2,10 +2,6 @@ import React, { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 
 function Loadingpage() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="Loadingpage">
       <TailSpin

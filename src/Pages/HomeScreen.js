@@ -47,9 +47,6 @@ function HomeScreen() {
     isError: eventerror,
     isLoading: eventloading,
   } = UseEventFech();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     const handleImageLoad = () => {

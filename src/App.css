@@ -765,8 +765,23 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 68px;
+  top: 70px;
   padding-top: 5px;
+}
+.RegstralofficeContact {
+  display: flex;
+  margin-top: 16vh;
+  height: 80vh;
+}
+.Pagesunderconstraction {
+  display: flex;
+  margin-top: 16vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: #252525;
+  height: 80vh;
 }
 #deptitle {
   font-weight: bold;

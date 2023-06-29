@@ -6,10 +6,6 @@ import UseCollageFech from "../hooks/UseCollageFech";
 import Loadingpage from "./Loadingpage";
 
 function CollageAdminstartion() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const { Collages } = useParams();
   const { data: collage } = UseCollageFech();
   const college = collage?.find((college) => college.pathname === Collages);

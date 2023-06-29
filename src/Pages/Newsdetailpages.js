@@ -22,10 +22,6 @@ function Newsdetailpages() {
     fetchDepartment();
   }, [id, refetch]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const formattedDate = formatDate(individualNews?.date);
 
   if (news && individualNews) {

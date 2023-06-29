@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import notfound from "../Assets/Errorpage.svg";
 
 function Erorrpage() {

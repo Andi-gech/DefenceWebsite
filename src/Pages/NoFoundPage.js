@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import notfound from "../Assets/pagenotfound.svg";
 import { Link } from "react-router-dom";
 function NoFoundPage() {
