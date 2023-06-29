@@ -4,11 +4,24 @@ import Newscardcomponent from "../components/Newscardcomponent";
 import UseNewsfech from "../hooks/UseNewsfetch";
 import UseIndividualnewsFech from "../hooks/UseIndividualnews";
 import Loadingpage from "./Loadingpage";
+import { TailSpin } from "react-loader-spinner";
 
 function Newsdetailpages() {
   const { id } = useParams();
   const { data: news } = UseNewsfech();
-  const { data: individualNews } = UseIndividualnewsFech(id);
+  const {
+    data: individualNews,
+    refetch,
+    isLoading,
+  } = UseIndividualnewsFech(id);
+  useEffect(() => {
+    const fetchDepartment = () => {
+      refetch();
+    };
+
+    fetchDepartment();
+  }, [id, refetch]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -29,6 +42,19 @@ function Newsdetailpages() {
 
         <div className="SideNEws">
           <div className="titles">Related news</div>
+
+          {isLoading && (
+            <TailSpin
+              height="80"
+              width="80"
+              color="black"
+              ariaLabel="tail-spin-loading"
+              radius="1"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            />
+          )}
           <div>
             {news.map((item) => (
               <div key={item.id}>
