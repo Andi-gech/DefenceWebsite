@@ -479,7 +479,7 @@ a {
   align-items: center;
 }
 .Presidantpic img {
-  border-radius: 2%;
+  border-radius: 50%;
   width: 280px;
   height: 280px;
 }
