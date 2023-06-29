@@ -20,12 +20,21 @@ import Loadingpage from "./Pages/Loadingpage";
 import NoFoundPage from "./Pages/NoFoundPage";
 import Adminstrationpage from "./Pages/Adminstrationpage";
 import Downloadpage from "./Pages/Downloadpage";
+import { useRef } from "react";
 
 function App() {
+  const headerRef = useRef(null); // Create a ref for the header
+
+  const scrollToBottom = () => {
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header click={scrollToBottom} />
         <Routes>
           <Route exact path="/" element={<HomeScreen />} />
           <Route path="home" element={<HomeScreen />} />
@@ -76,7 +85,9 @@ function App() {
           />
           <Route element={<NoFoundPage />} />
         </Routes>
-        <Footer />
+        <div ref={headerRef}>
+          <Footer />
+        </div>
       </BrowserRouter>
     </div>
   );
