@@ -46,7 +46,6 @@ a {
   list-style-type: lower-roman;
   margin-left: 0;
   padding-left: 30px;
-
 }
 .container {
   display: flex;
@@ -128,6 +127,7 @@ a {
   display: flex;
   flex-direction: column-reverse;
   font-size: 15px;
+
   align-items: center;
   justify-content: center;
 }
@@ -210,7 +210,9 @@ a {
   justify-content: center;
 }
 .Header-buttons ul {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .Header-buttons #selected {
   background-color: #fdfdfd;
@@ -233,11 +235,14 @@ a {
 .Header-buttons li {
   list-style: none;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border-radius: 3px;
   margin-inline: 10px;
   height: 40px;
-  width: 90px;
+  min-width: 70px;
 }
 .HomeScreen {
   flex: 1;
@@ -731,11 +736,11 @@ a {
   padding-bottom: 10px;
 
   background-color: rgb(41, 39, 41);
-  right: 450px;
+  right: 350px;
   animation: myAnimation 0.2s;
   display: flex;
   flex-direction: row;
-  top: 65px;
+  top: 70px;
   padding-top: 5px;
   flex-wrap: wrap;
 }
@@ -751,13 +756,13 @@ a {
   height: 200px;
   width: 200px;
   background-color: rgb(41, 39, 41);
-  right: 650px;
+  right: 550px;
   animation: myAnimation 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 65px;
+  top: 68px;
   padding-top: 5px;
 }
 #deptitle {
