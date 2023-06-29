@@ -4,11 +4,24 @@ import Newscardcomponent from "../components/Newscardcomponent";
 import UseNewsfech from "../hooks/UseNewsfetch";
 import UseIndividualnewsFech from "../hooks/UseIndividualnews";
 import Loadingpage from "./Loadingpage";
+import { TailSpin } from "react-loader-spinner";
 
 function Newsdetailpages() {
   const { id } = useParams();
   const { data: news } = UseNewsfech();
-  const { data: individualNews } = UseIndividualnewsFech(id);
+  const {
+    data: individualNews,
+    refetch,
+    isFetching,
+  } = UseIndividualnewsFech(id);
+  useEffect(() => {
+    const fetchDepartment = () => {
+      refetch();
+    };
+
+    fetchDepartment();
+  }, [id, refetch]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -19,16 +32,33 @@ function Newsdetailpages() {
     return (
       <div className="Newsdetailpages">
         <div className="MainNewsdetail">
-          <div className="NEWspageTitle"> {individualNews?.Title}</div>
-          <div className="newsdate"> {formattedDate}</div>
-          <img src={individualNews?.image} alt="News" />
-          <div>
-            <p>{individualNews.description}</p>
-          </div>
+          {!isFetching && (
+            <>
+              <div className="NEWspageTitle"> {individualNews?.Title}</div>
+              <div className="newsdate"> {formattedDate}</div>
+              <img src={individualNews?.image} alt="News" />
+              <div>
+                <p>{individualNews.description}</p>
+              </div>
+            </>
+          )}
+          {isFetching && (
+            <TailSpin
+              height="80"
+              width="80"
+              color="black"
+              ariaLabel="tail-spin-loading"
+              radius="1"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            />
+          )}
         </div>
 
         <div className="SideNEws">
           <div className="titles">Related news</div>
+
           <div>
             {news.map((item) => (
               <div key={item.id}>
