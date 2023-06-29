@@ -1,5 +1,4 @@
 import React from "react";
-import "../downloadpage.css";
 import pdf from "../Assets/pdf.pdf";
 import logo from "../Assets/pdf.png";
 function Downloadpage() {
