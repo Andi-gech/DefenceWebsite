@@ -12,7 +12,7 @@ function Newsdetailpages() {
   const {
     data: individualNews,
     refetch,
-    isLoading,
+    isFetching,
   } = UseIndividualnewsFech(id);
   useEffect(() => {
     const fetchDepartment = () => {
@@ -32,18 +32,17 @@ function Newsdetailpages() {
     return (
       <div className="Newsdetailpages">
         <div className="MainNewsdetail">
-          <div className="NEWspageTitle"> {individualNews?.Title}</div>
-          <div className="newsdate"> {formattedDate}</div>
-          <img src={individualNews?.image} alt="News" />
-          <div>
-            <p>{individualNews.description}</p>
-          </div>
-        </div>
-
-        <div className="SideNEws">
-          <div className="titles">Related news</div>
-
-          {isLoading && (
+          {!isFetching && (
+            <>
+              <div className="NEWspageTitle"> {individualNews?.Title}</div>
+              <div className="newsdate"> {formattedDate}</div>
+              <img src={individualNews?.image} alt="News" />
+              <div>
+                <p>{individualNews.description}</p>
+              </div>
+            </>
+          )}
+          {isFetching && (
             <TailSpin
               height="80"
               width="80"
@@ -55,6 +54,11 @@ function Newsdetailpages() {
               visible={true}
             />
           )}
+        </div>
+
+        <div className="SideNEws">
+          <div className="titles">Related news</div>
+
           <div>
             {news.map((item) => (
               <div key={item.id}>
