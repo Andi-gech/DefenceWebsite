@@ -19,6 +19,7 @@ a {
   display: flex;
   position: fixed;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 .Announcmentpage {
@@ -132,10 +133,11 @@ a {
 }
 .headermobile {
   flex: 1;
-  background-color: #c4c4c4;
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 20px;
 }
 .Logo-container {
   height: 90px;
@@ -427,9 +429,20 @@ a {
 }
 .WellcomeMessage {
   display: flex;
-  height: 300px;
+  min-height: 300px;
   margin-top: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
   margin-bottom: 40px;
+}
+.mobilebody {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  overflow: hidden;
 }
 .ECNEwscards {
   width: 800px;
@@ -467,8 +480,10 @@ a {
   background-color: transparent;
   width: 200px;
 }
+#Message {
+  height: 300px;
+}
 .WellcomeMessage p {
-  height: 60%;
   overflow: hidden;
   text-align: justify;
 }
@@ -511,6 +526,9 @@ a {
   width: 100vw;
   overflow: hidden;
   margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .bodycontainer {
   flex: 1;
@@ -812,7 +830,7 @@ a {
 }
 .Rightcommunitycard {
   flex: 1;
-  background-color: #312e3191;
+  background-color: #17161791;
   color: white;
 
   display: flex;
@@ -821,7 +839,6 @@ a {
   justify-content: flex-end;
 }
 .textwidth {
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -923,6 +940,7 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 }
@@ -931,6 +949,8 @@ a {
 }
 .Wellcome-text p {
   margin: 0px;
+
+  text-align: center;
   padding: 0px;
 }
 .Banner-darken .Wellcome-text #wellcome {

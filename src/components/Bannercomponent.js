@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import Typewriter from "typewriter-effect";
 
 function Bannercomponent({ banner, onImageLoad }) {
@@ -14,6 +15,11 @@ function Bannercomponent({ banner, onImageLoad }) {
       img.onload = null;
     };
   }, [banner, onImageLoad]);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   return (
     <div
@@ -21,7 +27,8 @@ function Bannercomponent({ banner, onImageLoad }) {
       style={{
         backgroundImage: `url(${banner})`,
         backgroundSize: "cover",
-        backgroundPositionY: -200,
+
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="Banner-darken">

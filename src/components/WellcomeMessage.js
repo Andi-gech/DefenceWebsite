@@ -14,7 +14,7 @@ function WellcomeMessage({ Leadername, message, image }) {
       </div>
 
       <div className="WellcomeText">
-        <p>{message}</p>
+        <p id="Message">{message}</p>
         <button>Read More</button>
       </div>
     </div>

@@ -21,10 +21,17 @@ import logo from "../Assets/defenceLogo.png";
 
 import Erorrpage from "./Errorpage";
 import AnnouncmentCard from "../components/AnnouncmentCard";
+import { useMediaQuery } from "react-responsive";
 
 function HomeScreen() {
   const [imageLoaded, setImageLoaded] = useState(false);
   const { data, isLoading, isError } = UseUniversityFech();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+
   const {
     data: collages,
     isError: collegeerror,
@@ -74,97 +81,147 @@ function HomeScreen() {
             banner={data[0].bannerimage}
             onImageLoad={() => setImageLoaded(true)}
           />
-          <div className="bodycontainer">
-            <div className="leftbodycontainer">
-              <div>
-                <div className="">
-                  <p id="title">Welcome Message From Commandant</p>
-                </div>
-                <WellcomeMessage
-                  Leadername={data[0]?.leaderName}
-                  message={data[0]?.welcomeMessage}
-                  image={data[0]?.leaderimage}
+          {isTabletOrMobile && (
+            <div className="mobilebody">
+              <p id="Newcontainertitle">Welcome Message From Commandant</p>
+              <WellcomeMessage
+                Leadername={data[0]?.leaderName}
+                message={data[0]?.welcomeMessage}
+                image={data[0]?.leaderimage}
+              />
+              <p id="Newcontainertitle">Latest News</p>
+              {News.slice()
+                .reverse()
+                .slice(0, 7)
+                .map((news) => (
+                  <Newscardcomponent
+                    key={news.id}
+                    id={news.id}
+                    title={news.Title}
+                    discription={news.description}
+                    date={news.date}
+                    image={news.image}
+                  />
+                ))}
+              <p id="Newcontainertitle">events</p>
+              {Event.map((e, index) => (
+                <motion.div
+                  whileInView={{ scale: [0, 1.2, 1] }}
+                  transition={{ duration: 1, delay: index / 10 }}
+                >
+                  <AnnouncmentCard
+                    title={e.Title}
+                    date={e.date}
+                    location={e.location}
+                  />
+                </motion.div>
+              ))}
+              <p id="Newcontainertitle">feature Videos</p>
+              <div className="feature_Vidocontent">
+                <iframe
+                  src="https://www.youtube.com/embed/0-ND5ib9FkY"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="Defence University"
                 />
               </div>
-
-              <div className="Newscontainerlist">
-                <p id="Newcontainertitle">Latest News</p>
-                <p id="Newcontainertitle">
-                  Sort
-                  <FaArrowDown style={{ fontWeight: "normal" }} />
-                </p>
-              </div>
-              <div className="Newslist">
-                {News.slice()
-                  .reverse()
-                  .slice(0, 4)
-                  .map((news) => (
-                    <Newscardcomponent
-                      key={news.id}
-                      id={news.id}
-                      title={news.Title}
-                      discription={news.description}
-                      date={news.date}
-                      image={news.image}
-                    />
-                  ))}
-              </div>
-              <p className="seemore">
-                See more
-                <FaShare />
-              </p>
-              <div className="feature_Vidos">
-                <div className="feature_Vidos_header">
-                  <p id="title">Feature Video</p>
-                </div>
-                <div className="feature_Vidocontent">
-                  <iframe
-                    src="https://www.youtube.com/embed/0-ND5ib9FkY"
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    title="Defence University"
+            </div>
+          )}
+          {isDesktopOrLaptop && (
+            <div className="bodycontainer">
+              <div className="leftbodycontainer">
+                <div>
+                  <div className="">
+                    <p id="title">Welcome Message From Commandant</p>
+                  </div>
+                  <WellcomeMessage
+                    Leadername={data[0]?.leaderName}
+                    message={data[0]?.welcomeMessage}
+                    image={data[0]?.leaderimage}
                   />
                 </div>
-              </div>
-            </div>
-            <div className="rightbodycontainer">
-              <div className="Cards">
-                <div className="cardstitle">
-                  <p id="Newcontainertitle">CAMPUSES</p>
+
+                <div className="Newscontainerlist">
+                  <p id="Newcontainertitle">Latest News</p>
+                  <p id="Newcontainertitle">
+                    Sort
+                    <FaArrowDown style={{ fontWeight: "normal" }} />
+                  </p>
                 </div>
-                {collages.map((collage, index) => (
-                  <motion.div
-                    whileInView={{ x: [150, 0] }}
-                    transition={{ duration: 1, delay: index / 10 }}
-                  >
-                    <div className="cardelements" key={collage.id}>
-                      <img src={logo} alt={collage.name} />
-                      <p>{collage.name}</p>
-                      <FaArrowRight />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="Cards">
-                <div className="cardstitle">
-                  <p id="Newcontainertitle">Events</p>
+                <div className="Newslist">
+                  {News.slice()
+                    .reverse()
+                    .slice(0, 4)
+                    .map((news) => (
+                      <Newscardcomponent
+                        key={news.id}
+                        id={news.id}
+                        title={news.Title}
+                        discription={news.description}
+                        date={news.date}
+                        image={news.image}
+                      />
+                    ))}
                 </div>
-                {Event.map((e, index) => (
-                  <motion.div
-                    whileInView={{ scale: [0, 1.2, 1] }}
-                    transition={{ duration: 1, delay: index / 10 }}
-                  >
-                    <AnnouncmentCard
-                      title={e.Title}
-                      date={e.date}
-                      location={e.location}
+                <p className="seemore">
+                  See more
+                  <FaShare />
+                </p>
+                <div className="feature_Vidos">
+                  <div className="feature_Vidos_header">
+                    <p id="title">Feature Video</p>
+                  </div>
+                  <div className="feature_Vidocontent">
+                    <iframe
+                      src="https://www.youtube.com/embed/0-ND5ib9FkY"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title="Defence University"
                     />
-                  </motion.div>
-                ))}
+                  </div>
+                </div>
+              </div>
+              <div className="rightbodycontainer">
+                <div className="Cards">
+                  <div className="cardstitle">
+                    <p id="Newcontainertitle">CAMPUSES</p>
+                  </div>
+                  {collages.map((collage, index) => (
+                    <motion.div
+                      whileInView={{ x: [150, 0] }}
+                      transition={{ duration: 1, delay: index / 10 }}
+                    >
+                      <div className="cardelements" key={collage.id}>
+                        <img src={logo} alt={collage.name} />
+                        <p>{collage.name}</p>
+                        <FaArrowRight />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="Cards">
+                  <div className="cardstitle">
+                    <p id="Newcontainertitle">Events</p>
+                  </div>
+                  {Event.map((e, index) => (
+                    <motion.div
+                      whileInView={{ scale: [0, 1.2, 1] }}
+                      transition={{ duration: 1, delay: index / 10 }}
+                    >
+                      <AnnouncmentCard
+                        title={e.Title}
+                        date={e.date}
+                        location={e.location}
+                      />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
           <ACadamicReward />
           <CommunityOutreach news={News} />
         </div>
