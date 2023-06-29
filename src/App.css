@@ -43,7 +43,9 @@ a {
   text-align: center;
 }
 .Adminstrationpage ul {
-  list-style: none;
+  list-style-type: lower-roman;
+  margin-left: 0;
+  padding-left: 30px;
 }
 .container {
   display: flex;
@@ -125,6 +127,7 @@ a {
   display: flex;
   flex-direction: column-reverse;
   font-size: 15px;
+
   align-items: center;
   justify-content: center;
 }
@@ -207,7 +210,9 @@ a {
   justify-content: center;
 }
 .Header-buttons ul {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .Header-buttons #selected {
   background-color: #fdfdfd;
@@ -230,11 +235,14 @@ a {
 .Header-buttons li {
   list-style: none;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border-radius: 3px;
   margin-inline: 10px;
   height: 40px;
-  width: 90px;
+  min-width: 70px;
 }
 .HomeScreen {
   flex: 1;
@@ -480,12 +488,11 @@ a {
 }
 .Presidantpic img {
   border-radius: 50%;
-  width: 280px;
-  height: 280px;
+  width: 228px;
+  height: 210px;
 }
 .Presidantpic p {
   margin: 0px;
-
   font-weight: bold;
   color: rgb(87, 80, 80);
 }
@@ -513,6 +520,49 @@ a {
   flex-direction: column;
   margin: 10px;
   align-items: center;
+}
+.menusidebar p {
+  align-items: center;
+}
+.Sidemenubutton {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(85, 84, 84, 0.281);
+  margin-top: 2px;
+}
+.menusidebar {
+  width: 100vw;
+  background-color: rgb(35, 34, 35);
+  color: white;
+  height: 100vh;
+  top: 16.5vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  transition: ease 1000ms;
+  animation: sidemenu 0.1s;
+  right: 0;
+  position: absolute;
+}
+@keyframes sidemenu {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 50vh;
+  }
+}
+.sidemenufinalsub {
+  background-color: rgb(38, 38, 42) !important;
+}
+.sidemenusub {
+  width: 100%;
+  background-color: rgb(31, 31, 36);
 }
 .ECrightBody {
   flex: 1;
@@ -686,11 +736,11 @@ a {
   padding-bottom: 10px;
 
   background-color: rgb(41, 39, 41);
-  right: 450px;
+  right: 350px;
   animation: myAnimation 0.2s;
   display: flex;
   flex-direction: row;
-  top: 65px;
+  top: 70px;
   padding-top: 5px;
   flex-wrap: wrap;
 }
@@ -706,13 +756,13 @@ a {
   height: 200px;
   width: 200px;
   background-color: rgb(41, 39, 41);
-  right: 650px;
+  right: 550px;
   animation: myAnimation 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 65px;
+  top: 68px;
   padding-top: 5px;
 }
 #deptitle {
