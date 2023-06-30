@@ -82,10 +82,14 @@ a {
 }
 
 .Erorrpage {
+  margin-top: 16vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: rgb(207, 19, 5);
+  font-weight: bold;
 
   background-color: rgb(43, 42, 42);
 }
@@ -409,6 +413,7 @@ a {
   flex: 1;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 .Facilitycardlist {
@@ -421,6 +426,17 @@ a {
   margin-top: 16vh;
   display: flex;
   flex-direction: column;
+}
+.CollageAdminstartionbody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CollageAdminstartionbody pre {
+  font-family: sans-serif;
+
+  white-space: break-spaces;
+  width: 90%;
 }
 .smallcard {
   height: 50%;
@@ -441,11 +457,14 @@ a {
   width: 98%;
   display: flex;
 
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
 
   flex-direction: row;
+}
+.inlinecardfacility p {
+  color: rgb(65, 64, 64);
 }
 .pervious {
   background-color: rgb(218, 223, 221);

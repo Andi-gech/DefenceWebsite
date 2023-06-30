@@ -91,13 +91,16 @@ function Collegescreen() {
                 {Anounments?.length == 0 && (
                   <p style={{ textAlign: "center" }}>No Announcement Exist</p>
                 )}
-                {Anounments?.map((An) => (
-                  <AnnouncmentCard
-                    key={An.id}
-                    title={An.Title}
-                    date={An.date}
-                  />
-                ))}
+                {Anounments?.slice()
+                  .reverse()
+                  .slice(0, 4)
+                  .map((An) => (
+                    <AnnouncmentCard
+                      key={An.id}
+                      title={An.Title}
+                      date={An.date}
+                    />
+                  ))}
                 <div className="titles">
                   <p>Departments</p>
                 </div>
@@ -167,13 +170,16 @@ function Collegescreen() {
                         No Announcement Exist
                       </p>
                     )}
-                    {Anounments?.map((An) => (
-                      <AnnouncmentCard
-                        key={An.id}
-                        title={An.Title}
-                        date={An.date}
-                      />
-                    ))}
+                    {Anounments?.slice()
+                      .reverse()
+                      .slice(0, 4)
+                      .map((An) => (
+                        <AnnouncmentCard
+                          key={An.id}
+                          title={An.Title}
+                          date={An.date}
+                        />
+                      ))}
                   </div>
                 </div>
               </div>

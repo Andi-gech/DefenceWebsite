@@ -35,15 +35,16 @@ function CollageAdminstartion() {
         style={{ display: imageLoaded ? "flex" : "none" }}
       >
         <Smallbanner
-          name={college.name}
-          image={college.bannerimage}
+          name={college?.name}
+          image={college?.bannerimage}
           onImageLoad={() => setImageLoaded(true)}
         />
         <Subheadercomponent />
-
-        <p>{college?.adminstartion}</p>
-
-        <p>{}</p>
+        <div className="CollageAdminstartionbody">
+          <pre dangerouslySetInnerHTML={{ __html: college?.adminstartion }}>
+            {}
+          </pre>
+        </div>
       </div>
       <div style={{ display: !imageLoaded ? "block" : "none" }}>
         <Loadingpage />

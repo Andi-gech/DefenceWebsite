@@ -103,7 +103,7 @@ function HomeScreen() {
                     image={news.image}
                   />
                 ))}
-              <p id="Newcontainertitle">events</p>
+              <p id="Newcontainertitle">Upcoming Events</p>
               {Event?.length == 0 && (
                 <p style={{ textAlign: "center" }}>No Events Exist</p>
               )}
@@ -215,7 +215,7 @@ function HomeScreen() {
                 </div>
                 <div className="Cards">
                   <div className="cardstitle">
-                    <p id="Newcontainertitle">Events</p>
+                    <p id="Newcontainertitle">Upcoming Events</p>
                   </div>
                   {Event?.length == 0 && (
                     <p style={{ textAlign: "center" }}>No Events Exist</p>

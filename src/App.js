@@ -55,6 +55,14 @@ function App() {
             element={<CollageAdminstartion />}
           />
           <Route
+            path=":Collages/Gallary"
+            element={<Pagesunderconstraction />}
+          />
+          <Route
+            path=":Collages/RuleAndRegulation"
+            element={<Pagesunderconstraction />}
+          />
+          <Route
             path="/admissioncontact"
             element={<Pagesunderconstraction />}
           />
