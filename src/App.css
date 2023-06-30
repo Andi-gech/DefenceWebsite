@@ -689,7 +689,7 @@ a {
 }
 .Text {
   text-align: center;
-  color: #605e60;
+  color: #737073;
   height: 400px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1098,6 +1098,8 @@ a {
 }
 .AboutContainer {
   margin: auto;
+  width: 98vw;
+
   text-align: center;
 }
 .Aboutpages p {
