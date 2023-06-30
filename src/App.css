@@ -726,7 +726,6 @@ a {
   flex-direction: column;
 }
 .rightbodycontainer .Cards {
-  height: 300px;
   width: 300px;
   background-color: rgba(238, 236, 234, 0.041);
 }

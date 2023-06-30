@@ -186,6 +186,7 @@ function HomeScreen() {
                   <div className="cardstitle">
                     <p id="Newcontainertitle">CAMPUSES</p>
                   </div>
+
                   {collages.map((collage, index) => (
                     <motion.div
                       key={index}
