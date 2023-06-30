@@ -55,7 +55,7 @@ a {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 .column-container h3 {
@@ -717,6 +717,7 @@ a {
 }
 #Newcontainertitle {
   font-weight: bold;
+
 }
 .rightbodycontainer {
   flex: 1;
