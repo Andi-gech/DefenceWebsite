@@ -687,6 +687,13 @@ a {
   margin: 0px;
   padding: 0px;
 }
+.Text {
+  text-align: center;
+  color: #605e60;
+  height: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .texteventname #location {
   font-size: 10px;
   color: rgb(66, 34, 34);
