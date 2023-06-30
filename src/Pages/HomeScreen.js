@@ -87,6 +87,9 @@ function HomeScreen() {
                 image={data[0]?.leaderimage}
               />
               <p id="Newcontainertitle">Latest News</p>
+              {News?.length == 0 && (
+                <p style={{ textAlign: "center" }}>No News Exist</p>
+              )}
               {News.slice()
                 .reverse()
                 .slice(0, 7)
@@ -101,6 +104,9 @@ function HomeScreen() {
                   />
                 ))}
               <p id="Newcontainertitle">events</p>
+              {Event?.length == 0 && (
+                <p style={{ textAlign: "center" }}>No Events Exist</p>
+              )}
               {Event.map((e, index) => (
                 <motion.div
                   key={index}
@@ -148,6 +154,9 @@ function HomeScreen() {
                   </p>
                 </div>
                 <div className="Newslist">
+                  {News?.length == 0 && (
+                    <p style={{ textAlign: "center" }}>No News Exist</p>
+                  )}
                   {News.slice()
                     .reverse()
                     .slice(0, 4)
@@ -186,6 +195,9 @@ function HomeScreen() {
                   <div className="cardstitle">
                     <p id="Newcontainertitle">CAMPUSES</p>
                   </div>
+                  {collages?.length == 0 && (
+                    <p style={{ textAlign: "center" }}>No collages Exist</p>
+                  )}
 
                   {collages.map((collage, index) => (
                     <motion.div
@@ -205,6 +217,9 @@ function HomeScreen() {
                   <div className="cardstitle">
                     <p id="Newcontainertitle">Events</p>
                   </div>
+                  {Event?.length == 0 && (
+                    <p style={{ textAlign: "center" }}>No Events Exist</p>
+                  )}
                   {Event.map((e, index) => (
                     <motion.div
                       key={index}

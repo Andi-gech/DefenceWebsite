@@ -690,7 +690,7 @@ a {
 .Text {
   text-align: center;
   color: #737073;
-  height: 400px;
+  max-height: 400px;
   overflow: hidden;
   text-overflow: ellipsis;
 }

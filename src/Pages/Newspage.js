@@ -18,6 +18,9 @@ function Newspage() {
         <div className="titles">
           <p>Latest News</p>
         </div>
+        {news?.length == 0 && (
+          <p style={{ textAlign: "center" }}>No News Exist</p>
+        )}
         <div
           className="Newslist"
           style={{ width: isTabletOrMobile ? "100vw" : 900 }}

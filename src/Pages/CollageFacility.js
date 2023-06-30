@@ -50,6 +50,9 @@ function CollageFacility() {
 
           <Subheadercomponent />
           <div className="facilitybody">
+            {data?.length == 0 && (
+              <p style={{ textAlign: "center" }}>No Facility Exist</p>
+            )}
             {data.map((Facility) => {
               return (
                 <FacilityComponent

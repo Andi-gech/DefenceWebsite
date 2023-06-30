@@ -88,6 +88,9 @@ function Collegescreen() {
                 <div className="titles">
                   <p>Announcements</p>
                 </div>
+                {Anounments?.length == 0 && (
+                  <p style={{ textAlign: "center" }}>No Announcement Exist</p>
+                )}
                 {Anounments?.map((An) => (
                   <AnnouncmentCard
                     key={An.id}
@@ -132,6 +135,7 @@ function Collegescreen() {
                   <div className="titles">
                     <p>Departments</p>
                   </div>
+
                   <Slideshow id={college.id} />
 
                   <div className="titles">
@@ -144,6 +148,7 @@ function Collegescreen() {
                     <p>Partners</p>
                   </div>
                   <div className="PartnersCards">
+                    {Partners?.length == 0 && <p>No partners Exist</p>}
                     {Partners?.map((Partner) => (
                       <PartnerComponent
                         key={Partner.id}
@@ -157,6 +162,11 @@ function Collegescreen() {
                     <p>Announcements</p>
                   </div>
                   <div className="AnnouncmentCardlsts">
+                    {Anounments?.length == 0 && (
+                      <p style={{ textAlign: "center" }}>
+                        No Announcement Exist
+                      </p>
+                    )}
                     {Anounments?.map((An) => (
                       <AnnouncmentCard
                         key={An.id}
