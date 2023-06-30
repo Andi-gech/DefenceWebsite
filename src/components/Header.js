@@ -206,9 +206,9 @@ function Header({ click }) {
               >
                 <p>About-us</p>
               </Link>
-              <Link onClick={supportclick} className="Sidemenubutton">
+              <div onClick={supportclick} className="Sidemenubutton">
                 Support
-              </Link>
+              </div>
             </div>
           )}
           <FaBars
@@ -395,9 +395,9 @@ function Header({ click }) {
                 color: selected === "support" ? "black" : "white",
               }}
             >
-              <Link onClick={click} className="EachHeaderbutton">
+              <div onClick={click} className="EachHeaderbutton">
                 Support <FaQuestionCircle id="icon" />
-              </Link>
+              </div>
             </li>
           </ul>
         </div>
