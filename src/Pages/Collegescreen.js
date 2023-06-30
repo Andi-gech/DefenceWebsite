@@ -92,7 +92,6 @@ function Collegescreen() {
                   <AnnouncmentCard
                     key={An.id}
                     title={An.Title}
-                    location={An.description}
                     date={An.date}
                   />
                 ))}
