@@ -9,7 +9,7 @@ function NoFoundPage() {
       </div>
       <div className="NoFoundPageText">Looks Like Your page NotFound</div>
       <div>
-        <Link to={""}>Back to Home</Link>
+        <Link to={"home"}>Back to Home</Link>
       </div>
     </div>
   );
