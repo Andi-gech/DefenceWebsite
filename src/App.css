@@ -717,7 +717,6 @@ a {
 }
 #Newcontainertitle {
   font-weight: bold;
-
 }
 .rightbodycontainer {
   flex: 1;
@@ -1063,7 +1062,6 @@ a {
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 900px;
 }
 .Loadingpage {
   margin-top: 16vh;

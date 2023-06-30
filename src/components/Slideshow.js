@@ -1,12 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import DepartmentCards from "./DepartmentCards";
 import UseDepartmentFech from "../hooks/UseDepartmentFetch";
+import { useMediaQuery } from "react-responsive";
 
 function Slideshow({ id }) {
   const delay = 2500;
   const [index, setIndex] = useState(0);
   const { data: images, refetch } = UseDepartmentFech(id);
   const timeoutRef = useRef(null);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   useEffect(() => {
     const fetchDepartment = () => {
@@ -36,13 +42,16 @@ function Slideshow({ id }) {
   }, [index, images]);
 
   return (
-    <div className="slideshow">
+    <div
+      className="slideshow"
+      style={{ width: isDesktopOrLaptop ? 900 : "100vw" }}
+    >
       <div
         className="slideshowSlider"
         style={{
-          transform: `translate3d(${
-            -index * (images?.length || 0) * 2
-          }%, 0, 0)`,
+          transform: isDesktopOrLaptop
+            ? `translate3d(${-index * (images?.length || 0) * 2}%, 0, 0)`
+            : `translate3d(${-index * (images?.length || 0) * 10}%, 0, 0)`,
         }}
       >
         {images?.map((department, idx) => (
