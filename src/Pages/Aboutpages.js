@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 
 function Aboutpages() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="Aboutpages">
       <div className="AboutContainer">

@@ -21,9 +21,6 @@ import { useMediaQuery } from "react-responsive";
 
 function Collegescreen() {
   const { Collages } = useParams();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });

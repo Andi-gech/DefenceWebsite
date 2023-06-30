@@ -6,9 +6,6 @@ import { useMediaQuery } from "react-responsive";
 
 function Newspage() {
   const { data: news } = UseNewsfech();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });

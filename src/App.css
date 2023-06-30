@@ -30,7 +30,12 @@ a {
 }
 .Adminstrationpage {
   margin-top: 16vh;
-  height: 85vh;
+
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .Adminstrationpage p {
@@ -58,8 +63,11 @@ a {
   height: 40px;
 }
 .column-container {
-  width: 23%;
-  margin-bottom: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   text-align: center;
 }
@@ -164,7 +172,7 @@ a {
   width: 100%;
 }
 .feature_Vidocontent {
-  height: 300px;
+  height: 400px;
   width: 100%;
 }
 .feature_Vidocontent iframe {
@@ -218,9 +226,7 @@ a {
   background-color: #fdfdfd;
   color: black;
 }
-.Map {
 
-}
 .Header-buttons li:hover #icon {
   color: orange !important;
 
@@ -721,7 +727,6 @@ a {
   flex-direction: column;
 }
 .rightbodycontainer .Cards {
-  height: 300px;
   width: 300px;
   background-color: rgba(238, 236, 234, 0.041);
 }
@@ -760,8 +765,23 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 68px;
+  top: 70px;
   padding-top: 5px;
+}
+.RegstralofficeContact {
+  display: flex;
+  margin-top: 16vh;
+  height: 80vh;
+}
+.Pagesunderconstraction {
+  display: flex;
+  margin-top: 16vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: #252525;
+  height: 80vh;
 }
 #deptitle {
   font-weight: bold;
@@ -1150,14 +1170,16 @@ a {
 }
 .newsdate {
   color: #716f71;
+  width: 78%;
   font-weight: bold;
 }
 .SideNEws {
   width: 500px;
 }
 .MainNewsdetail {
-  margin-left: 30px;
   margin-top: 40px;
+  width: 98%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1165,11 +1187,21 @@ a {
   flex: 1;
 }
 .MainNewsdetail p {
-  width: 600px;
+  width: 95%;
+
+  text-align: center;
+}
+.center {
+  width: 99%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .Newsdetailpages {
   margin-top: 16vh;
   display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
   flex-direction: row;
 }
 .listCard {

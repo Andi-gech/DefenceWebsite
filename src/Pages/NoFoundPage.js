@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import notfound from "../Assets/pagenotfound.svg";
 import { Link } from "react-router-dom";
 function NoFoundPage() {
@@ -9,7 +9,7 @@ function NoFoundPage() {
       </div>
       <div className="NoFoundPageText">Looks Like Your page NotFound</div>
       <div>
-        <Link to={""}>Back to Home</Link>
+        <Link to={"home"}>Back to Home</Link>
       </div>
     </div>
   );

@@ -47,9 +47,6 @@ function HomeScreen() {
     isError: eventerror,
     isLoading: eventloading,
   } = UseEventFech();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     const handleImageLoad = () => {
@@ -106,6 +103,7 @@ function HomeScreen() {
               <p id="Newcontainertitle">events</p>
               {Event.map((e, index) => (
                 <motion.div
+                  key={index}
                   whileInView={{ scale: [0, 1.2, 1] }}
                   transition={{ duration: 1, delay: index / 10 }}
                 >
@@ -188,8 +186,10 @@ function HomeScreen() {
                   <div className="cardstitle">
                     <p id="Newcontainertitle">CAMPUSES</p>
                   </div>
+
                   {collages.map((collage, index) => (
                     <motion.div
+                      key={index}
                       whileInView={{ x: [150, 0] }}
                       transition={{ duration: 1, delay: index / 10 }}
                     >
@@ -207,6 +207,7 @@ function HomeScreen() {
                   </div>
                   {Event.map((e, index) => (
                     <motion.div
+                      key={index}
                       whileInView={{ scale: [0, 1.2, 1] }}
                       transition={{ duration: 1, delay: index / 10 }}
                     >

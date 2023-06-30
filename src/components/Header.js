@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import UseCollageFech from "../hooks/UseCollageFech";
 
-function Header() {
+function Header({ click }) {
   const [isLatest, setIsLatest] = useState(false);
   const [isAcademy, setIsAcademy] = useState(false);
   const [ismenuopen, setmenuopen] = useState(false);
@@ -36,6 +36,10 @@ function Header() {
   const acadamicClicked = () => {
     setSelected("academics");
     setIsAcademy(false);
+  };
+  const supportclick = () => {
+    click();
+    setmenuopen(false);
   };
 
   const { data } = UseCollageFech();
@@ -202,12 +206,8 @@ function Header() {
               >
                 <p>About-us</p>
               </Link>
-              <Link
-                to={"support"}
-                onClick={() => setmenuopen(false)}
-                className="Sidemenubutton"
-              >
-                <p>support</p>
+              <Link onClick={supportclick} className="Sidemenubutton">
+                Support
               </Link>
             </div>
           )}
@@ -395,7 +395,7 @@ function Header() {
                 color: selected === "support" ? "black" : "white",
               }}
             >
-              <Link to={"support"} className="EachHeaderbutton">
+              <Link onClick={click} className="EachHeaderbutton">
                 Support <FaQuestionCircle id="icon" />
               </Link>
             </li>
