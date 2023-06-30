@@ -55,7 +55,7 @@ function HomeScreen() {
 
     if (data && data.length > 0) {
       const img = new Image();
-      img.src = data[0].bannerimage;
+      img.src = data[0]?.bannerimage;
       img.onload = handleImageLoad;
 
       return () => {
@@ -75,7 +75,7 @@ function HomeScreen() {
           style={{ display: imageLoaded ? "flex" : "none" }}
         >
           <Bannercomponent
-            banner={data[0].bannerimage}
+            banner={data[0]?.bannerimage}
             onImageLoad={() => setImageLoaded(true)}
           />
           {isTabletOrMobile && (
