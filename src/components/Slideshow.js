@@ -51,7 +51,7 @@ function Slideshow({ id }) {
         style={{
           transform: isDesktopOrLaptop
             ? `translate3d(${-index * (images?.length || 0) * 2}%, 0, 0)`
-            : `translate3d(${-index * (images?.length || 0) * 10}%, 0, 0)`,
+            : `translate3d(${-index * (images?.length || 0) * 3}%, 0, 0)`,
         }}
       >
         {images?.map((department, idx) => (
