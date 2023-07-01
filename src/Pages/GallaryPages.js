@@ -26,7 +26,7 @@ function GallaryPages() {
         className="Images-container"
         style={{ width: isDesktopOrLaptop ? 900 : "100vw" }}
       >
-        {data.map((item) => {
+        {data?.map((item) => {
           return (
             <div className="gallarycard">
               <Facilitycard image={item.image} />
