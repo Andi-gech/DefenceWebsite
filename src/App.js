@@ -24,6 +24,7 @@ import { useRef } from "react";
 import RegstralofficeContact from "./Pages/RegstralofficeContact";
 import Pagesunderconstraction from "./Pages/Pagesunderconstraction";
 import ScrollToTop from "./Pages/Scrolltotop";
+import GallaryPages from "./Pages/GallaryPages";
 
 function App() {
   const headerRef = useRef(null); // Create a ref for the header
@@ -54,10 +55,7 @@ function App() {
             path=":Collages/Adminstration"
             element={<CollageAdminstartion />}
           />
-          <Route
-            path=":Collages/Gallary"
-            element={<Pagesunderconstraction />}
-          />
+          <Route path=":Collages/Gallary" element={<GallaryPages />} />
           <Route
             path=":Collages/RuleAndRegulation"
             element={<Pagesunderconstraction />}

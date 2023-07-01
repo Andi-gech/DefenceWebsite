@@ -1113,6 +1113,7 @@ a {
 }
 .Aboutpages {
   margin-top: 16vh;
+
   background-color: #fff;
 }
 .AboutContainer {
@@ -1120,6 +1121,36 @@ a {
   width: 98vw;
 
   text-align: center;
+}
+.GallaryPages {
+  margin-top: 16vh;
+
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.GallaryPages p {
+  font-weight: bold;
+}
+
+.Images-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+.gallarycard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gallarycard p {
+  font-weight: bold;
 }
 .Aboutpages p {
   width: 800px;
