@@ -426,17 +426,141 @@ a {
   margin-top: 16vh;
   display: flex;
   flex-direction: column;
+  min-height: 900px;
 }
 .CollageAdminstartionbody {
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+}
+.adminofficetitles {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.admin-message {
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(12, 11, 11, 0.061) 1.2px 1.95px 1.95px 2.6px;
+  background-color: rgb(255, 255, 255);
+
+  margin-inline: 10px;
+}
+.Contact-links {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-inline: 10px;
+  background-color: #312e3118;
+}
+.Contact-links .links {
+  display: flex;
+  margin-inline: 30px;
+}
+.admin-pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-pic p,
+h3 {
+  margin: 0px;
+}
+.messagetext {
+  flex: 1;
+
+  width: 200px;
+  padding: 10px;
+  height: 300px;
+  overflow: hidden;
+}
+.admin-message img {
+  margin-top: 10px;
+  height: 300px;
+  width: 300px;
+}
+.messagehead {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+.sideoffices-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.AdminSides {
+  flex: 1;
+
+  display: flex;
+}
+.Officebutton {
+  height: 50px;
+  background-color: rgba(53, 56, 56, 0.142);
+  color: rgb(13, 13, 13);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.background {
+  flex: 1;
+  padding-inline: 100px;
+}
+.Detailprofile {
+  height: 900px;
+}
+.Detailprofile table {
+  background-color: #252525;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+table tr {
+  display: flex;
+  border: 1px solid black;
+  flex: 1;
+  background-color: white;
+}
+table th {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.CollageAdminstartionbody pre {
-  font-family: sans-serif;
 
-  white-space: break-spaces;
-  width: 90%;
+.profile-list p {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.listbox img {
+  height: 100px;
+  margin-inline: 10px;
+  width: 100px;
+  border-radius: 50px;
+}
+table td {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  border-left: 1px solid black;
 }
 .smallcard {
   height: 50%;
@@ -462,6 +586,10 @@ a {
   align-items: start;
 
   flex-direction: row;
+}
+.Officebutton:hover {
+  cursor: pointer;
+  background-color: orange;
 }
 .inlinecardfacility p {
   color: rgb(65, 64, 64);
@@ -941,7 +1069,7 @@ a {
 }
 .Rightcommunitycard {
   flex: 1;
-  background-color: #17161791;
+  background-color: #0f010175;
   color: white;
 
   display: flex;
@@ -1027,14 +1155,14 @@ a {
 .Banner-darken {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.478);
+  background-color: rgba(0, 0, 0, 0.667);
   display: flex;
   flex-direction: row;
 }
 .smallBanner-darken {
   height: 100%;
   width: 100%;
-  background-color: rgba(2, 1, 31, 0.671);
+  background-color: rgba(0, 0, 0, 0.757);
   display: flex;
   flex-direction: row;
   align-items: center;
