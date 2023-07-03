@@ -103,10 +103,14 @@ function HomeScreen() {
                     image={news.image}
                   />
                 ))}
+<<<<<<< HEAD
+              <p id="Newcontainertitle">Events</p>
+=======
               <p id="Newcontainertitle">Upcoming Events</p>
               {Event?.length == 0 && (
                 <p style={{ textAlign: "center" }}>No Events Exist</p>
               )}
+>>>>>>> 1874233dfb295c490bad1a4c19ec8a5803752a27
               {Event.map((e, index) => (
                 <motion.div
                   key={index}
@@ -120,7 +124,7 @@ function HomeScreen() {
                   />
                 </motion.div>
               ))}
-              <p id="Newcontainertitle">feature Videos</p>
+              <p id="Newcontainertitle">Feature Videos</p>
               <div className="feature_Vidocontent">
                 <iframe
                   src="https://www.youtube.com/embed/0-ND5ib9FkY"
@@ -177,7 +181,7 @@ function HomeScreen() {
                 </p>
                 <div className="feature_Vidos">
                   <div className="feature_Vidos_header">
-                    <p id="title">Feature Video</p>
+                    <p id="title">fEATURED VIDEOS</p>
                   </div>
                   <div className="feature_Vidocontent">
                     <iframe
@@ -215,7 +219,11 @@ function HomeScreen() {
                 </div>
                 <div className="Cards">
                   <div className="cardstitle">
+<<<<<<< HEAD
+                    <p id="Newcontainertitle">EVENTS</p>
+=======
                     <p id="Newcontainertitle">Upcoming Events</p>
+>>>>>>> 1874233dfb295c490bad1a4c19ec8a5803752a27
                   </div>
                   {Event?.length == 0 && (
                     <p style={{ textAlign: "center" }}>No Events Exist</p>

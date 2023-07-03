@@ -1451,6 +1451,49 @@ table td {
   margin-top: 16vh;
   height: 85vh;
 }
+<<<<<<< HEAD
+
+.page{
+  margin-left:10%;
+  margin-right:10%;
+}
+.headline{
+      display:inline-block;
+      width: 100%;
+      height:500px;
+      background-color: black;
+}
+.headline .h-0{
+  color:white;
+  font-size:4em;
+}
+.headline .h-2{
+  margin-top:-1em;
+  color:white;
+}
+.mid-text{
+  position: absolute;
+  display:inline-block;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.h-1{
+ width:100%;
+ background-color:orange; 
+
+}
+.h1{
+  font-size:xx-large;
+  color:white;
+}
+.content{
+  border-radius:14px;
+  outline: 2px solid gray;
+  padding:10px 10px 10px  10px;
+  margin-top:-1em;
+
+=======
 .my-container {
   display: flex;
   align-items: center;
@@ -1494,4 +1537,5 @@ table td {
 .description p {
   margin: 0;
   font-size: 14px;
+>>>>>>> 1874233dfb295c490bad1a4c19ec8a5803752a27
 }
