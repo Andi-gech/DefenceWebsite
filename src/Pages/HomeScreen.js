@@ -103,7 +103,7 @@ function HomeScreen() {
                     image={news.image}
                   />
                 ))}
-              <p id="Newcontainertitle">events</p>
+              <p id="Newcontainertitle">Events</p>
               {Event.map((e, index) => (
                 <motion.div
                   whileInView={{ scale: [0, 1.2, 1] }}
@@ -116,7 +116,7 @@ function HomeScreen() {
                   />
                 </motion.div>
               ))}
-              <p id="Newcontainertitle">feature Videos</p>
+              <p id="Newcontainertitle">Feature Videos</p>
               <div className="feature_Vidocontent">
                 <iframe
                   src="https://www.youtube.com/embed/0-ND5ib9FkY"
@@ -170,7 +170,7 @@ function HomeScreen() {
                 </p>
                 <div className="feature_Vidos">
                   <div className="feature_Vidos_header">
-                    <p id="title">Feature Video</p>
+                    <p id="title">fEATURED VIDEOS</p>
                   </div>
                   <div className="feature_Vidocontent">
                     <iframe
@@ -203,7 +203,7 @@ function HomeScreen() {
                 </div>
                 <div className="Cards">
                   <div className="cardstitle">
-                    <p id="Newcontainertitle">Events</p>
+                    <p id="Newcontainertitle">EVENTS</p>
                   </div>
                   {Event.map((e, index) => (
                     <motion.div
