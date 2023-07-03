@@ -11,9 +11,6 @@ import Loadingpage from "./Loadingpage";
 function CollageFacility() {
   const { Collages } = useParams();
   const { data: collages } = UseCollageFech();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const college = collages?.find(
     (college) => college.pathname.toLowerCase() === Collages.toLowerCase()
@@ -53,6 +50,9 @@ function CollageFacility() {
 
           <Subheadercomponent />
           <div className="facilitybody">
+            {data?.length == 0 && (
+              <p style={{ textAlign: "center" }}>No Facility Exist</p>
+            )}
             {data.map((Facility) => {
               return (
                 <FacilityComponent

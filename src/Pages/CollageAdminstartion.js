@@ -6,10 +6,6 @@ import UseCollageFech from "../hooks/UseCollageFech";
 import Loadingpage from "./Loadingpage";
 
 function CollageAdminstartion() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const { Collages } = useParams();
   const { data: collage } = UseCollageFech();
   const college = collage?.find((college) => college.pathname === Collages);
@@ -39,15 +35,16 @@ function CollageAdminstartion() {
         style={{ display: imageLoaded ? "flex" : "none" }}
       >
         <Smallbanner
-          name={college.name}
-          image={college.bannerimage}
+          name={college?.name}
+          image={college?.bannerimage}
           onImageLoad={() => setImageLoaded(true)}
         />
         <Subheadercomponent />
-
-        <p>{college?.adminstartion}</p>
-
-        <p>{}</p>
+        <div className="CollageAdminstartionbody">
+          <pre dangerouslySetInnerHTML={{ __html: college?.adminstartion }}>
+            {}
+          </pre>
+        </div>
       </div>
       <div style={{ display: !imageLoaded ? "block" : "none" }}>
         <Loadingpage />

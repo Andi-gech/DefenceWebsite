@@ -1,12 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import DepartmentCards from "./DepartmentCards";
 import UseDepartmentFech from "../hooks/UseDepartmentFetch";
+import { useMediaQuery } from "react-responsive";
 
 function Slideshow({ id }) {
   const delay = 2500;
   const [index, setIndex] = useState(0);
-  const { data: images, refetch } = UseDepartmentFech(id);
+  const { data: department, refetch } = UseDepartmentFech(id);
   const timeoutRef = useRef(null);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   useEffect(() => {
     const fetchDepartment = () => {
@@ -26,26 +32,31 @@ function Slideshow({ id }) {
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       setIndex((prevIndex) =>
-        prevIndex === images?.length - 1 ? 0 : prevIndex + 1
+        prevIndex === department?.length - 1 ? 0 : prevIndex + 1
       );
     }, delay);
 
     return () => {
       resetTimeout();
     };
-  }, [index, images]);
+  }, [index, department]);
 
   return (
-    <div className="slideshow">
+    <div
+      className="slideshow"
+      style={{ width: isDesktopOrLaptop ? 900 : "100vw" }}
+    >
       <div
         className="slideshowSlider"
         style={{
-          transform: `translate3d(${
-            -index * (images?.length || 0) * 2
-          }%, 0, 0)`,
+          transform: isDesktopOrLaptop
+            ? `translate3d(${-index * (department?.length || 0) * 2}%, 0, 0)`
+            : `translate3d(${-index * 40}%, 0, 0)`,
         }}
       >
-        {images?.map((department, idx) => (
+        {department?.length == 0 && <p>No department Exist</p>}
+
+        {department?.map((department, idx) => (
           <div className="slide" key={idx}>
             <DepartmentCards
               image={department.photo}
@@ -56,7 +67,7 @@ function Slideshow({ id }) {
       </div>
 
       <div className="slideshowDots">
-        {images?.map((_, idx) => (
+        {department?.map((_, idx) => (
           <div
             key={idx}
             className={`slideshowDot${index === idx ? " active" : ""}`}

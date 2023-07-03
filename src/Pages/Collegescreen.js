@@ -21,9 +21,6 @@ import { useMediaQuery } from "react-responsive";
 
 function Collegescreen() {
   const { Collages } = useParams();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
@@ -91,14 +88,19 @@ function Collegescreen() {
                 <div className="titles">
                   <p>Announcements</p>
                 </div>
-                {Anounments?.map((An) => (
-                  <AnnouncmentCard
-                    key={An.id}
-                    title={An.Title}
-                    location={An.description}
-                    date={An.date}
-                  />
-                ))}
+                {Anounments?.length == 0 && (
+                  <p style={{ textAlign: "center" }}>No Announcement Exist</p>
+                )}
+                {Anounments?.slice()
+                  .reverse()
+                  .slice(0, 4)
+                  .map((An) => (
+                    <AnnouncmentCard
+                      key={An.id}
+                      title={An.Title}
+                      date={An.date}
+                    />
+                  ))}
                 <div className="titles">
                   <p>Departments</p>
                 </div>
@@ -136,6 +138,7 @@ function Collegescreen() {
                   <div className="titles">
                     <p>Departments</p>
                   </div>
+
                   <Slideshow id={college.id} />
 
                   <div className="titles">
@@ -148,6 +151,7 @@ function Collegescreen() {
                     <p>Partners</p>
                   </div>
                   <div className="PartnersCards">
+                    {Partners?.length == 0 && <p>No partners Exist</p>}
                     {Partners?.map((Partner) => (
                       <PartnerComponent
                         key={Partner.id}
@@ -161,14 +165,21 @@ function Collegescreen() {
                     <p>Announcements</p>
                   </div>
                   <div className="AnnouncmentCardlsts">
-                    {Anounments?.map((An) => (
-                      <AnnouncmentCard
-                        key={An.id}
-                        title={An.Title}
-                        location={An.description}
-                        date={An.date}
-                      />
-                    ))}
+                    {Anounments?.length == 0 && (
+                      <p style={{ textAlign: "center" }}>
+                        No Announcement Exist
+                      </p>
+                    )}
+                    {Anounments?.slice()
+                      .reverse()
+                      .slice(0, 4)
+                      .map((An) => (
+                        <AnnouncmentCard
+                          key={An.id}
+                          title={An.Title}
+                          date={An.date}
+                        />
+                      ))}
                   </div>
                 </div>
               </div>

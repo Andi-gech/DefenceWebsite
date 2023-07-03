@@ -22,10 +22,6 @@ function Newsdetailpages() {
     fetchDepartment();
   }, [id, refetch]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const formattedDate = formatDate(individualNews?.date);
 
   if (news && individualNews) {
@@ -36,9 +32,11 @@ function Newsdetailpages() {
             <>
               <div className="NEWspageTitle"> {individualNews?.Title}</div>
               <div className="newsdate"> {formattedDate}</div>
-              <img src={individualNews?.image} alt="News" />
-              <div>
-                <p>{individualNews.description}</p>
+              <div className="center">
+                <img src={individualNews?.image} alt="News" />
+                <div className="center">
+                  <p>{individualNews.description}</p>
+                </div>
               </div>
             </>
           )}
@@ -57,7 +55,9 @@ function Newsdetailpages() {
         </div>
 
         <div className="SideNEws">
-          <div className="titles">Related news</div>
+          <div className="titles">
+            <p>Related news</p>
+          </div>
 
           <div>
             {news.map((item) => (

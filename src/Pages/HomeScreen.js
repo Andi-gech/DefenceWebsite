@@ -47,9 +47,6 @@ function HomeScreen() {
     isError: eventerror,
     isLoading: eventloading,
   } = UseEventFech();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
     const handleImageLoad = () => {
@@ -58,7 +55,7 @@ function HomeScreen() {
 
     if (data && data.length > 0) {
       const img = new Image();
-      img.src = data[0].bannerimage;
+      img.src = data[0]?.bannerimage;
       img.onload = handleImageLoad;
 
       return () => {
@@ -78,7 +75,7 @@ function HomeScreen() {
           style={{ display: imageLoaded ? "flex" : "none" }}
         >
           <Bannercomponent
-            banner={data[0].bannerimage}
+            banner={data[0]?.bannerimage}
             onImageLoad={() => setImageLoaded(true)}
           />
           {isTabletOrMobile && (
@@ -90,6 +87,9 @@ function HomeScreen() {
                 image={data[0]?.leaderimage}
               />
               <p id="Newcontainertitle">Latest News</p>
+              {News?.length == 0 && (
+                <p style={{ textAlign: "center" }}>No News Exist</p>
+              )}
               {News.slice()
                 .reverse()
                 .slice(0, 7)
@@ -103,9 +103,17 @@ function HomeScreen() {
                     image={news.image}
                   />
                 ))}
+<<<<<<< HEAD
               <p id="Newcontainertitle">Events</p>
+=======
+              <p id="Newcontainertitle">Upcoming Events</p>
+              {Event?.length == 0 && (
+                <p style={{ textAlign: "center" }}>No Events Exist</p>
+              )}
+>>>>>>> 1874233dfb295c490bad1a4c19ec8a5803752a27
               {Event.map((e, index) => (
                 <motion.div
+                  key={index}
                   whileInView={{ scale: [0, 1.2, 1] }}
                   transition={{ duration: 1, delay: index / 10 }}
                 >
@@ -150,6 +158,9 @@ function HomeScreen() {
                   </p>
                 </div>
                 <div className="Newslist">
+                  {News?.length == 0 && (
+                    <p style={{ textAlign: "center" }}>No News Exist</p>
+                  )}
                   {News.slice()
                     .reverse()
                     .slice(0, 4)
@@ -188,8 +199,13 @@ function HomeScreen() {
                   <div className="cardstitle">
                     <p id="Newcontainertitle">CAMPUSES</p>
                   </div>
+                  {collages?.length == 0 && (
+                    <p style={{ textAlign: "center" }}>No collages Exist</p>
+                  )}
+
                   {collages.map((collage, index) => (
                     <motion.div
+                      key={index}
                       whileInView={{ x: [150, 0] }}
                       transition={{ duration: 1, delay: index / 10 }}
                     >
@@ -203,10 +219,18 @@ function HomeScreen() {
                 </div>
                 <div className="Cards">
                   <div className="cardstitle">
+<<<<<<< HEAD
                     <p id="Newcontainertitle">EVENTS</p>
+=======
+                    <p id="Newcontainertitle">Upcoming Events</p>
+>>>>>>> 1874233dfb295c490bad1a4c19ec8a5803752a27
                   </div>
+                  {Event?.length == 0 && (
+                    <p style={{ textAlign: "center" }}>No Events Exist</p>
+                  )}
                   {Event.map((e, index) => (
                     <motion.div
+                      key={index}
                       whileInView={{ scale: [0, 1.2, 1] }}
                       transition={{ duration: 1, delay: index / 10 }}
                     >

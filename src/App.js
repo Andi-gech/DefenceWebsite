@@ -20,12 +20,26 @@ import Loadingpage from "./Pages/Loadingpage";
 import NoFoundPage from "./Pages/NoFoundPage";
 import Adminstrationpage from "./Pages/Adminstrationpage";
 import Downloadpage from "./Pages/Downloadpage";
+import { useRef } from "react";
+import RegstralofficeContact from "./Pages/RegstralofficeContact";
+import Pagesunderconstraction from "./Pages/Pagesunderconstraction";
+import ScrollToTop from "./Pages/Scrolltotop";
+import GallaryPages from "./Pages/GallaryPages";
 
 function App() {
+  const headerRef = useRef(null); // Create a ref for the header
+
+  const scrollToBottom = () => {
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header click={scrollToBottom} />
+        <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<HomeScreen />} />
           <Route path="home" element={<HomeScreen />} />
@@ -41,42 +55,37 @@ function App() {
             path=":Collages/Adminstration"
             element={<CollageAdminstartion />}
           />
-          <Route path="/admissioncontact" element={<p>ss</p>} />
+          <Route path=":Collages/Gallary" element={<GallaryPages />} />
+          <Route
+            path=":Collages/RuleAndRegulation"
+            element={<Pagesunderconstraction />}
+          />
+          <Route
+            path="/admissioncontact"
+            element={<Pagesunderconstraction />}
+          />
 
           <Route path="latest-announcement" element={<Announcmentpage />} />
           <Route path="Administration" element={<Adminstrationpage />} />
           <Route path="latest-news" element={<Newspage />} />
           <Route path="Downloads" element={<Downloadpage />} />
-          <Route path="Support" element={<h1 id="PAgesh1">Support page</h1>} />
+
           <Route path="*" element={<NoFoundPage />} />
           <Route path="about" element={<Aboutpages />} />
           <Route path="/latest-news/:id" element={<Newsdetailpages />} />
-          <Route
-            path="research-project"
-            element={<h1 id="PAgesh1">research-project page</h1>}
-          />
+          <Route path="research-project" element={<Pagesunderconstraction />} />
           <Route
             path="research-Community"
-            element={
-              <h1 id="PAgesh1">
-                The College is rigorously working on research, and it has
-                established an office and a managing editor to effectively carry
-                out its research endeavors. To this end, there is a bi-annual
-                journal, the Ethiopian Journal of Business and Economics, which
-                publishes research contributions mainly from staff and also from
-                the external multidisciplinary contributors.e
-              </h1>
-            }
+            element={<Pagesunderconstraction />}
           />
 
           <Route path="Admission" element={<Admissionpage />} />
-          <Route
-            path="Latest-Research"
-            element={<h1 id="PAgesh1">Latest-Research page</h1>}
-          />
+          <Route path="Latest-Research" element={<Pagesunderconstraction />} />
           <Route element={<NoFoundPage />} />
         </Routes>
-        <Footer />
+        <div ref={headerRef}>
+          <Footer />
+        </div>
       </BrowserRouter>
     </div>
   );

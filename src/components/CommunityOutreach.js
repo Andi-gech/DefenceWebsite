@@ -21,8 +21,8 @@ function CommunityOutreach({ news }) {
         <FaArrowCircleLeft onClick={goToPrevCard} size={30} color="gray" />
         <div className="Communitycards">
           <CommunityCard
-            name={news[currentCard].Title}
-            banner={news[currentCard].image}
+            name={news[currentCard]?.Title}
+            banner={news[currentCard]?.image}
           />
         </div>
         <FaArrowCircleRight onClick={goToNextCard} size={30} color="gray" />

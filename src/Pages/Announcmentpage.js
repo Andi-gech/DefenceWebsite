@@ -3,9 +3,6 @@ import AnnouncmentCard from "../components/AnnouncmentCard";
 import UseNewsfech from "../hooks/UseNewsfetch";
 
 function Announcmentpage() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const { data: News } = UseNewsfech();
   const Anouncments = News?.filter((f) => f.type === "Announcment");
 

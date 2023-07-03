@@ -6,9 +6,6 @@ import { useMediaQuery } from "react-responsive";
 
 function Newspage() {
   const { data: news } = UseNewsfech();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
@@ -21,6 +18,9 @@ function Newspage() {
         <div className="titles">
           <p>Latest News</p>
         </div>
+        {news?.length == 0 && (
+          <p style={{ textAlign: "center" }}>No News Exist</p>
+        )}
         <div
           className="Newslist"
           style={{ width: isTabletOrMobile ? "100vw" : 900 }}
