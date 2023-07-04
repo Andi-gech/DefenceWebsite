@@ -46,8 +46,8 @@ function Footer() {
           </div>
           <div className="Map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15773.639378766347!2d38.97793492518764!3d8.74745241788386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b0d0d39a7d6af%3A0xd77fcf3e790eca05!2sEthiopian%20Defence%20University!5e0!3m2!1sam!2set!4v1688057565229!5m2!1sam!2set"
-              allowFullScreen=""
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1610.7395755575242!2d38.99742638769051!3d8.76132850924324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b0d04849adb3f%3A0x183b8f8279bb2a45!2sEthiopian%20Defense%20University!5e0!3m2!1sam!2set!4v1688450724323!5m2!1sam!2set"
+              allowFullScreen="" title="map"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
