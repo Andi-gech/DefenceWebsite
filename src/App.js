@@ -52,7 +52,7 @@ function App() {
           <Route path="AcadamicCalander" element={<Calanderpage />} />
 
           <Route
-            path=":Collages/Adminstration"
+            path=":Collages/Adminstration/:offices"
             element={<CollageAdminstartion />}
           />
           <Route path=":Collages/Gallary" element={<GallaryPages />} />

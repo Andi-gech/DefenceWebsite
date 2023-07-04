@@ -23,7 +23,9 @@ function Subheadercomponent() {
           <Link to={`/${Collages}/facilities`}>Facilities</Link>
         </li>
         <li>
-          <Link to={`/${Collages}/Adminstration`}>Adminstration</Link>
+          <Link to={`/${Collages}/Adminstration/Academic Office`}>
+            Adminstration
+          </Link>
         </li>
         <li>
           {" "}
