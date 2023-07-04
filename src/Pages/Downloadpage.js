@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import pdf from "../Assets/pdf.pdf";
 import logo from "../Assets/pdf.png";
+import "../app.css";
 function Downloadpage() {
   return (
     <div className="Downloadpage">
