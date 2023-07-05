@@ -515,7 +515,6 @@ h3 {
   padding-inline: 100px;
 }
 .Detailprofile {
-  height: 900px;
 }
 .Detailprofile table {
   background-color: #252525;
@@ -549,11 +548,17 @@ table th {
   justify-content: center;
   flex-direction: row;
 }
-.listbox img {
+.ImageCircle img {
   height: 100px;
   margin-inline: 10px;
   width: 100px;
   border-radius: 50px;
+}
+.Loadingoffice {
+  background-color: "red";
+  width: 500px;
+  height: 300px;
+  align-self: flex-start;
 }
 table td {
   flex: 1;
