@@ -49,7 +49,7 @@ function Bannercomponent({ banner, onImageLoad }) {
 
                   .pauseFor(3000)
                   .deleteAll()
-                  .typeString(" the Largest Learning Center In ethiopia")
+                  .typeString(" The Largest Learning Center In Ethiopia")
                   .pauseFor(3000)
                   .deleteAll()
 
