@@ -25,6 +25,7 @@ import RegstralofficeContact from "./Pages/RegstralofficeContact";
 import Pagesunderconstraction from "./Pages/Pagesunderconstraction";
 import ScrollToTop from "./Pages/Scrolltotop";
 import GallaryPages from "./Pages/GallaryPages";
+import DepartmentPage from "./Pages/department";
 
 function App() {
   const headerRef = useRef(null); // Create a ref for the header
@@ -55,6 +56,7 @@ function App() {
             path=":Collages/Adminstration/:offices"
             element={<CollageAdminstartion />}
           />
+          <Route path=":Collages/department/:id" element={<DepartmentPage />} />
           <Route path=":Collages/Gallary" element={<GallaryPages />} />
           <Route
             path=":Collages/RuleAndRegulation"

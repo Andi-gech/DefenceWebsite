@@ -16,16 +16,15 @@ function CommunityOutreach({ news }) {
 
   return (
     <div className="CommunityOutreach">
-      <div className="CommunityOutreachheads">CommunityOutreach</div>
       <div className="Communitycardsout">
-        <FaArrowCircleLeft onClick={goToPrevCard} size={30} color="gray" />
         <div className="Communitycards">
           <CommunityCard
             name={news[currentCard]?.Title}
             banner={news[currentCard]?.image}
+            onclick={() => goToPrevCard()}
+            onnext={() => goToNextCard()}
           />
         </div>
-        <FaArrowCircleRight onClick={goToNextCard} size={30} color="gray" />
       </div>
     </div>
   );
