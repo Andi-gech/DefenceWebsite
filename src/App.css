@@ -728,7 +728,7 @@ table td {
   background-color: white;
 }
 .Smallbanner {
-  height: 85vh;
+  height: 200px;
   background-color: orange;
   backdrop-filter: blur(2px);
 }
@@ -1102,6 +1102,11 @@ table td {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  background: linear-gradient(
+    90deg,
+    rgb(10, 21, 40) 0%,
+    rgba(84, 2, 98, 0.745) 100%
+  );
 }
 .box .boxdetail {
   display: flex;
@@ -1114,7 +1119,7 @@ table td {
   height: 220px;
 }
 .boxdetail p {
-  color: rgb(59, 53, 53);
+  color: rgb(254, 254, 254);
   margin: 0px;
 }
 #No {
