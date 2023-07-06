@@ -3,10 +3,12 @@ import WellcomeMessage from "../components/WellcomeMessage";
 import { FaFacebook, FaLinkedin, FaMailBulk, FaPhone } from "react-icons/fa";
 import UseofficesFech from "../hooks/UseOfficefechhook";
 import UseStafmemberFech from "../hooks/UseUserfechhook";
+import "../App.css";
 import ImageCircle from "../components/ImageCircle";
 import { Link, useParams } from "react-router-dom";
 import Loadingpage from "../Pages/Loadingpage";
 import { TailSpin } from "react-loader-spinner";
+
 function Collageadminbody({ offices, path, college }) {
   const { data, isFetching, isRefetching } = UseofficesFech(college?.id);
 
@@ -127,7 +129,7 @@ function Collageadminbody({ offices, path, college }) {
         </div>
       )}
       {isFetching && (
-        <div className="Loadingoffice">
+        <div className="loadpages">
           <TailSpin
             height="80"
             width="80"
