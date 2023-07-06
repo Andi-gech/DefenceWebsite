@@ -56,7 +56,10 @@ function App() {
             path=":Collages/Adminstration/:offices"
             element={<CollageAdminstartion />}
           />
-          <Route path=":Collages/department/:id" element={<DepartmentPage />} />
+          <Route
+            path=":Collages/department/:id"
+            element={<Pagesunderconstraction />}
+          />
           <Route path=":Collages/Gallary" element={<GallaryPages />} />
           <Route
             path=":Collages/RuleAndRegulation"

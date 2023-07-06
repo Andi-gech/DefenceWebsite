@@ -1026,7 +1026,7 @@ table td {
   flex-direction: column;
   align-items: center;
 
-  height: 500px;
+  height: 700px;
   width: 100%;
   font-weight: bold;
 }
@@ -1096,11 +1096,7 @@ table td {
 }
 .box {
   height: 300px;
-  background: linear-gradient(
-    90deg,
-    rgb(10, 21, 40) 0%,
-    rgba(84, 2, 98, 0.745) 100%
-  );
+  color: black !important;
 
   display: flex;
   align-items: center;
@@ -1118,7 +1114,7 @@ table td {
   height: 220px;
 }
 .boxdetail p {
-  color: white;
+  color: rgb(59, 53, 53);
   margin: 0px;
 }
 #No {
@@ -1173,7 +1169,7 @@ table td {
 .smallBanner-darken {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.757);
+  background-color: rgba(0, 0, 0, 0.552);
   display: flex;
   flex-direction: row;
   align-items: center;
