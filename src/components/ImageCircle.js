@@ -4,22 +4,14 @@ import UseStafmemberFech from "../hooks/UseUserfechhook";
 import { useEffect } from "react";
 import { useState } from "react";
 
-function ImageCircle({ id }) {
-  const [images, setdata] = useState();
-  const fecthuser = (id) => {
-    refetch();
-  };
-  useEffect(() => {
-    fecthuser(id);
-    setdata(data?.image);
-  }, [id]);
-  const { data, refetch } = UseStafmemberFech(id);
-
-  console.log(data);
+function ImageCircle({ id, user }) {
+  const staffmember = user?.find((usr) => usr.id === id);
+  console.log(staffmember, "heer");
 
   return (
     <div className="ImageCircle">
-      <img src={images} />
+      <img src={staffmember?.image} />
+      <p>{staffmember?.name}</p>
     </div>
   );
 }

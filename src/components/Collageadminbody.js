@@ -39,18 +39,26 @@ function Collageadminbody({ offices, path, college }) {
                 </div>
               </div>
               <div className="Contact-links">
-                <div className="links">
-                  <FaPhone size={20} />
-                </div>
-                <div className="links">
-                  <FaFacebook size={20} />
-                </div>
-                <div className="links">
-                  <FaMailBulk size={20} />
-                </div>
-                <div className="links">
-                  <FaLinkedin size={20} />
-                </div>
+                {leader?.contact_number !== null && (
+                  <a href={`tel:${leader?.contact_number}`} className="links">
+                    <FaPhone size={20} />
+                  </a>
+                )}
+                {leader?.facebooklink !== null && (
+                  <a href={`${leader?.facebooklink}`} className="links">
+                    <FaFacebook size={20} />
+                  </a>
+                )}
+                {leader?.email !== null && (
+                  <a href={`${leader?.email}`} className="links">
+                    <FaMailBulk size={20} />
+                  </a>
+                )}
+                {leader?.linkedin !== null && (
+                  <a href={`${leader?.linkedin}`} className="links">
+                    <FaLinkedin size={20} />
+                  </a>
+                )}
               </div>
               <div className="background">
                 <div className="adminofficetitles">
@@ -83,18 +91,11 @@ function Collageadminbody({ offices, path, college }) {
                       </tr>
                       <tr>
                         <th>Administrative Positions Held</th>
-                        <td>{leader?.leader_role}</td>
+                        <td>{leader?.leader_role}ff</td>
                       </tr>
                       <tr>
                         <th>Research interest</th>
-                        <td>
-                          {" "}
-                          ⦁ Thermal Engineering: Combustion of low calorific
-                          value gases, diffusion flame structure and stability,
-                          Industrial burners ⦁ Automotive Engineering:
-                          Alternative fuels, Dynamics of vehicle system,
-                          Composite vehicle structure, aerodynamics of vehicle
-                        </td>
+                        <td>{leader?.researchInterest}</td>
                       </tr>
                     </table>
                   </div>
@@ -103,7 +104,7 @@ function Collageadminbody({ offices, path, college }) {
                   <p>Staff Members</p>
                   <div className="listbox">
                     {officess?.staffmembers.map((id) => {
-                      <ImageCircle id={id} />;
+                      return <ImageCircle id={id} user={user} />;
                     })}
                   </div>
                 </div>
