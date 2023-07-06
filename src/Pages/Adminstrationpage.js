@@ -16,7 +16,7 @@ function Adminstrationpage() {
         style={{ flexDirection: isTabletOrMobile ? "column-reverse" : "23vw" }}
       >
         <div class="column-container">
-          <h3>President Office</h3>
+          <h3>Commandant Office</h3>
           <div
             class="column"
             style={{ width: isTabletOrMobile ? "95vw" : "23vw" }}
@@ -38,7 +38,7 @@ function Adminstrationpage() {
           class="column-container"
           style={{ width: isTabletOrMobile ? "80vw" : "23vw" }}
         >
-          <h3>Adminstrative Vice President</h3>
+          <h3>Acadamic VP Office</h3>
           <div class="column">
             <ul>
               <li>Administration Vice President</li>
