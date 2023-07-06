@@ -10,7 +10,7 @@ function Pagesunderconstraction() {
       </div>
       <div className="NoFoundPageText">This Pages Under Construction</div>
       <div>
-        <Link to={"home"}>Back to Home</Link>
+        <Link to={"/home"}>Back to Home</Link>
       </div>
     </div>
   );
