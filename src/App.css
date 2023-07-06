@@ -728,7 +728,7 @@ table td {
   background-color: white;
 }
 .Smallbanner {
-  height: 200px;
+  height: 85vh;
   background-color: orange;
   backdrop-filter: blur(2px);
 }
@@ -1096,7 +1096,11 @@ table td {
 }
 .box {
   height: 300px;
-  background: linear-gradient(90deg, rgb(10, 21, 40) 0%, rgba(84, 2, 98, 0.745) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(10, 21, 40) 0%,
+    rgba(84, 2, 98, 0.745) 100%
+  );
 
   display: flex;
   align-items: center;

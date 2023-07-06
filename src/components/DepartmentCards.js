@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function DepartmentCards({ deparmentname, image }) {
+function DepartmentCards({ deparmentname, image, id, collage }) {
   return (
-    <div className="DepartmentCards">
+    <Link to={`department/${id}`} target="_blank" className="DepartmentCards">
       <div>
         <img src={image} />
       </div>
       <div className="DepcardText">
         <p>{deparmentname} Department</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

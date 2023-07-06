@@ -3,7 +3,7 @@ import DepartmentCards from "./DepartmentCards";
 import UseDepartmentFech from "../hooks/UseDepartmentFetch";
 import { useMediaQuery } from "react-responsive";
 
-function Slideshow({ id }) {
+function Slideshow({ id, collage }) {
   const delay = 2500;
   const [index, setIndex] = useState(0);
   const { data: department, refetch } = UseDepartmentFech(id);
@@ -59,8 +59,10 @@ function Slideshow({ id }) {
         {department?.map((department, idx) => (
           <div className="slide" key={idx}>
             <DepartmentCards
+              id={department.id}
               image={department.photo}
               deparmentname={department.name}
+              collage={collage}
             />
           </div>
         ))}

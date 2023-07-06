@@ -139,7 +139,7 @@ function Collegescreen() {
                     <p>Departments</p>
                   </div>
 
-                  <Slideshow id={college.id} />
+                  <Slideshow id={college.id} collage={college.pathname} />
 
                   <div className="titles">
                     <p>About {college.name}</p>

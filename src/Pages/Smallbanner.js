@@ -20,6 +20,7 @@ function Smallbanner({ name, image, onImageLoad }) {
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="smallBanner-darken">
