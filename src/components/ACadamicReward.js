@@ -1,10 +1,19 @@
 import React from "react";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import banner from "../Assets/5076404.jpg";
 
 export default function ACadamicReward() {
   return (
-    <div className="AcadamicReward">
+    <div
+      className="AcadamicReward"
+      style={{
+        backgroundImage: `url(${banner})`,
+        backgroundSize: "cover",
+
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="orange"

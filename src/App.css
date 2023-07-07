@@ -1105,8 +1105,8 @@ table td {
   flex-direction: row;
   background: linear-gradient(
     90deg,
-    rgb(10, 21, 40) 0%,
-    rgba(84, 2, 98, 0.745) 100%
+    rgba(10, 21, 40, 0.723) 0%,
+    rgba(84, 2, 98, 0.812) 100%
   );
 }
 .box .boxdetail {
@@ -1129,7 +1129,7 @@ table td {
 }
 #value {
   font-weight: bold;
-  color: #312e31;
+  color: #ffffff;
 }
 .eachelement:hover {
   background-color: rgba(148, 148, 144, 0.116);
