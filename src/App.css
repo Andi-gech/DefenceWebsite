@@ -1096,7 +1096,7 @@ table td {
   font-weight: normal;
 }
 .box {
-  height: 300px;
+  height: 200px;
   color: black !important;
 
   display: flex;
@@ -1106,7 +1106,7 @@ table td {
   background: linear-gradient(
     90deg,
     rgba(10, 21, 40, 0.723) 0%,
-    rgba(84, 2, 98, 0.812) 100%
+    rgba(84, 2, 98, 0.745) 100%
   );
 }
 .box .boxdetail {
@@ -1117,7 +1117,7 @@ table td {
 
   z-index: 1;
   width: 200px;
-  height: 220px;
+  height: 120px;
 }
 .boxdetail p {
   color: rgb(254, 254, 254);
