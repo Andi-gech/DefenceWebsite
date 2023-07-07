@@ -668,7 +668,7 @@ table td {
   width: 200px;
 }
 #Message {
-  height: 200px;
+  height: 210px;
 }
 .WellcomeMessage p {
   overflow: hidden;
@@ -803,7 +803,7 @@ table td {
   width: 90%;
 }
 .NewsText #newsdescription {
-  height: 60px;
+  height: 70px;
   margin: 5px;
   max-width: 600px;
   font-size: 12px;
