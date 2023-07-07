@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCalendarDay, FaMapMarker } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function AnnouncmentCard({ title, location, date }) {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -8,7 +9,11 @@ function AnnouncmentCard({ title, location, date }) {
     day: "2-digit",
   });
   return (
-    <div className="cardelements" style={{ paddingInline: 25 }}>
+    <Link
+      to={"/AcadamicCalander"}
+      className="cardelements"
+      style={{ paddingInline: 25 }}
+    >
       <FaCalendarDay size={19} color="gray" />
       <div className="texteventname">
         <p>{title}</p>
@@ -20,7 +25,7 @@ function AnnouncmentCard({ title, location, date }) {
           <span>{formattedDate}</span>
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -22,6 +22,7 @@ import logo from "../Assets/defenceLogo.png";
 import Erorrpage from "./Errorpage";
 import AnnouncmentCard from "../components/AnnouncmentCard";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 function HomeScreen() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -205,11 +206,15 @@ function HomeScreen() {
                       whileInView={{ x: [150, 0] }}
                       transition={{ duration: 1, delay: index / 10 }}
                     >
-                      <div className="cardelements" key={collage.id}>
+                      <Link
+                        to={`/${collage.pathname}`}
+                        className="cardelements"
+                        key={collage.id}
+                      >
                         <img src={logo} alt={collage.name} />
                         <p>{collage.name}</p>
                         <FaArrowRight />
-                      </div>
+                      </Link>
                     </motion.div>
                   ))}
                 </div>
