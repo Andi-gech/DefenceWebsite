@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 .App {
   background-color: #ffffff;
   min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  font-family: "Roboto";
 }
 
 a {
