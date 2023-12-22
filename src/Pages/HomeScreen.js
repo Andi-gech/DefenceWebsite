@@ -18,6 +18,7 @@ import UseEventFech from "../hooks/UseEventfecg";
 import UseCollageFech from "../hooks/UseCollageFech";
 import Loadingpage from "./Loadingpage";
 import logo from "../Assets/defenceLogo.png";
+import banners from "../Assets/newsimage2.f5f8708e9eb5ca75ae36.jpg"
 
 import Erorrpage from "./Errorpage";
 import AnnouncmentCard from "../components/AnnouncmentCard";
@@ -76,7 +77,7 @@ function HomeScreen() {
           style={{ display: imageLoaded ? "flex" : "none" }}
         >
           <Bannercomponent
-            banner={data[0]?.bannerimage}
+            banner={banners}
             onImageLoad={() => setImageLoaded(true)}
           />
           {isTabletOrMobile && (
@@ -176,20 +177,7 @@ function HomeScreen() {
                   See more
                   <FaShare />
                 </p>
-                <div className="feature_Vidos">
-                  <div className="feature_Vidos_header">
-                    <p id="title">fEATURED VIDEOS</p>
-                  </div>
-                  <div className="feature_Vidocontent">
-                    <iframe
-                      src="https://www.youtube.com/embed/0-ND5ib9FkY"
-                      frameBorder="0"
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen
-                      title="Defence University"
-                    />
-                  </div>
-                </div>
+               
               </div>
               <div className="rightbodycontainer">
                 <div className="Cards">
@@ -239,12 +227,38 @@ function HomeScreen() {
                     </motion.div>
                   ))}
                 </div>
+                <div className="feature_Vidos">
+                  <div className="feature_Vidos_header">
+                    <p id="title">Feature Videos</p>
+                  </div>
+                  <div className="video_list">
+                  <div className="feature_Vidocontent">
+                    <iframe
+                      src="https://www.youtube.com/embed/0-ND5ib9FkY"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title="Defence University"
+                    />
+                  </div>
+                  <div className="feature_Vidocontent">
+                    <iframe
+                      src="https://www.youtube.com/embed/0-ND5ib9FkY"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title="Defence University"
+                    />
+                  </div>
+                  </div>
+               
+                </div>
               </div>
             </div>
           )}
 
           <ACadamicReward />
-          <CommunityOutreach news={News} />
+      
         </div>
         <div style={{ display: !imageLoaded ? "block" : "none" }}>
           <Loadingpage />

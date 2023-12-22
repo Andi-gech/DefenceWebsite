@@ -6,8 +6,8 @@ function WellcomeMessage({ Leadername, message, image }) {
       <div className="Presidantpic">
         <img src={image} alt="presidantpic" />
         <div className="WellcomeMessagername">
-          <p>{Leadername} </p>
-          <p style={{ fontWeight: "normal", fontSize: 14 }}>
+          <p>{Leadername.toUpperCase()} </p>
+          <p style={{ fontWeight: "bold",fontFamily: "'Alike Angular', serif", fontSize: 14 }}>
             Defence University Commandant
           </p>
         </div>
