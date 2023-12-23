@@ -885,6 +885,7 @@ margin: o;
  
   margin-top: 20px;
   display: flex;
+  margin-inline: 10px;
   position: relative;
   flex-direction: row;
   flex-wrap: wrap;
@@ -897,7 +898,7 @@ padding-inline: 20px;
 
  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.055);
- max-width: 400px;
+ max-width: 350px;
 
 
 
@@ -1057,8 +1058,9 @@ border: 1px solid rgba(9, 191, 248, 0.3);
  width: 500px;
   padding-bottom: 10px;
 
-  background: rgb(0,103,184);
-  background: linear-gradient(173deg, rgba(0,103,184,1) 0%, rgba(0,103,184,1) 80%, rgba(255,255,255,1) 100%);
+
+  background: rgb(1, 79, 139);
+  background: linear-gradient(173deg, rgb(1, 48, 83) 0%, rgba(0,103,184,1) 80%);
 
   
   animation: myAnimation 0.2s;
@@ -1079,8 +1081,8 @@ border: 1px solid rgba(9, 191, 248, 0.3);
   position: absolute;
   height: 200px;
   width: 200px;
-  background: rgb(0,103,184);
-  background: linear-gradient(173deg, rgba(0,103,184,1) 0%, rgba(0,103,184,1) 80%, rgba(255,255,255,1) 100%);
+  background: rgb(1, 79, 139);
+  background: linear-gradient(173deg, rgb(1, 48, 83) 0%, rgba(0,103,184,1) 80%);
 
  
   animation: myAnimation 0.2s;
