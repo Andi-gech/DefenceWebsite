@@ -220,9 +220,9 @@ Ethiopian Defence University</p>
           )}
           <FaBars
             size={25}
-            color="white"
+            color="black"
             onClick={() => setmenuopen(!ismenuopen)}
-          />{" "}
+          />
         </div>
       )}
     
@@ -235,7 +235,7 @@ Ethiopian Defence University</p>
               onClick={() => setSelected("home")}
               style={{
                 backgroundColor: selected === "home" ? "white" : "transparent",
-                color: selected === "home" ? "black":"white",
+                color: selected === "home" ? "white" : "white",
               }}
             >
               <Link to={"home"} className="EachHeaderbutton">
@@ -251,7 +251,7 @@ Ethiopian Defence University</p>
               style={{
                 backgroundColor:
                   selected === "latest" ? "white" : "transparent",
-                color: selected === "latest" ? "black":"white",
+                color: selected === "latest" ? "white" : "white",
               }}
             >
               <div
@@ -286,7 +286,7 @@ Ethiopian Defence University</p>
               style={{
                 backgroundColor:
                   selected === "academics" ? "white" : "transparent",
-                color: selected === "academics" ? "black":"white",
+                color: selected === "academics" ? "white" : "white",
               }}
             >
               <div
@@ -344,7 +344,7 @@ Ethiopian Defence University</p>
               style={{
                 backgroundColor:
                   selected === "library" ? "white" : "transparent",
-                color: selected === "library" ? "black":"white",
+                color: selected === "library" ? "white" : "white",
               }}
             >
               <Link to={"Administration"} className="EachHeaderbutton">
@@ -358,7 +358,7 @@ Ethiopian Defence University</p>
               style={{
                 backgroundColor:
                   selected === "calendar" ? "white" : "transparent",
-                color: selected === "calendar" ? "black":"white",
+                color: selected === "calendar" ? "white" : "white",
               }}
             >
               <Link to={"Downloads"} className="EachHeaderbutton">
@@ -370,7 +370,7 @@ Ethiopian Defence University</p>
               onClick={() => setSelected("about")}
               style={{
                 backgroundColor: selected === "about" ? "white" : "transparent",
-                color: selected === "about" ? "black":"white",
+                color: selected === "about" ? "white" : "white",
               }}
             >
               <Link to={"about"} className="EachHeaderbutton">
@@ -383,7 +383,7 @@ Ethiopian Defence University</p>
               style={{
                 backgroundColor:
                   selected === "support" ? "white" : "transparent",
-                color: selected === "support" ? "black":"white",
+                color: selected === "support" ? "white" : "white",
               }}
             >
               <div onClick={click} className="EachHeaderbutton">

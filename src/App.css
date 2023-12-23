@@ -151,15 +151,19 @@ background-color:  white;
   margin-top: 100px;
 }
 .headermobile {
-  flex: 1;
+ 
+  width: 30px;
 
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-right: 20px;
+ 
+
 }
 .Logo-container {
   height: 150px;
+ 
 
  
   display: flex;
@@ -167,9 +171,10 @@ background-color:  white;
  
 }
 .Logo-container img {
-  height: 150px;
+  height: 120px;
   width: 150px;
 }
+
 .headerText{
   width: 500px;
   font-size: 24px;
@@ -178,6 +183,7 @@ background-color:  white;
   display: flex;
   margin-right: 20px;
 }
+
 .headerTexteach{
   margin: 4px;
   font-family: 'Alike Angular', serif;
@@ -659,7 +665,7 @@ table td {
 .WellcomeMessage {
   display: flex;
   min-height: 300px;
-  width: 700px;
+  max-width: 700px;
   margin-top: 30px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -672,6 +678,43 @@ table td {
   justify-content: center;
 
   margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .Logo-container img{
+    width: 100px;
+    height: 100px;
+  }
+  .Logo-container {
+height: 100px;
+width: 90%;
+
+  }
+  .Logo-container .headerText .headerTexteach{
+    font-size: 15px;
+margin: o;
+  }
+  .Header {
+    flex-direction: row;
+    height: 100px;
+
+  }
+  .Newscard{
+    max-width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    flex-direction: column;
+  }
+  .Newscard img{
+    width: 100px;
+    height: 100px;
+
+
+  }
+ 
+  
+
 }
 .mobilebody {
   display: flex;
@@ -756,7 +799,8 @@ table td {
 }
 .menusidebar {
   width: 100vw;
-  background-color: rgb(35, 34, 35);
+  background: rgb(0,103,184);
+  background: linear-gradient(173deg, rgba(0,103,184,1) 0%, rgba(0,103,184,1) 80%, rgba(255,255,255,1) 100%);
   color: white;
   height: 100vh;
   top: 16.5vh;
@@ -778,11 +822,13 @@ table td {
   }
 }
 .sidemenufinalsub {
-  background-color: rgb(38, 38, 42) !important;
+  background: rgb(0,103,184);
+  background: linear-gradient(173deg, rgba(0,103,184,1) 0%, rgba(0,103,184,1) 80%);
 }
 .sidemenusub {
   width: 100%;
-  background-color: rgb(31, 31, 36);
+  background: rgb(1, 44, 77);
+  background: linear-gradient(173deg, rgb(2, 50, 87) 0%, rgb(2, 56, 97) 80%);
 }
 .ECrightBody {
   flex: 1;
@@ -841,6 +887,7 @@ table td {
   display: flex;
   position: relative;
   flex-direction: row;
+  flex-wrap: wrap;
   background-color: white;
   box-shadow: -2px 0px 13px 0px rgba(0, 0, 0, 0.13);
   -webkit-box-shadow: -2px 0px 13px 0px rgba(0,0,0,0.24);
@@ -850,8 +897,8 @@ padding-inline: 20px;
 
  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.055);
- width: 500px;
- height: 200px;
+ max-width: 400px;
+
 
 
 
@@ -862,16 +909,18 @@ padding-inline: 20px;
 }
 .Newslist {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .NewsText {
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+
   justify-content: space-between;
   padding-bottom: 20px;
   padding-top: 20px;
 
-  width: 90%;
+  width: 100%;
 }
 .NewsText #newsdescription {
   height: 61px;
