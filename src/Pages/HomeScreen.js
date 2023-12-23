@@ -173,10 +173,7 @@ function HomeScreen() {
                       />
                     ))}
                 </div>
-                <p className="seemore">
-                  See more
-                  <FaShare />
-                </p>
+              
                
               </div>
               <div className="rightbodycontainer">
@@ -199,7 +196,7 @@ function HomeScreen() {
                         className="cardelements"
                         key={collage.id}
                       >
-                        <img src={logo} alt={collage.name} />
+                        {/* <img src={logo} alt={collage.name} /> */}
                         <p>{collage.name}</p>
                         <FaArrowRight />
                       </Link>
@@ -243,7 +240,7 @@ function HomeScreen() {
                   </div>
                   <div className="feature_Vidocontent">
                     <iframe
-                      src="https://www.youtube.com/embed/0-ND5ib9FkY"
+                      src="https://www.youtube.com/embed/u2NjQrt5kL0"
                       frameBorder="0"
                       allow="autoplay; encrypted-media"
                       allowFullScreen

@@ -10,7 +10,8 @@ function Newscardcomponent({ id, title, discription, date, image }) {
   });
 
   return (
-    <div className="Newscard">
+    <Link to={`/latest-news/${id}`}  className="Newscard">
+    
       <img src={image} alt="News" />
       <div className="NewsText">
         <Link to={`/latest-news/${id}`} id="NewsTitle">
@@ -21,7 +22,7 @@ function Newscardcomponent({ id, title, discription, date, image }) {
           <FaCalendar size={12} color="rgb(8, 8, 54)" /> {formattedDate}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 

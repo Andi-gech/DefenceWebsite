@@ -235,15 +235,12 @@ Ethiopian Defence University</p>
               onClick={() => setSelected("home")}
               style={{
                 backgroundColor: selected === "home" ? "white" : "transparent",
-                color: selected === "home" ? "black" : "black",
+                color: selected === "home" ? "black":"white",
               }}
             >
               <Link to={"home"} className="EachHeaderbutton">
                 Home
-                <FaHome
-                  id="icon"
-                  color={selected === "home" ? "orange" : "black"}
-                />
+              
               </Link>
             </li>
             <li
@@ -253,15 +250,15 @@ Ethiopian Defence University</p>
               onClick={latestClicked}
               style={{
                 backgroundColor:
-                  selected === "latest" ? "black" : "transparent",
-                color: selected === "latest" ? "black" : "black",
+                  selected === "latest" ? "white" : "transparent",
+                color: selected === "latest" ? "black":"white",
               }}
             >
               <div
                 className="Drop-downlatest"
                 style={{
                   display: isLatest ? "flex" : "none",
-                  color: "black",
+                  color: "white",
                 }}
               >
                 <Link className="eachelement" to={"latest-announcement"}>
@@ -278,10 +275,7 @@ Ethiopian Defence University</p>
               <span>
                 latest <FaAngleDown />
               </span>
-              <FaNewspaper
-                id="icon"
-                color={selected === "latest" ? "orange" : "black"}
-              />
+            
             </li>
 
             <li
@@ -291,15 +285,15 @@ Ethiopian Defence University</p>
               onMouseLeave={() => setIsAcademy(false)}
               style={{
                 backgroundColor:
-                  selected === "academics" ? "black" : "transparent",
-                color: selected === "academics" ? "black" : "black",
+                  selected === "academics" ? "white" : "transparent",
+                color: selected === "academics" ? "black":"white",
               }}
             >
               <div
                 className="Drop-downAcadmay"
                 style={{
                   display: isAcademy ? "flex" : "none",
-                  color: "black",
+                  color: "white",
                 }}
               >
                 <div className="dropdownpart">
@@ -342,25 +336,20 @@ Ethiopian Defence University</p>
                 Academics
                 <FaAngleDown />
               </span>
-              <FaGraduationCap
-                id="icon"
-                color={selected === "academics" ? "orange" : "black"}
-              />
+           
+          
             </li>
             <li
               onClick={() => setSelected("library")}
               style={{
                 backgroundColor:
-                  selected === "library" ? "black" : "transparent",
-                color: selected === "library" ? "black" : "black",
+                  selected === "library" ? "white" : "transparent",
+                color: selected === "library" ? "black":"white",
               }}
             >
               <Link to={"Administration"} className="EachHeaderbutton">
                 Administration
-                <FaUserShield
-                  id="icon"
-                  color={selected === "library" ? "orange" : "black"}
-                />
+              
               </Link>
             </li>
 
@@ -368,43 +357,37 @@ Ethiopian Defence University</p>
               onClick={() => setSelected("calendar")}
               style={{
                 backgroundColor:
-                  selected === "calendar" ? "black" : "transparent",
-                color: selected === "calendar" ? "black" : "black",
+                  selected === "calendar" ? "white" : "transparent",
+                color: selected === "calendar" ? "black":"white",
               }}
             >
               <Link to={"Downloads"} className="EachHeaderbutton">
                 Downloads{" "}
-                <FaFileDownload
-                  id="icon"
-                  color={selected === "calendar" ? "orange" : "black"}
-                />
+               
               </Link>
             </li>
             <li
               onClick={() => setSelected("about")}
               style={{
-                backgroundColor: selected === "about" ? "black" : "transparent",
-                color: selected === "about" ? "black" : "black",
+                backgroundColor: selected === "about" ? "white" : "transparent",
+                color: selected === "about" ? "black":"white",
               }}
             >
               <Link to={"about"} className="EachHeaderbutton">
                 About
-                <FaGlobe
-                  id="icon"
-                  color={selected === "about" ? "orange" : "black"}
-                />
+               
               </Link>
             </li>
             <li
               onClick={() => setSelected("support")}
               style={{
                 backgroundColor:
-                  selected === "support" ? "black" : "transparent",
-                color: selected === "support" ? "black" : "black",
+                  selected === "support" ? "white" : "transparent",
+                color: selected === "support" ? "black":"white",
               }}
             >
               <div onClick={click} className="EachHeaderbutton">
-                Support <FaQuestionCircle id="icon" />
+                Support 
               </div>
             </li>
           </ul>

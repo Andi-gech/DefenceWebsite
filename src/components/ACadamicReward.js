@@ -9,6 +9,7 @@ export default function ACadamicReward() {
       className="AcadamicReward"
      
     >
+      <div className="titlesdec"><p>DU With Number</p></div>
     
       <div className="box">
         <div className="boxdetail">

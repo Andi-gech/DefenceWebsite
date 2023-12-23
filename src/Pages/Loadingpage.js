@@ -7,7 +7,7 @@ function Loadingpage() {
       <TailSpin
         height="80"
         width="80"
-        color="white"
+        color="blue"
         ariaLabel="tail-spin-loading"
         radius="1"
         wrapperStyle={{}}
