@@ -306,7 +306,7 @@ justify-content: center;
   background-color: rgba(243, 241, 241, 0.651);
 }
 .Subheadercomponent {
-  background-color: rgb(51, 49, 49);
+  background-color: #0067b8;;
   height: 50px;
   width: 100vw;
 
@@ -366,8 +366,8 @@ justify-content: center;
   width: 200px;
 }
 .DepartmentCards img {
-  height: 200px;
-  width: 150px;
+  height: 100%;
+  width: 100%;
 }
 .DepcardText {
   height: 74px;
@@ -1365,6 +1365,7 @@ border: 1px solid rgba(9, 191, 248, 0.3);
   font-size: 30px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  margin-top: 100px;
 }
 .Wellcome-text {
   color: white;
