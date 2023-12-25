@@ -1590,6 +1590,7 @@ border: 1px solid rgba(9, 191, 248, 0.3);
   justify-content: space-around;
   box-shadow: rgba(12, 11, 11, 0.041) 1.2px 1.95px 1.95px 2.6px;
 }
+
 .Questioncard {
   margin-inline: 10px;
   display: flex;
@@ -1600,6 +1601,8 @@ border: 1px solid rgba(9, 191, 248, 0.3);
 }
 .Questioncard:hover {
   cursor: pointer;
+  color: #0067b8;
+ 
 }
 .hiddentext {
   display: none;
@@ -1613,7 +1616,7 @@ border: 1px solid rgba(9, 191, 248, 0.3);
   margin-top: 16vh;
   display: flex;
   align-items: center;
-  /* flex-direction: column; */
+  
   justify-content: center;
   align-items: center;
 }
