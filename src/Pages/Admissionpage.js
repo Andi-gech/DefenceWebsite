@@ -4,8 +4,9 @@ import QuestionsCard from "../components/Questionscard";
 function Admissionpage() {
   return (
     <div className="Admissionpage">
+    <div className="Admissioncontainer">
       <div className="titles">
-        <p>Admmisson</p>
+        <p>Admisson</p>
       </div>
       <div className="Admissionpagetext">
         Each semester existing students are required to register for classes for
@@ -15,14 +16,16 @@ function Admissionpage() {
         department and complete the required information and get them signed by
         the head of the department/school and submit one copy of the slip to the
         respective college office of students’ Affairs and one copy to the
-        University office of the registrar. You can now apply to Jimma Universty
+        University office of the registrar. You can now apply to Defence Universty
         Registrar office at the following programs based on the minimum
         requirements of each departments.
+        
       </div>
       <QuestionsCard />
       <QuestionsCard />
       <QuestionsCard />
       <QuestionsCard />
+    </div>
     </div>
   );
 }
